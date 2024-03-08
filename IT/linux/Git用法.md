@@ -202,7 +202,7 @@ submodule是先于subtree出现的子库方案，直接集成在git包中，原�
 ```Shell
 cd parent
 # 添加submodule，路径位于主库的parent/mod/sub
-git submodule add https://code.qingfengtec.com/ma.yc/sub.git mod/sub
+git submodule add https://gitee.com/eosino/sub.git mod/sub
 # 此时执行git status可以看到如下图1所示的变动，所以还需要一次提交
 git commit -m 'add submodule mod/sub'
 git submodule                # 查看子库信息，如下图2
@@ -222,7 +222,7 @@ git log -1                # 查看子库的log，如下图3，可以看到与图
 明白了原理，当子库有更新，主库同步的方式就是：进入子库目录执行git pull，然后返回主库目录提交commitid的变更即可。
 ```Shell
 # 默认clone不会拉取子库，仅创建一个空目录；需要加上参数--recurse-submodule
-git clone --recurse-submodules https://code.qingfengtec.com/ma.yc/parent.git
+git clone --recurse-submodules https://gitee.com/eosino/parent.git
 # 若clone时未带参数--recurse-submodule，也可以在clone后执行下面的命令来拉子库
 git submodule update --init
 # 注：拉子库到本地默认处于对应commitid的游离分支，不要直接修改
@@ -245,7 +245,7 @@ git commit -m 'remove submodule mod/sub'
 &emsp;&emsp;相对submodule，subtree可以让主库和子库的使用者不关心他们的关系，直接按普通git库操作即可，只需要及时或定时同步；但复杂易出问题的细节只是隐藏在了同步这一环罢了，还有主库push到子库需要遍历提交记录找出与子库目录相关的日志去同步，容易有性能问题。
 ```Shell
 # 主库增加子库的远程仓库
-git remote add sub https://code.qingfengtec.com/ma.yc/sub.git
+git remote add sub https://gitee.com/eosino/sub.git
 # 主库增加一个subtree子库，会自动产生两次提交，如下图1
 git subtree add --prefix=tree/sub sub master --squash
 
