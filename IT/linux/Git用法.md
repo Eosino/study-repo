@@ -195,10 +195,10 @@ git checkout master
 git branch -D branch-sub
 ```
 把两个库放到远程仓库，作为下文示例：  
-&emsp;&emsp;https://gitee.com/eosino/parent.git  
-&emsp;&emsp;https://gitee.com/eosino/sub.git  
+* https://gitee.com/eosino/parent.git  
+* https://gitee.com/eosino/sub.git  
 ### 10.2. submodule
-&emsp;&emsp;submodule是先于subtree出现的子库方案，直接集成在git包中，原理是把子库的一个commit保存在主库。
+submodule是先于subtree出现的子库方案，直接集成在git包中，原理是把子库的一个commit保存在主库。
 ```Shell
 cd parent
 # 添加submodule，路径位于主库的parent/mod/sub
@@ -210,12 +210,16 @@ git submodule                # 查看子库信息，如下图2
 cd mod/sub/
 git log -1                # 查看子库的log，如下图3，可以看到与图2记录的commitid一致
 ```
-![alt text](res/git-usage-1.png)
-![alt text](res/git-usage-2.png)
-![alt text](res/git-usage-3.png)
-&emsp;&emsp;主库仅仅是通过commitid对子库进行引用，之后，直接修改子库，或者在主库中修改子库（提交、更新、切换分支等），都会改变这个commitid，需要对主库进行一次提交：
-![alt text](res/git-usage-4.png)
-&emsp;&emsp;明白了原理，当子库有更新，主库同步的方式就是：进入子库目录执行git pull，然后返回主库目录提交commitid的变更即可。
+<div>
+<img src="./res/git-usage-1.png" width="60%">
+<img src="./res/git-usage-2.png" width="60%">
+<img src="./res/git-usage-3.png" width="60%">
+</div>
+主库仅仅是通过commitid对子库进行引用，之后，直接修改子库，或者在主库中修改子库（提交、更新、切换分支等），都会改变这个commitid，需要对主库进行一次提交：
+<div>
+<img src="./res/git-usage-4.png" width="60%">
+</div>
+明白了原理，当子库有更新，主库同步的方式就是：进入子库目录执行git pull，然后返回主库目录提交commitid的变更即可。
 ```Shell
 # 默认clone不会拉取子库，仅创建一个空目录；需要加上参数--recurse-submodule
 git clone --recurse-submodules https://code.qingfengtec.com/ma.yc/parent.git
@@ -250,4 +254,6 @@ git subtree pull --prefix=tree/sub sub master --squash
 # 主库推送更新到子库
 git subtree push --prefix=tree/sub sub master --squash
 ```
-![alt text](res/git-usage-5.png)
+<div>
+<img src="./res/git-usage-5.png" width="60%">
+</div>
