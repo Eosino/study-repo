@@ -8,7 +8,7 @@
 | $(\frac{1}{x})'=-\frac{1}{x^2}$ | $(\tan{x})'=\sec^2{x}$ | $(\arcsin{x})'=\frac{1}{\sqrt{1-x^2}}$ |
 | $(\sqrt{x})'=\frac{1}{2\sqrt{x}}$ | $(\cot{x})'=-\csc^2{x}$ | $(\arccos{x})'=-\frac{1}{\sqrt{1-x^2}}$ |
 | $[\ln{(x+\sqrt{x^2 \pm a^2})}]'=\frac{1}{\sqrt{x^2 \pm a^2}}$ | $(\sec{x})'=\sec{x}\tan{x}$ | $(\arctan{x})'=\frac{1}{1+x^2}$ |
-|  | $(\csc{x})'=-\csc{x}\cot{x}$ | $(arccot\,x)'=-\frac{1}{1+x^2}$ |
+|  | $(\csc{x})'=-\csc{x}\cot{x}$ | $(arccot\space x)'=-\frac{1}{1+x^2}$ |
 |  |  |  |
 # 2. 一元二次方程
 $ax^2+bx+c=0$  
