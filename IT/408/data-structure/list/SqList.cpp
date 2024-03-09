@@ -508,11 +508,41 @@ int ReverseArrayDemo() {
     最易算法：归并排序，定位中位数。
         时间O(n)，空间O(n)。
 */
-int FindMedian(SqList S1, SqList S2) {
-    int k=0, k1=0, k2=0;    //分别表示归并下标、S1下标、S2下标
-    int mid = S1.length;    //两个等长序列的中位数所在位序
+int FindMedian_best(int A[], int B[], int n) {
+    int s1=0, m1, d1=n-1;   //序列A的首位数、中位数、末位数
+    int s2=0, m2, d2=n-1;   //序列B的首位数、中位数、末位数
+    while (s1!=d1 || s2!=d2) {
+        m1 = (s1+d1)/2;
+        m2 = (s2+d2)/2;
+        if (A[m1] == B[m1]) //两个序列的中位数相等，那这个就是两个序列的中位数
+            return A[m1];
+        else if (A[m1] < B[m2]) {
+            if ((d1-s1+1)%2 == 0) { //元素个数为偶数
+                //因为偶数序列的中位数取的是中间两个数的较小者，所以这里舍弃较小的中位数，保留较大的中位数
+                s1 = m1+1;  //中位数较小的序列，舍弃该中位数及前面的元素
+                d2 = m2;    //中位数较大的序列，保留该中位数，舍弃其后面的元素
+            } else {    //元素个数为奇数
+                s1 = m1;    //中位数较小的序列，保留该中位数，舍弃其前面的元素
+                d2 = m2;    //中位数较大的序列，保留该中位数，舍弃其后面的元素
+            }
+        } else {
+            if ((d1-s1+1)%2 == 0) { //元素个数为偶数
+                s2 = m2+1;
+                d1 = m1;
+            } else {    //元素个数为奇数
+                s1 = m1;
+                d2 = m2;
+            }
+        }
+    }
+    //最后两个序列各剩下一个元素，取较小的那个
+    return A[s1]<B[s2] ? A[s1] : B[s2];
+}
+int FindMedian(int A[], int B[], int n) {
+    int k=0, k1=0, k2=0;    //分别表示归并下标、A下标、B下标
+    int mid = n;    //两个等长序列的中位数的位序
     while (k < mid-1) {     //归并下标到达中位数时跳出循环；这里的mid是位序而不是下标所以要减一
-        if (S1.data[k1] < S2.data[k2]) {
+        if (A[k1] < B[k2]) {
             k1++;
         } else {
             k2++;
@@ -520,19 +550,18 @@ int FindMedian(SqList S1, SqList S2) {
         k++;
     }
     //归并下标到达中位数时，两个序列的下个元素较小的那个即是中位数
-    return S1.data[k1]<S2.data[k2] ? S1.data[k1] : S2.data[k2];
+    return A[k1]<B[k2] ? A[k1] : B[k2];
 }
 int FindMedianDemo() {
-    SqList S1;
-    InitList(S1);
-    SqList S2;
-    InitList(S2);
-    for (int i=1; i<5; i++) {
-        InsertList(S1, S1.length+1, i*3);
-        InsertList(S2, S2.length+1, i*4);
-    }
-    printf("初始化：\n"); PrintList(S1); PrintList(S2);
-    printf("中位数：%d\n", FindMedian(S1, S2));
+    //int n = 5;
+    //int A[] = {1,2,3,100,200};
+    //int B[] = {2,6,8,10,20};
+    int n = 3;
+    int A[] = {1,11,111};
+    int B[] = {2,22,222};
+    printf("初始化：\n"); PrintArray(A, n); PrintArray(B, n);
+    printf("中位数（归并）：%d\n", FindMedian(A, B, n));
+    printf("中位数（最佳）：%d\n", FindMedian_best(A, B, n));
     return 0;
 }
 
