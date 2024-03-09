@@ -400,6 +400,142 @@ int MergeSqListDemo() {
     return 0;
 }
 
+//顺序表题目六：已知在一维数组L[m+n]中依次存放着两个线性表（a1,a2,...,am）和（b1,b2,...,bn）；
+//试编写一个函数，将数组中两个顺序表的位置互换，即将（b1,b2,...,bn）放到（a1,a2,...,am）的前面。
+//原理：先逆置L变为（bn,...b2,b1,am,...,a2,a1），再分别逆置b和a即可得（b1,b2,...,bn,a1,a2,...,am）
+//Reverse2：逆置顺序表L的第s位到第t位
+bool ReversePos(SqList &L, int s, int t) {
+    if (s<1 || s>t || t>L.length)
+        return false;
+    ElemType tmp;
+    int mid = (s+t)/2;
+    for (int i=0; i<=mid-s; i++) {  //这里的i表示偏移量，从s开始最大偏移到mid
+        //s向前偏移i，其对应要交换的目标就是t向后偏移i
+        //因为这里都是位序，所以还需要-1才是下标
+        tmp = L.data[s+i-1];
+        L.data[s+i-1] = L.data[t-i-1];
+        L.data[t-i-1] = tmp;
+    }
+    return true;
+
+}
+void SwapList(SqList &L, int m, int n) {
+    //初始为（a1,a2,...,am,b1,b2,...,bn）
+    ReversePos(L, 1, L.length); //逆置整个L，结果为：（bn,...b2,b1,am,...,a2,a1）
+    PrintList(L);
+    ReversePos(L, 1, n);    //逆置L的第1位到第n位，结果为：（b1,b2,...,bn,am,...,a2,a1）
+    PrintList(L);
+    ReversePos(L, n+1, m+n);    //逆置L的第n+1位到最后一位，结果为：（b1,b2,...,bn,a1,a2,...,am）
+    PrintList(L);
+}
+int SwapListDemo() {
+    SqList L;
+    InitList(L);
+    int m = 4;
+    int n = 6;
+    int i;
+    for (i=1; i<=m; i++)
+        InsertList(L, L.length+1, i);
+    for (i=1; i<=n; i++)
+        InsertList(L, L.length+1, i+10);
+    printf("初始化：");
+    PrintList(L);
+    SwapList(L, m, n);
+    printf("交换后：");
+    PrintList(L);
+    return 0;
+}
+
+/*
+顺序表题目七：
+    设将n(n>1)个整数存放到一维数组R中。试设计一个在时间和空间两方面都尽可能高效的算法。将R中保存的序列循环左移p(0<p<n)个位置，
+即将R中的数据由(X0,X1,...,Xn-1)变换为(Xp,Xp+1,...,Xn-1,X0,X1,...,Xp-1)。要求：
+    1. 给出算法的基本设计思想。
+    2. 根据设计思想，采用C、C++或Java语言描述算法，关键之处给出注释。
+    3. 说明所设计算法的时间复杂度和空间复杂度。
+
+答：1. 将R看成A、B两个数组，其中A(X0,X1,...,Xp-1)、B(Xp,Xp+1,...,Xn-1)，则该题就是要将AB变换为BA，需要的步骤是：
+       将(AB)逆置，得(B逆A逆)；然后分别逆置（B逆）和（A逆）即可得（BA）。
+    2. 见下方ReverseList和ReverseListDemo。
+    3. 时间复杂度为O(n)，空间复杂度为O(1)。
+*/
+//bool ReverseList(SqList &L, int from, int to) {
+    //if (from<0 || from>to || to>L.length-1)
+void ReverseArray(int R[], int from, int to) {
+    int tmp;
+    for (int i=0; i<=(to-from)/2; i++) {
+        tmp = R[from+i];
+        R[from+i] = R[to-i];
+        R[to-i] = tmp;
+    }
+}
+void PrintArray(int R[], int n) {
+    for (int i=0; i<n; i++)
+        printf("%d,", R[i]);
+    printf("\n");
+}
+int ReverseArrayDemo() {
+    int R[] = {1,2,3,4,5,6,7,8,9,10};
+    int n = 10;
+    printf("初始化：");
+    PrintArray(R, n);
+    int p = 3;
+    ReverseArray(R, 0, p-1);
+    printf("逆置(A)得(A逆B)：");
+    PrintArray(R, n);
+    ReverseArray(R, p, n-1);
+    printf("逆置(B)得(A逆B逆)：");
+    PrintArray(R, n);
+    ReverseArray(R, 0, n-1);
+    printf("逆置(A逆B逆)得(BA)：");
+    PrintArray(R, n);
+    return 0;
+}
+
+/*
+顺序表题目八：
+    一个长度L(L>=1)的升序序列S，处在第[L/2]个位置的数称为S的中位数。例如，若序列S1=(11,13,15,17,19)，则S1的中位数是15；
+两个序列的中位数是含它们所有元素的升序序列的中位数。例如，若S2=(2,4,6,8,20)，则S1和S2的中位数是11。
+    现在有两个等长升序序列A和B，试设计一个在时间和空间两方面都尽可能高效的算法，找出两个序列A和B的中位数。要求：
+    1. 给出算法的基本设计思想。
+    2. 根据设计思想，采用C、C++或Java语言描述算法，关键之处给出注释。
+    3. 说明你所设计算法的时间复杂度和空间复杂度。
+
+答：最优算法：通过两个序列各自求中位数，然后比较，舍弃小于较小中位数的部分和大于较大中位数的部分，直到两者相等，或只剩一个元素，较小者为中位数。
+        时间O(log2n)，空间O(1)。
+    次优算法：类比归并排序的思想但不实现归并，仅按顺序访问对比，访问到[L/2]即为所求。（推荐）
+        时间O(n)，空间O(1)。
+    最易算法：归并排序，定位中位数。
+        时间O(n)，空间O(n)。
+*/
+int FindMedian(SqList S1, SqList S2) {
+    int k=0, k1=0, k2=0;    //分别表示归并下标、S1下标、S2下标
+    int mid = S1.length;    //两个等长序列的中位数所在位序
+    while (k < mid-1) {     //归并下标到达中位数时跳出循环；这里的mid是位序而不是下标所以要减一
+        if (S1.data[k1] < S2.data[k2]) {
+            k1++;
+        } else {
+            k2++;
+        }
+        k++;
+    }
+    //归并下标到达中位数时，两个序列的下个元素较小的那个即是中位数
+    return S1.data[k1]<S2.data[k2] ? S1.data[k1] : S2.data[k2];
+}
+int FindMedianDemo() {
+    SqList S1;
+    InitList(S1);
+    SqList S2;
+    InitList(S2);
+    for (int i=1; i<5; i++) {
+        InsertList(S1, S1.length+1, i*3);
+        InsertList(S2, S2.length+1, i*4);
+    }
+    printf("初始化：\n"); PrintList(S1); PrintList(S2);
+    printf("中位数：%d\n", FindMedian(S1, S2));
+    return 0;
+}
+
 int main() {
     int ret = 0;
     //ret = SqListDemo();
@@ -409,6 +545,9 @@ int main() {
     //ret = DeleteAllElem();
     //ret = DeleteStoTDemo();
     //ret = DeleteDuplicateDemo();
-    ret = MergeSqListDemo();
+    //ret = MergeSqListDemo();
+    //ret = SwapListDemo();
+    //ret = ReverseArrayDemo();
+    ret = FindMedianDemo();
     return ret;
 }
