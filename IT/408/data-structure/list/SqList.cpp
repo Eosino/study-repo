@@ -508,7 +508,7 @@ int ReverseArrayDemo() {
     最易算法：归并排序，定位中位数。
         时间O(n)，空间O(n)。
 */
-int FindMedian_best(int A[], int B[], int n) {
+int FindMedian_optimal(int A[], int B[], int n) {
     int s1=0, m1, d1=n-1;   //序列A的首位数、中位数、末位数
     int s2=0, m2, d2=n-1;   //序列B的首位数、中位数、末位数
     while (s1!=d1 || s2!=d2) {
@@ -561,7 +561,182 @@ int FindMedianDemo() {
     int B[] = {2,22,222};
     printf("初始化：\n"); PrintArray(A, n); PrintArray(B, n);
     printf("中位数（归并）：%d\n", FindMedian(A, B, n));
-    printf("中位数（最佳）：%d\n", FindMedian_best(A, B, n));
+    printf("中位数（最佳）：%d\n", FindMedian_optimal(A, B, n));
+    return 0;
+}
+
+/*
+顺序表题目九：
+    已知一个整数序列A=(a0,a1,...,an-1)，其中0<=ai<n(0<=i<n)。若存在ap1=ap2=...=apm=x，且m>n/2(0<=pk<n, 1<=k<=m)，则称x为A的主元素。
+    例如A=(0,5,5,3,5,7,5,5)，则5是主元素；又如A=(0,5,5,3,5,1,5,7)，则A中没有主元素。
+    假设A中的n个元素保存在一个一维数组中，请设计一个尽可能高效的算法，找出A的主元素。若存在，输出主元素，否则输出-1。要求：
+    1. 给出算法的基本设计思想。
+    2. 根据设计思想，采用C、C++或Java语言描述算法，关键之处给出注释。
+    3. 说明你所设计算法的时间复杂度和空间复杂度。
+
+答：最优算法：遍历数组，找出唯一可能为主元素的数，然后遍历第二次，确认该数是否主元素；具体步骤如下：
+        1. 设变量tmp保存可能为主元素的数，设变量count进行计数；第一次遍历数组，将遇到的第一个数保存到tmp，count记为1；
+            往下若遇到相同的数则count加1，不相同则count减1；
+            若count减为了0，则将下一个数赋值给tmp，count记为1；
+            如此循环，直到遍历完成；
+        2. 第二次遍历数组，统计tmp所存元素的数量，若数量大于n/2，则为主元素，否则该数组没有主元素。
+        该算法的时间复杂度是O(n)，空间复杂度是O(1)
+    次优算法：构建一个大小为n的数组B，以下标表示序列A中的元素，以内容表示该元素的数量，遍历一遍A即可得到每个元素的数量，再遍历一遍B找出最大值即可；
+        注：该算法是经典的以空间换时间的次优方案，需要题中序列的元素全部>=0且<n
+        时间复杂度O(n)，空间复杂度O(n)
+*/
+int FindMedian_optimal(int A[], int n) {
+    int tmp = A[0];
+    int count = 1;
+    int i;
+    for (i=1; i<n; i++) {
+        if (A[i] == tmp)
+            count++;
+        else
+            if (count > 0)
+                count--;
+            else {
+                tmp = A[i];
+                count = 1;
+            }
+    }
+    count = 0;
+    for (i=0; i<n; i++)
+        if (A[i] == tmp)
+            count++;
+    if (count > n/2)
+        return tmp;
+    else
+        return -1;
+}
+int FindMainElem_suboptimal(int A[], int n) {
+    int B[n], i;
+    memset(B, 0, sizeof(int)*n);    //确保 0~n-1 每个数的初始计数都是0
+    for (i=0; i<n; i++)
+        B[A[i]]++;
+    int elem = 0;   //B中最大值对应的下标，也就是A的元素
+    int count = B[0];   //elem对应的计数
+    for (i=1; i<n; i++)
+        //打擂算法找出最大值
+        if (B[i] > count) {
+            count = B[i];
+            elem = i;
+        }
+    if (count > n/2)
+        return elem;
+    else
+        return -1;
+}
+
+int FindMainElemDemo() {
+    int A[] = {0,1,3,3,3,6,7};
+    int n = 7;
+    //printf("%d\n", FindMainElem_optimal(A, n));
+    printf("%d\n", FindMainElem_suboptimal(A, n));
+    return 0;
+}
+
+/*
+顺序表题目十：
+    给定一个含n(n>=1)个整数的数组，请设计一个在时间上尽可能高效的算法，找出数组中未出现的最小正整数。
+    例如{-5,3,2,3}中未出现的最小正整数是1，{1,2,3}中未出现的最小正整数是4。要求：
+    1. 给出算法的基本设计思想。
+    2. 根据设计思想，采用C、C++或Java语言描述算法，关键之处给出注释。
+    3. 说明你所设计算法的时间复杂度和空间复杂度。
+
+答：假设题中数组为A；新建一个长度为n的整数数组B，全部初始化为0；
+    遍历一遍数组A，将每个元素的值减一作为B的下标赋值对应的元素值为1；
+    之后再遍历数组B，找出第一个值为0的元素所对应的下标i，则i+1即为数组A中未出现的最小正整数。
+    时间复杂度O(n)，空间复杂度O(n)
+*/
+int FindMissMin(int A[], int n) {
+    int B[n], i;
+    memset(B, 0, sizeof(int)*n);
+    for (i=0; i<n; i++)
+        if (A[i]>0 && A[i]<=n)  //小于0和大于n的舍弃不管
+            B[A[i]-1] = 1;
+    //未出现的最小正整数只可能是：[1~n+1]
+    for (i=0; i<n; i++)
+        if (B[i] == 0)
+            break;
+    return i+1;
+}
+int FindMissMinDemo() {
+    //int A[] = {-5,3,2,3};
+    //int n = 4;
+    int A[] = {1,2,3};
+    int n = 3;
+    printf("%d\n", FindMissMin(A, n));
+    return 0;
+}
+
+/*
+顺序表题目十一：
+    定义三元组(a,b,c)（a、b、c均为整数）的距离D=|a-b|+|b-c|+|c-a|。给定3个非空整数集合S1、S2和S3，按升序分别存储在3个数组中。
+    请设计一个尽可能高效的算法，计算并输出所有可能的三元组(a,b,c)（a∈S1、b∈S2，c∈S3）中的最小距离。
+    例如S1={-1,0,9}，S2={-25,-10,10,11}，S3={2,9,17,30,41}，则最小距离为2，相应的三元组为(9,10,9)。要求：
+    1. 给出算法的基本设计思想。
+    2. 根据设计思想，采用C、C++或Java语言描述算法，关键之处给出注释。
+    3. 说明你所设计算法的时间复杂度和空间复杂度。
+
+答：假设a≤b≤c，则距离 D = |c-a| * 2，可知最小距离只跟3个数中的最大和最小值有关；
+    当固定住c而增大a时，可以减少这个最小距离，直到a∈[b,c]时则不再减少，等到a>c时则开始增加；
+    所以思路就是不停增加最小值直到它不再是最小值，到其中一个数组遍历完成时循环结束；
+    算法设计思路：
+        使用D_min记录已处理的三元组的最小距离，初值给一个足够大的整数；
+        三个集合分别存储在数组A、B、C，下标分别为i、j、k，循环从下标0开始直到其中一个数组遍历完成，循环内的逻辑是：
+            计算(A[i],B[j],C[k])的距离D，若D<D_min，则D_min=D；将A[i],B[j],C[k]的最小值的下标+1
+        循环结束，则输出结果D_min
+    时间复杂度O(n)，空间复杂度O(1)
+*/
+//获取绝对值
+int absValue(int n) {
+    if (n < 0)
+        return -n;
+    return n;
+}
+//判断a是否3个数中的最小值
+bool isMin(int a, int b, int c) {
+    if (a<=b && a<=c)
+        return true;
+    return false;
+}
+int findMinTrip(int A[], int n1, int B[], int n2, int C[], int n3) {
+    int i=0, j=0, k=0, D_min=INT_MAX, D;
+    while (i<n1 && j<n2 && k<n3 && D_min>0) {   //疑问：D_min>0有必要吗？D_min应该不可能<0
+        D = absValue(A[i]-B[j]) + absValue(B[j]-C[k]) + absValue(C[k]-A[i]);
+        if (D < D_min)
+            D_min = D;
+        if (isMin(A[i], B[j], C[k]))
+            i++;
+        else if (isMin(B[j], A[i], C[k]))
+            j++;
+        else
+            k++;
+    }
+    int a, b, c;
+    if (i >= n1) {
+        a = A[i-1];
+        b = B[j];
+        c = C[k];
+    } else if(j >= n2) {
+        a = A[i];
+        b = B[j-1];
+        c = C[k];
+    } else if(k >= n3) {
+        a = A[i];
+        b = B[j];
+        c = C[k-1];
+    }
+    printf("最小距离是：%d，对应三元组是：(%d, %d, %d)\n", D_min, a, b, c);
+    return D_min;
+}
+int findMinTripDemo() {
+    int A[] = {-1,0,9};
+    int B[] = {-25,-10,10,11};
+    int C[] = {2,9,17,30,41};
+    int n1=3, n2=4, n3=5;
+    findMinTrip(A, n1, B, n2, C, n3);
     return 0;
 }
 
@@ -577,6 +752,9 @@ int main() {
     //ret = MergeSqListDemo();
     //ret = SwapListDemo();
     //ret = ReverseArrayDemo();
-    ret = FindMedianDemo();
+    //ret = FindMedianDemo();
+    //ret = FindMainElemDemo();
+    //ret = FindMissMinDemo();
+    ret = findMinTripDemo();
     return ret;
 }
