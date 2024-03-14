@@ -32,7 +32,7 @@
 |---|---|
 | $\int{e^x}dx$ | $e^x+C$ |
 | $\int{a^x}dx$ | $\frac{a^x}{lna}+C$ |
-| $\int{x^a}dx$ | $\frac{x^a+1}{a+1}+C$ |
+| $\int{x^a}dx$ | $\frac{x^{a+1}}{a+1}+C\enspace(a\neq-1)$ |
 | $\int{\frac{1}{x^2}}dx$ | $-\frac{1}{x}+C$ |
 | $\int{\frac{1}{x}}dx$ | $ln{\|x\|}+C$ |
 | $\int{\frac{1}{\sqrt{x}}}dx$ | $2\sqrt{x}+C$ |
