@@ -26,3 +26,34 @@
 | $\cos x$ | $1-\frac{1}{2}x^2+\frac{1}{4!}x^4$ | $\sum_{n=0}^\infty\frac{(-1)^n}{(2n)!}x^{2n}$ |
 | $\frac{1}{1-x}$ | $1+x+x^2+...+x^n$ | $\sum_{n=0}^\infty x^n$ |
 | $\frac{1}{1+x}$ | $1-x+x^2-x^3+...+(-1)^nx^n$ | $\sum_{n=0}^\infty (-1)^nx^n$ |
+# 3. 一元函数积分学
+## 3.2 不定积分的公式法
+|  |  |
+|---|---|
+| $\int{e^x}dx$ | $e^x+C$ |
+| $\int{a^x}dx$ | $\frac{a^x}{lna}+C$ |
+| $\int{x^a}dx$ | $\frac{x^a+1}{a+1}+C$ |
+| $\int{\frac{1}{x^2}}dx$ | $-\frac{1}{x}+C$ |
+| $\int{\frac{1}{x}}dx$ | $ln{\|x\|}+C$ |
+| $\int{\frac{1}{\sqrt{x}}}dx$ | $2\sqrt{x}+C$ |
+| $\int{\sin x}dx$ | $-\cos x+C$ |
+| $\int{\cos x}dx$ | $\sin x+C$ |
+| $\int{\tan x}dx$ | $-\ln\|\cos x\|+C$ |
+| $\int{\cot x}dx$ | $\ln\|\sin x\|+C$ |
+| $\int{\sec x}dx$ | $\ln\|\sec x+\tan x\|+C$ |
+| $\int{\csc x}dx$ | $\ln\|\csc x-\cot x\|+C$ |
+| $\int{\sec^2x}dx$ | $\tan x+C$ |
+| $\int{\csc^2x}dx$ | $-\cot x+C$ |
+| $\int{\sec x\tan x}dx$ | $\sec x+C$ |
+| $\int{\csc x\cot x}dx$ | $-\csc x+C$ |
+| $\int{\frac{1}{\sqrt{1-x^2}}}dx$ | $\arcsin x+C$ |
+| $\int{\frac{1}{\sqrt{a^2-x^2}}}dx$ | $\arcsin\frac{x}{a}+C$ |
+| $\int{\frac{1}{\sqrt{x^2\pm a^2}}}dx$ | $\ln\|x+\sqrt{x^2\pm a^2}\|+C$ |
+| $\int{\frac{1}{1+x^2}}dx$ | $\arctan x+C$ |
+| $\int{\frac{1}{a^2+x^2}}dx$ | $\frac{1}{a}\arctan\frac{x}{a}+C$ |
+| $\int{\frac{1}{a^2-x^2}}dx$ | $\frac{1}{2a}\ln\|\frac{a+x}{a-x}\|+C$ |
+| $\int{\frac{1}{x^2-a^2}}dx$ | $\frac{1}{2a}\ln\|\frac{x-a}{x+a}\|+C$ |
+| $\int{\frac{1}{1+e^x}}dx$ | $x-\ln(1+e^x)+C$ |
+| $\int{\sqrt{x^2+a^2}}dx$ | $\frac{x}{2}\sqrt{x^2+a^2}+\frac{a^2}{2}\ln(x+\sqrt{x^2+a^2})+C$ |
+| $\int{\sqrt{x^2-a^2}}dx$ | $\frac{x}{2}\sqrt{x^2-a^2}-\frac{a^2}{2}\ln\|x+\sqrt{x^2-a^2}\|+C$ |
+| $\int{\sqrt{a^2-x^2}}dx$ | $\frac{x}{2}\sqrt{a^2-x^2}+\frac{a^2}{2}\arcsin\frac{x}{a}+C$ |
