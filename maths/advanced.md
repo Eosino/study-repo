@@ -13,4 +13,16 @@
    2. $\lim\limits_{x\to\forall}f(x)=0\iff\lim\limits_{x\to\forall}g(x)=0$，二者为同阶无穷大  
    3. 当$x\to\infty$时，若$g(x)$是$n$次多项式，则$f(x)$也是$n$次多项式  
 3. 若$\lim\limits_{x\to\forall}[f(x)-g(x)]$存在，则$\lim\limits_{x\to\forall}f(x)=\infty\iff\lim\limits_{x\to\forall}g(x)=\infty$，二者为同阶无穷大；即：$f(x),g(x)$阶数相同，系数相反
-## 泰勒
+## 1.3. 泰勒公式
+|  |  |  |
+|---|---|---|
+| $\sin x$ | $x-\frac{1}{3!}x^3+\frac{1}{5!}x^5$ | $\sum_{n=0}^\infty\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ |
+| $\arcsin x$ | $x+\frac{1}{3!}x^3+\frac{1}{5!}x^5$ | $\sum_{n=0}^\infty\frac{1}{(2n+1)!}x^{2n+1}$ |
+| $\tan x$ | $x+\frac{1}{3}x^3+\frac{1}{5}x^5$ | $\sum_{n=0}^\infty\frac{1}{2n+1}x^{2n+1}$ |
+| $\arctan x$ | $x-\frac{1}{3}x^3+\frac{1}{5}x^5$ |  $\sum_{n=0}^\infty\frac{(-1)^n}{2n+1}x^{2n+1}$|
+| $\ln(1+x)$ | $x-\frac{1}{2}x^2+\frac{1}{3}x^3$ | $\sum_{n=0}^\infty\frac{(-1)^n}{n+1}x^{n+1}$ |
+| $e^x$ | $1+x+\frac{1}{2}x^2+\frac{1}{3!}x^3$ | $\sum_{n=0}^\infty\frac{1}{n!}x^n$ |
+| $(1+x)^a$ | $1+ax+\frac{a(a-1)}{2}x^2$ | $\sum_{n=0}^\infty\frac{a(a-1)...(a-n+1)}{n!}x^n$ |
+| $\cos x$ | $1-\frac{1}{2}x^2+\frac{1}{4!}x^4$ | $\sum_{n=0}^\infty\frac{(-1)^n}{(2n)!}x^{2n}$ |
+| $\frac{1}{1-x}$ | $1+x+x^2+...+x^n$ | $\sum_{n=0}^\infty x^n$ |
+| $\frac{1}{1+x}$ | $1-x+x^2-x^3+...+(-1)^nx^n$ | $\sum_{n=0}^\infty (-1)^nx^n$ |
