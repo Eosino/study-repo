@@ -219,7 +219,8 @@ git log -1                # 查看子库的log，如下图3，可以看到与图
 <div>
 <img src="./res/git-usage-4.png" width="50%">
 </div>
-明白了原理，当子库有更新，主库同步的方式就是：进入子库目录执行git pull，然后返回主库目录提交commitid的变更即可。
+
+明白了原理，当子库有更新，主库同步的方式就是：进入子库目录执行git pull，然后返回主库目录提交commitid的变更即可：
 ```Shell
 # 默认clone不会拉取子库，仅创建一个空目录；需要加上参数--recurse-submodule
 git clone --recurse-submodules https://gitee.com/eosino/parent.git
