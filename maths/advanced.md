@@ -3,28 +3,28 @@
 ### 1.1.1. 解题思路
 1. 第一步判断类型：直接带入，若能得到一个数值，则为非未定型，该值就是极限的结果；否则就是未定型。
 2. 七种未定型极限：
-   * $0\cdot\infty$ 形式：把求导简单的取倒数放分母变形为 $\frac{0}{\frac{1}{\infin}}=\frac{0}{0}$ 或 $\frac{\infin}{\frac{1}{0}}=\frac{\infin}{\infin}$
-   * $\infin-\infin$ 形式：通分、有理化、倒代换
-   * $\frac{0}{0}$ 或 $\frac{\infin}{\infin}$ 形式可以用无穷小替换、泰勒公式、洛必达法则
-   * $1^\infin$ 形式：极限结果 $=e^A$
-      * $\lim\limits_{x\to\forall}[1+f(x)]^{g(x)}$, 其中 $f(x)\to0, g(x)\to\infin, A=\lim\limits_{x\to\forall}f(x)g(x)$
-      * $\lim\limits_{x\to\forall}f(x)^{g(x)}$, 其中 $f(x)\to1, g(x)\to\infin, A=\lim\limits_{x\to\forall}[f(x)-1]g(x)$
+   * $0\cdot\infty$ 形式：把求导简单的取倒数放分母变形为 $\frac{0}{\frac{1}{\infty}}=\frac{0}{0}$ 或 $\frac{\infty}{\frac{1}{0}}=\frac{\infty}{\infty}$
+   * $\infty-\infty$ 形式：通分、有理化、倒代换
+   * $\frac{0}{0}$ 或 $\frac{\infty}{\infty}$ 形式可以用无穷小替换、泰勒公式、洛必达法则
+   * $1^\infty$ 形式：极限结果 $=e^A$
+      * $\lim\limits_{x\to\forall}[1+f(x)]^{g(x)}$, 其中 $f(x)\to0, g(x)\to\infty, A=\lim\limits_{x\to\forall}f(x)g(x)$
+      * $\lim\limits_{x\to\forall}f(x)^{g(x)}$, 其中 $f(x)\to1, g(x)\to\infty, A=\lim\limits_{x\to\forall}[f(x)-1]g(x)$
 3. $0^0、\infty^0$ 形式：指数化，$f(x)^{g(x)}=e^{g(x)\ln{f(x)}}$
 4. 出现 $f(a)-f(b)$ 考虑使用拉格朗日中值定理
 ### 1.1.2. 抓大
 求极限时，可分别取分子分母中趋于$\infty$速度最快的无穷大项（主部，主要部分），舍弃其他，然后再计算。  
-1. 当$x\to+\infty$，下列函数趋于$+\infty$的速度由慢到快：$\ln x,\enspace x^a,\enspace a^x,\enspace x^x\quad(a>0)$  
-2. 当$n\to\infty\enspace(n为正整数，n\to\infty就是n\to+\infty)$：$\ln n,\enspace n^a,\enspace a^n,\enspace n^n,\enspace n^n\quad(a>0)$  
-> 注1：当$x\to-\infty$时要具体问题具体分析，或用相反数代换转化为$x\to+\infty$  
+1. 当 $x\to+\infty$，下列函数趋于$+\infty$的速度由慢到快：$\ln x,\enspace x^a,\enspace a^x,\enspace x^x\quad(a>0)$  
+2. 当 $n\to\infty\enspace(n为正整数，n\to\infty就是n\to+\infty)$：$\ln n,\enspace n^a,\enspace a^n,\enspace n^n,\enspace n^n\quad(a>0)$  
+> 注1：当 $x\to-\infty$ 时要具体问题具体分析，或用相反数代换转化为 $x\to+\infty$  
  
 > 注2：若分子分母均是无穷大与同一单调函数的复合，则这种复合型$\frac{\infty}{\infty}也可以“抓大”$  
 ## 1.2. 已知极限反求参数
-1. 若$\lim\limits_{x\to\forall}{\frac{f(x)}{g(x)}}$存在，则$\lim\limits_{x\to\forall}g(x)=0\implies\lim\limits_{x\to\forall}f(x)=0$
-2. 若$\lim\limits_{x\to\forall}{\frac{f(x)}{g(x)}}$存在，且不等于0
+1. 若 $\lim\limits_{x\to\forall}{\frac{f(x)}{g(x)}}$ 存在，则 $\lim\limits_{x\to\forall}g(x)=0\implies\lim\limits_{x\to\forall}f(x)=0$
+2. 若 $\lim\limits_{x\to\forall}{\frac{f(x)}{g(x)}}$ 存在，且不等于0
    1. $\lim\limits_{x\to\forall}f(x)=0\implies\lim\limits_{x\to\forall}g(x)=0$
    2. $\lim\limits_{x\to\forall}f(x)=0\iff\lim\limits_{x\to\forall}g(x)=0$，二者为同阶无穷大  
-   3. 当$x\to\infty$时，若$g(x)$是$n$次多项式，则$f(x)$也是$n$次多项式  
-3. 若$\lim\limits_{x\to\forall}[f(x)-g(x)]$存在，则$\lim\limits_{x\to\forall}f(x)=\infty\iff\lim\limits_{x\to\forall}g(x)=\infty$，二者为同阶无穷大；即：$f(x),g(x)$阶数相同，系数相反
+   3. 当 $x\to\infty$ 时，若$g(x)$是$n$次多项式，则$f(x)$也是$n$次多项式  
+3. 若 $\lim\limits_{x\to\forall}[f(x)-g(x)]$ 存在，则 $\lim\limits_{x\to\forall}f(x)=\infty\iff\lim\limits_{x\to\forall}g(x)=\infty$，二者为同阶无穷大；即：$f(x), g(x)$ 阶数相同，系数相反
 ## 1.3. 泰勒公式求极限
 |  |  |  |
 |---|---|---|
@@ -64,9 +64,9 @@
 3. $\frac{0}{0}$型的$\lim\limits_{x\to x_0}\frac{f[u(x)]-f[u(x_0)]}{g[v(x)]-g[v(x_0)]}=\lim\limits_{x\to x_0}\frac{\frac{f[u(x)]-f[u(x_0)]}{u(x)-u(x_0)}}{\frac{g[v(x)]-g[v(x_0)]}{v(x)-v(x_0)}}\frac{u(x)-u(x_0)}{v(x)-v(x_0)}=\frac{f'[u(x_0)]}{f'[v(x_0)]}\frac{u(x)-u(x_0)}{v(x)-v(x_0)}$
 ## 1.7. 求幂指函数极限
 1. $1^\infty=e^A$, 若 $\lim{f(x)^{g(x)}}$ 为 $1^\infty$ 型，则 $A=g(x)[f(x)-1]$
-2. 重要结论：$\lim\limits_{x\to\infin}(\frac{ax+b}{ax+c})^{hx+k}=e^{\frac{(b-c)h}{a}}$
+2. 重要结论：$\lim\limits_{x\to\infty}(\frac{ax+b}{ax+c})^{hx+k}=e^{\frac{(b-c)h}{a}}$
 3. 重要结论：$\lim\limits_{x\to0}(\frac{a^x+b^x+c^x}{3})^{\frac{1}{x}}=\sqrt[3]{abc}$
-   * 等价：$\lim\limits_{n\to\infin}(\frac{\sqrt[n]{a}+\sqrt[n]{b}+\sqrt[n]{c}}{3})^n=\sqrt[3]{abc}$
+   * 等价：$\lim\limits_{n\to\infty}(\frac{\sqrt[n]{a}+\sqrt[n]{b}+\sqrt[n]{c}}{3})^n=\sqrt[3]{abc}$
 ## 1.8. 左右极限
 需要考虑左、右极限的情况：
 1. 
