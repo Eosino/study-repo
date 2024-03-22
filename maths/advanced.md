@@ -67,9 +67,25 @@
 2. 重要结论：$\lim\limits_{x\to\infty}(\frac{ax+b}{ax+c})^{hx+k}=e^{\frac{(b-c)h}{a}}$
 3. 重要结论：$\lim\limits_{x\to0}(\frac{a^x+b^x+c^x}{3})^{\frac{1}{x}}=\sqrt[3]{abc}$
    * 等价：$\lim\limits_{n\to\infty}(\frac{\sqrt[n]{a}+\sqrt[n]{b}+\sqrt[n]{c}}{3})^n=\sqrt[3]{abc}$
+   * 推广：$\lim\limits_{n\to\infty}(\frac{\sqrt[n]{a_1}+\sqrt[n]{a_2}+...+\sqrt[n]{a_m}}{m})^n=\sqrt[m]{a_1a_2...a_m}$
 ## 1.8. 左右极限
 需要考虑左、右极限的情况：
-1. 
+1. 当 $x\to\infty$ 时的 $e^x$，和当 $x\to0$ 时的 $e^\frac{1}{x}$ ：
+   * $\lim\limits_{x\to+\infty}e^x=+\infty$
+   * $\lim\limits_{x\to-\infty}e^x=0$
+   * $\lim\limits_{x\to0^+}e^{\frac{1}{x}}=+\infty$
+   * $\lim\limits_{x\to0^-}e^{\frac{1}{x}}=0$
+2. 当 $x\to\infty$ 时的 $\arctan x$ 和 $arccotx$ ：
+   * $\lim\limits_{x\to+\infty}\arctan x=\frac{\pi}{2}$
+   * $\lim\limits_{x\to-\infty}\arctan x=-\frac{\pi}{2}$
+   * $\lim\limits_{x\to+\infty}arccotx=0$
+   * $\lim\limits_{x\to-\infty}arccotx=\pi$
+3. 取整函数 $[x]$ ，意思是取不超过x的最大整数：
+   * $\lim\limits_{x\to n^+}[x]=n$
+   * $\lim\limits_{x\to n^-}[x]=n-1$
+4. 偶次方根：含偶次方根的函数式提导根号外的因子要加负号。
+5. 绝对值函数：即当 $x\to a$ 时的 $|x-a|$ 。
+6. 分段函数分段点的极限。
 # 3. 一元函数积分学
 ## 3.2 不定积分的公式法
 |  |  |
