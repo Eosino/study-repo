@@ -16,11 +16,10 @@ ln -s /opt/certbot/bin/certbot /usr/bin/certbot
 certbot version
 ```
 # 3. 生成证书
-生成证书需要证明域名的所有权，有两种方式：http和dns，certbot会随机生成字符串，若是http方式则放到指定路径使可以通过域名访问到，而dns方式则是到域名管理后台配置一个对应的txt解析。  
-生成的证书默认位于目录：`/etc/letsencrypt/live/[域名]/`，，建议不要挪动，需要时直接配置到这里读取即可。  
+&emsp;&emsp;生成证书需要证明域名的所有权，有两种方式：http和dns，certbot会随机生成字符串，若是http方式则放到指定路径使可以通过域名访问到，而dns方式则是到域名管理后台配置一个对应的txt解析。生成的证书默认位于目录：`/etc/letsencrypt/live/[域名]/`，建议不要挪动，需要时直接配置到这里读取即可。
 ## 3.1. http
 ```Shell
-# http方式，要在域名所访问的服务器安装certbot和执行命令，有三种用法
+# http方式，最好在webserver所在服务器上安装certbot和进行操作，有三种用法：
 
 #手动-manual，按提示输入邮箱、域名，并手动配置对应路径的字符串访问，可以加-d参数指定域名就不需要交互输入了
 certbot certonly --manual
