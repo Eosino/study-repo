@@ -86,6 +86,63 @@
 4. 偶次方根：含偶次方根的函数式提导根号外的因子要加负号。
 5. 绝对值函数：即当 $x\to a$ 时的 $|x-a|$ 。
 6. 分段函数分段点的极限。
+## 1.9. 极限的定义及性质
+### 1.9.1. 数列的极限
+>定义：设有数列${u_n}$和常数$A$，对任意给定的$\varepsilon>0$，存在整数N，使得当$n>N$时，恒有$|u_n-A|<\varepsilon$成立，则称数列${u_n}$以$A$为极限，记为：$\lim\limits_{n\to\infty}u_n=A$ 或 $u_n\to A\ (n\to\infty)$
+1. $\varepsilon$表示$u_n$与$A$的接近程度，可以任意小，可以有多种形式表达，比如：$2\varepsilon$、$\varepsilon^2$、$\sqrt{\varepsilon}$等
+2. $u_n$收敛于$A\iff u_n$的任意子数列也收敛于$A$
+   * 注意：这里的任意子列可以理解为全部子列，不能覆盖整个$u_n$的子列收敛不能推导$u_n$收敛
+3. $\lim\limits_{n\to\infty}u_n=A\iff u_n$的偶数子列和奇数子列满足$\lim\limits_{n\to\infty}u_{2n}=\lim\limits_{n\to\infty}u_{2n+1}=A$
+4. $u_n$是单调数列、$\lim\limits_{n\to\infty}u_n=A \iff$存在某个子列收敛于$A$
+### 1.9.2. 函数的极限
+1. $x\to\infty$时函数$f(x)$的极限：设有函数$y=f(x)$和常数$A$，对任意给定的$\varepsilon>0$，若存在$M>0$，使得当$|x|>M$时，恒有$|f(x)-A|<\varepsilon$成立，则称当$x\to\infty$时，$y=f(x)$的极限为A，记为：$\lim\limits_{x\to\infty}f(x)=A$ 或 $f(x)\to A\ (x\to\infty)$
+2. $x\to x_0$时函数$f(x)$的极限：设有函数$y=f(x)$和常数$A$，对任意给定的$\varepsilon>0$，若存在$M>0$，使得当$0<|x-x_0|<M$时，恒有$|f(x)-A|<\varepsilon$成立，则称当$x\to x_0$时，$y=f(x)$的极限为A，记为：$\lim\limits_{x\to x_0}f(x)=A$ 或 $f(x)\to A\ (x\to x_0)$
+### 1.9.3. 极限的性质
+1. 唯一性：若极限存在，则极限值唯一
+2. 有界性：极限存在，则局部有界；另两个与有界性有关联的结论：
+   * 连续函数在$[a,b]$上一定有界
+   * $f'(x)$在有限区间$(a,b)$上有界，则$f(x)$在$(a,b)$上有界
+3. 保号性：设$\lim\limits_{x\to x_0}=A$，则：
+   * $A>0\implies f(x)>0$
+   * $A<0\implies f(x)<0$
+   * $f(x)>0\implies A\ge 0$，例：$\lim\limits_{n\to\infty}\frac{1}{n}=0$
+   * $f(x)<0\implies A\le 0$
+## 1.10. 极限的运用
+### 1.10.1. 连续与间断点
+设$f(x)$在$x=x_0$左右两侧都有定义：
+* 左极限：$\lim\limits_{x\to x_0^-}f(x)$
+* 右极限：$\lim\limits_{x\to x_0^+}f(x)$
+* 函数值：$f(x_0)$
+
+则：
+1. 左右极限至少有一个不存在且等于$\infty$，则$x_0$为无穷间断点（第二类间断点）
+2. 左右极限至少有一个不存在且振荡，则$x_0$为振荡间断点（第二类间断点）
+3. 左右极限都存在，但不相等，则$x_0$为跳跃间断点（第一类间断点）
+4. 左右极限都存在，且相等，但不等于函数值，则$x_0$为可去间断点（第一类间断点）
+5. 左右极限都存在，且相等，且等于函数值，则$f(x)$在$x_0$连续
+
+寻找间断点：
+1. 分母为零的点
+2. 无定义的点
+3. 分段函数的分段点
+
+寻找可去间断点：
+* 分子为零的点是可去间断点的高度怀疑点
+### 1.10.2. 渐近线
+垂直渐近线：
+* 若$\lim\limits_{x\to x_0}f(x)=\infty$，则直线$x=x_0$为曲线$y=f(x)$的垂直渐近线
+* （注：找使分母为零的$x_0$）
+
+水平渐近线：
+* 若$\lim\limits_{x\to\infty}f(x)=A$，则直线$y=A$为曲线$y=f(x)$的水平渐近线
+
+斜渐近线：
+* 若$k=\lim\limits_{x\to\infty}\frac{f(x)}{x}$、$b=\lim\limits_{x\to\infty}[f(x)-kx]$，则$y=kx+b$为曲线$y=f(x)$的斜渐近线
+* （注：同一侧水平渐近线与斜渐近线不会共存）
+
+求斜渐近线扩展：
+1. $k=\lim\limits_{x\to\infty}\frac{f(x)}{x}\xlongequal{L'}\lim\limits_{x\to\infty}f'(x)$
+2. 在$x\to\infty$时，把$f(x)$展开为线性组合$kx+b$与无穷小量之和：$kx+b+o(1)$，则$y=kx+b$即为渐近线
 # 3. 一元函数积分学
 ## 3.2 不定积分的公式法
 |  |  |
