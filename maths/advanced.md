@@ -59,8 +59,8 @@
    &emsp;&emsp;&emsp;&ensp;$=\lim\limits_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$  
    &emsp;&emsp;&emsp;&ensp;$=\lim\limits_{x\to x_0}\frac{f[x_0+\varphi(x)]-f(x_0)}{\varphi(x)}$&emsp;[$x\to x_0$使$\varphi(x)\to0$]
 2. 令$h=\frac{1}{\Delta x}$，$f'(x_0) = \lim\limits_{h\to\infty}\frac{f(x_0+\frac{1}{h})-f(x_0)}{\frac{1}{h}} = \lim\limits_{h\to\infty}h[f(x_0+\frac{1}{h})-f(x_0)]$
-   * 若$x_0=0,\ f(x_0)=a，f'(0)=\lim\limits_{h\to\infty}h[f(\frac{1}{h})-a]$
-   * 若$x_0=0,\ f(x_0)=0，f'(0)=\lim\limits_{h\to\infty}hf(\frac{1}{h})$
+   * 若$x_0=0、f(x_0)=a，f'(0)=\lim\limits_{h\to\infty}h[f(\frac{1}{h})-a]$
+   * 若$x_0=0、f(x_0)=0，f'(0)=\lim\limits_{h\to\infty}hf(\frac{1}{h})$
 3. $\frac{0}{0}$型的$\lim\limits_{x\to x_0}\frac{f[u(x)]-f[u(x_0)]}{g[v(x)]-g[v(x_0)]}=\lim\limits_{x\to x_0}\frac{\frac{f[u(x)]-f[u(x_0)]}{u(x)-u(x_0)}}{\frac{g[v(x)]-g[v(x_0)]}{v(x)-v(x_0)}}\frac{u(x)-u(x_0)}{v(x)-v(x_0)}=\frac{f'[u(x_0)]}{f'[v(x_0)]}\frac{u(x)-u(x_0)}{v(x)-v(x_0)}$
 ## 1.7. 求幂指函数极限
 1. $1^\infty=e^A$, 若 $\lim{f(x)^{g(x)}}$ 为 $1^\infty$ 型，则 $A=g(x)[f(x)-1]$
@@ -88,15 +88,15 @@
 6. 分段函数分段点的极限。
 ## 1.9. 极限的定义及性质
 ### 1.9.1. 数列的极限
->定义：设有数列${u_n}$和常数$A$，对任意给定的$\varepsilon>0$，存在整数N，使得当$n>N$时，恒有$|u_n-A|<\varepsilon$成立，则称数列${u_n}$以$A$为极限，记为：$\lim\limits_{n\to\infty}u_n=A$ 或 $u_n\to A\ (n\to\infty)$
+>定义：设有数列${u_n}$和常数$A$，对任意给定的$\varepsilon>0$，存在整数N，使得当$n>N$时，恒有$|u_n-A|<\varepsilon$成立，则称数列${u_n}$以$A$为极限，记为：$\lim\limits_{n\to\infty}u_n=A$ 或 $u_n\to A\space(n\to\infty)$
 1. $\varepsilon$表示$u_n$与$A$的接近程度，可以任意小，可以有多种形式表达，比如：$2\varepsilon$、$\varepsilon^2$、$\sqrt{\varepsilon}$等
 2. $u_n$收敛于$A\iff u_n$的任意子数列也收敛于$A$
    * 注意：这里的任意子列可以理解为全部子列，不能覆盖整个$u_n$的子列收敛不能推导$u_n$收敛
 3. $\lim\limits_{n\to\infty}u_n=A\iff u_n$的偶数子列和奇数子列满足$\lim\limits_{n\to\infty}u_{2n}=\lim\limits_{n\to\infty}u_{2n+1}=A$
 4. $u_n$是单调数列、$\lim\limits_{n\to\infty}u_n=A \iff$存在某个子列收敛于$A$
 ### 1.9.2. 函数的极限
-1. $x\to\infty$时函数$f(x)$的极限：设有函数$y=f(x)$和常数$A$，对任意给定的$\varepsilon>0$，若存在$M>0$，使得当$|x|>M$时，恒有$|f(x)-A|<\varepsilon$成立，则称当$x\to\infty$时，$y=f(x)$的极限为A，记为：$\lim\limits_{x\to\infty}f(x)=A$ 或 $f(x)\to A\ (x\to\infty)$
-2. $x\to x_0$时函数$f(x)$的极限：设有函数$y=f(x)$和常数$A$，对任意给定的$\varepsilon>0$，若存在$M>0$，使得当$0<|x-x_0|<M$时，恒有$|f(x)-A|<\varepsilon$成立，则称当$x\to x_0$时，$y=f(x)$的极限为A，记为：$\lim\limits_{x\to x_0}f(x)=A$ 或 $f(x)\to A\ (x\to x_0)$
+1. $x\to\infty$时函数$f(x)$的极限：设有函数$y=f(x)$和常数$A$，对任意给定的$\varepsilon>0$，若存在$M>0$，使得当$|x|>M$时，恒有$|f(x)-A|<\varepsilon$成立，则称当$x\to\infty$时，$y=f(x)$的极限为A，记为：$\lim\limits_{x\to\infty}f(x)=A$ 或 $f(x)\to A\space(x\to\infty)$
+2. $x\to x_0$时函数$f(x)$的极限：设有函数$y=f(x)$和常数$A$，对任意给定的$\varepsilon>0$，若存在$M>0$，使得当$0<|x-x_0|<M$时，恒有$|f(x)-A|<\varepsilon$成立，则称当$x\to x_0$时，$y=f(x)$的极限为A，记为：$\lim\limits_{x\to x_0}f(x)=A$ 或 $f(x)\to A\space(x\to x_0)$
 ### 1.9.3. 极限的性质
 1. 唯一性：若极限存在，则极限值唯一
 2. 有界性：极限存在，则局部有界；另两个与有界性有关联的结论：
