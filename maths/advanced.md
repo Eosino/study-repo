@@ -156,9 +156,9 @@
 2. 取中点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^nf(\frac{2i-1}{2n})\frac{1}{n}$
 ### 1.11.2. 夹逼准则
 1. 对 $u_1+u_2+...+u_n$ 进行缩放有两个常见的结论：
-   * 当$n$为无穷大时，则 $n\cdot u_{min}\le\sum^{n}_{i=1}u_i\le n\cdot u_{max}$
-   * 当$n$为有限数，且 $u_i\ge0$，则 $u_{max}\le\sum^{n}_{i=1}u_i\le n\cdot u_{max}$
-2. $\lim\limits_{n\to\infty}\sqrt[n]{a^n_1+a^n_2+...+a^n_k}=max\{a_i\}\space(i=1,2,...,k)$
+   * 当$n$为无穷大时，则 $n\cdot u_{min}\le\sum^{n}_{i=1}u_i\le n\cdot u_{mx}$
+   * 当$n$为有限数，且 $u_i\ge0$，则 $u_{mx}\le\sum^{n}_{i=1}u_i\le n\cdot u_{mx}$
+2. $\lim\limits_{n\to\infty}\sqrt[n]{a^n_1+a^n_2+...+a^n_k}=\max(a_i)\space(i=1,2,...,k)$
 ### 1.11.3. 其他
 * 先用夹逼准则，再用定积分定义
 * 数列极限改为函数极限
