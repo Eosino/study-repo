@@ -143,6 +143,27 @@
 求斜渐近线扩展：
 1. $k=\lim\limits_{x\to\infty}\frac{f(x)}{x}=^{L'}\lim\limits_{x\to\infty}f'(x)$
 2. 在$x\to\infty$时，把$f(x)$展开为线性组合$kx+b$与无穷小量之和：$kx+b+o(1)$，则$y=kx+b$即为渐近线
+## 1.11. 计算数列极限
+### 1.11.1. 使用定积分定义
+>分割、代替、求和、取极限
+1. 取右端点：$\int^b_af(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^n[f(a+\frac{b-a}{n}\cdot i)\cdot\frac{b-a}{n}]$
+2. 取左端点：$\int^b_af(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^n\{f[a+\frac{b-a}{n}\cdot(i-1)]\cdot\frac{b-a}{n}\}$
+2. 取中点：$\int^b_af(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^n\{f[a+\frac{b-a}{n}\cdot\frac{1}{2}\cdot(2i-1)]\cdot\frac{b-a}{n}\}$
+
+特殊地，当$a=0、b=1$时：
+1. 取右端点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^nf(\frac{i}{n})\frac{1}{n}$
+2. 取左端点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^nf(\frac{i-1}{n})\frac{1}{n}$
+2. 取中点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^nf(\frac{2i-1}{2n})\frac{1}{n}$
+### 1.11.2. 夹逼准则
+1. 对 $u_1+u_2+...+u_n$ 进行缩放有两个常见的结论：
+   * 当$n$为无穷大时，则 $n\cdot u_{min}\leq\sum^{n}_{i=1}u_i\leq n\cdot u_{max}$
+   * 当$n$为有限数，且 $u_i\geq0$，则 $u_{max}\leq\sum^{n}_{i=1}u_i\leq n\cdot u_{max}$
+2. $\lim\limits_{n\to\infty}\sqrt[n]{a^n_1+a^n_2+...+a^n_k}=max\{a_i\}\space(i=1,2,...,k)$
+### 1.11.3. 其他
+* 先用夹逼准则，再用定积分定义
+* 数列极限改为函数极限
+## 1.12. 证明数列极限存在
+
 # 3. 一元函数积分学
 ## 3.2 不定积分的公式法
 |  |  |
