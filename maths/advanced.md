@@ -61,7 +61,7 @@
 2. 令$h=\frac{1}{\Delta x}$，$f'(x_0) = \lim\limits_{h\to\infty}\frac{f(x_0+\frac{1}{h})-f(x_0)}{\frac{1}{h}} = \lim\limits_{h\to\infty}h[f(x_0+\frac{1}{h})-f(x_0)]$
    * 若$x_0=0、f(x_0)=a，f'(0)=\lim\limits_{h\to\infty}h[f(\frac{1}{h})-a]$
    * 若$x_0=0、f(x_0)=0，f'(0)=\lim\limits_{h\to\infty}hf(\frac{1}{h})$
-3. $\frac{0}{0}$型的$\lim\limits_{x\to x_0}\frac{f[u(x)]-f[u(x_0)]}{g[v(x)]-g[v(x_0)]}=\lim\limits_{x\to x_0}\frac{\frac{f[u(x)]-f[u(x_0)]}{u(x)-u(x_0)}}{\frac{g[v(x)]-g[v(x_0)]}{v(x)-v(x_0)}}\frac{u(x)-u(x_0)}{v(x)-v(x_0)}=\frac{f'[u(x_0)]}{f'[v(x_0)]}\frac{u(x)-u(x_0)}{v(x)-v(x_0)}$
+3. $\frac{0}{0}$型的$\lim\limits_{x\to x_0}\frac{f[u(x)]-f[u(x_0)]}{g[v(x)]-g[v(x_0)]}=\lim\limits_{x\to x_0}\frac{\frac{f[u(x)]-f[u(x_0)]}{u(x)-u(x_0)}}{\frac{g[v(x)]-g[v(x_0)]}{v(x)-v(x_0)}}\frac{u(x)-u(x_0)}{v(x)-v(x_0)}=\frac{f'[u(x_0)]}{f'[v(x_0)]}\lim\limits_{x\to x_0}\frac{u(x)-u(x_0)}{v(x)-v(x_0)}$
 ## 1.7. 求幂指函数极限
 1. $1^\infty=e^A$, 若 $\lim{f(x)^{g(x)}}$ 为 $1^\infty$ 型，则 $A=g(x)[f(x)-1]$
 2. 重要结论：$\lim\limits_{x\to\infty}(\frac{ax+b}{ax+c})^{hx+k}=e^{\frac{(b-c)h}{a}}$
@@ -83,12 +83,14 @@
 3. 取整函数 $[x]$ ，意思是取不超过x的最大整数：
    * $\lim\limits_{x\to n^+}[x]=n$
    * $\lim\limits_{x\to n^-}[x]=n-1$
-4. 偶次方根：含偶次方根的函数式提导根号外的因子要加负号。
+4. 偶次方根：当$x\to\infty$，含偶次方根的函数式提导根号外的因子要加负号。
 5. 绝对值函数：即当 $x\to a$ 时的 $|x-a|$ 。
 6. 分段函数分段点的极限。
 ## 1.9. 极限的定义及性质
 ### 1.9.1. 数列的极限
 >定义：设有数列${u_n}$和常数$A$，对任意给定的$\varepsilon>0$，存在整数N，使得当$n>N$时，恒有$|u_n-A|<\varepsilon$成立，则称数列${u_n}$以$A$为极限，记为：$\lim\limits_{n\to\infty}u_n=A$ 或 $u_n\to A\space(n\to\infty)$
+
+>子列：从一个数列中抽取无穷多项，在不改变原有次序的情况下构成的新数列称为原数列的子数列，简称子列
 1. $\varepsilon$表示$u_n$与$A$的接近程度，可以任意小，可以有多种形式表达，比如：$2\varepsilon$、$\varepsilon^2$、$\sqrt{\varepsilon}$等
 2. $u_n$收敛于$A\iff u_n$的任意子数列也收敛于$A$
    * 注意：这里的任意子列可以理解为全部子列，不能覆盖整个$u_n$的子列收敛不能推导$u_n$收敛
@@ -102,7 +104,7 @@
 2. 有界性：极限存在，则局部有界；另两个与有界性有关联的结论：
    * 连续函数在闭区间$[a,b]$上一定有界
    * $f'(x)$在有限区间$(a,b)$上有界，则$f(x)$在$(a,b)$上有界（拉格朗日中值定理推出）
-3. 保号性：设$\lim\limits_{x\to x_0}=A$，则：
+3. 保号性：设$\lim\limits_{x\to x_0}f(x)=A$，则：
    * $A>0\implies f(x)>0$
    * $A<0\implies f(x)<0$
    * $f(x)>0\implies A\ge 0$，例：$\lim\limits_{n\to\infty}\frac{1}{n}=0$
@@ -157,13 +159,27 @@
 ### 1.11.2. 夹逼准则
 1. 对 $u_1+u_2+...+u_n$ 进行缩放有两个常见的结论：
    * 当$n$为无穷大时，则 $n\cdot u_m\le\sum^{n}_{i=1}u_i\le n\cdot u_M$
-   * 当$n$为有限数，且 $u_i\ge0$，则 $u_m\le\sum^{n}_{i=1}u_i\le n\cdot u_M$
+   * 当$n$为有限数，且 $u_i\ge0$，则 $u_M\le\sum^{n}_{i=1}u_i\le n\cdot u_M$
 2. $\lim\limits_{n\to\infty}\sqrt[n]{a^n_1+a^n_2+...+a^n_k}=\max(a_i)\space(i=1,2,...,k)$
 ### 1.11.3. 其他
 * 先用夹逼准则，再用定积分定义
 * 数列极限改为函数极限
 ## 1.12. 证明数列极限存在
+>证明$\lim\limits_{n\to\infty}a_n$存在：单调有界准则，单调增加（减少）且有上（下）界。
 
+>证明数列极限存在后，求极限：写出相邻两项（如$a_n$和$a_{n+1}$）之间的关系，并在其两端求$n\to\infty$时的极限，令$\lim\limits_{n\to\infty}a_n=A$，得到关于A的方程（应是因为$\lim\limits_{n\to\infty}a_{n+1}=\lim\limits_{n\to\infty}a_n=A$所以这里是等式方程而非不等式），解出A即得到所求极限。
+
+证明单调性的方法：
+* 定义法：
+   1. $a_{n+1}-a_n\ge0\space(\le0)$
+   2. $\frac{a_{n+1}}{a_n}\ge1\space(\le1)$
+* 一些常用不等式的结论：
+   1. $\frac{x_1+x_2+...+x_n}{n}\ge\sqrt[n]{x_1x_2...x_n},\space x_i\in R^+$
+   2. $x^2+y^2\ge 2xy,\space x,y\in R$
+   3. $\frac{2}{\pi}x\le\sin x\le x \le \tan x,\space x\in [0,\frac{\pi}{2})$
+   4. $\frac{x}{1+x}<\ln(1+x)<x,\space x\in R^+$
+      * 变形：设$n$为正整数，则：$\frac{1}{1+n}<\ln(1+\frac{1}{n})<\frac{1}{n}$
+* 数学归纳法
 # 3. 一元函数积分学
 ## 3.2 不定积分的公式法
 |  |  |
