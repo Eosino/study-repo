@@ -186,8 +186,8 @@
 1. $f'(x_0)=\lim\limits_{\varDelta x\to0}\frac{f(x_0+\varDelta x)-f(x_0)}{\varDelta x}$
 2. $f'(x_0)=\lim\limits_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$
 ### 2.1.2. 左右导数
-1. 左导数：$f'_-(x_0)=\lim\limits_{\varDelta x\to0^-}\frac{f(x_0+\varDelta x)-f(x_0)}{\varDelta x}=\lim\limits_{x\to x_0^-}\frac{f(x)-f(x_0)}{x-x_0}$
-2. 右导数：$f'_+(x_0)=\lim\limits_{\varDelta x\to0^+}\frac{f(x_0+\varDelta x)-f(x_0)}{\varDelta x}=\lim\limits_{x\to x_0^+}\frac{f(x)-f(x_0)}{x-x_0}$
+1. 左导数：$f_-'(x_0)=\lim\limits_{\varDelta x\to0^-}\frac{f(x_0+\varDelta x)-f(x_0)}{\varDelta x}=\lim\limits_{x\to x_0^-}\frac{f(x)-f(x_0)}{x-x_0}$
+2. 右导数：$f_+'(x_0)=\lim\limits_{\varDelta x\to0^+}\frac{f(x_0+\varDelta x)-f(x_0)}{\varDelta x}=\lim\limits_{x\to x_0^+}\frac{f(x)-f(x_0)}{x-x_0}$
 ### 2.1.3. 可导的条件
 >一元函数在某点可导的充要条件是：**函数在该点的左右导数存在且相等**。但只知道这句话往往是不够的，还需要扩展：
 
