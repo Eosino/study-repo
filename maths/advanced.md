@@ -180,6 +180,27 @@
    4. $\frac{x}{1+x}<\ln(1+x)<x,\space x\in R^+$
       * 变形：设$n$为正整数，则：$\frac{1}{1+n}<\ln(1+\frac{1}{n})<\frac{1}{n}$
 * 数学归纳法
+# 2. 一元函数微分学
+## 2.1. 导数的定义
+### 2.1.1. 导数的两种定义形式
+1. $f'(x_0)=\lim\limits_{\varDelta x\to0}\frac{f(x_0+\varDelta x)-f(x_0)}{\varDelta x}$
+2. $f'(x_0)=\lim\limits_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$
+### 2.1.2. 左右导数
+1. 左导数：$f'_-(x_0)=\lim\limits_{\varDelta x\to0^-}\frac{f(x_0+\varDelta x)-f(x_0)}{\varDelta x}=\lim\limits_{x\to x_0^-}\frac{f(x)-f(x_0)}{x-x_0}$
+2. 右导数：$f'_+(x_0)=\lim\limits_{\varDelta x\to0^+}\frac{f(x_0+\varDelta x)-f(x_0)}{\varDelta x}=\lim\limits_{x\to x_0^+}\frac{f(x)-f(x_0)}{x-x_0}$
+### 2.1.3. 可导的条件
+>一元函数在某点可导的充要条件是：**函数在该点的左右导数存在且相等**。但只知道这句话往往是不够的，还需要扩展：
+
+设$f(x)$在$x=x_0$处可导，定义为：$f'(x_0)=\lim\limits_{x\to x_0}\frac{f[g_1(x)]-f[g_2(x)]}{g_3(x)}$，则：  
+**必要条件**  
+* $g_1(x)-g_2(x)=g_3(x)$
+* 题目中若该等式不成立，则通常利用分子分母同乘$g_1(x)-g_2(x)$来求出极限值
+
+**充分条件**  
+1. 一动一静：分子必为一个动点减一个固定点，固定点就是$f(x_0)$  
+2. 保证$f_+(x_0)=f_-(x_0)$：假设$f[g_2(x)]=f(x_0)$，当$x$由$x^-_0\to x^+_0$过程中，$g_1(x)$必由$x^-_0\to x^+_0$或$x^+_0\to x^-_0$
+3. $g_1(x)-g_2(x)$为$g_3(x)$的同阶或低阶无穷小
+
 # 3. 一元函数积分学
 ## 3.2 不定积分的公式法
 |  |  |
