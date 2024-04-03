@@ -160,7 +160,7 @@
 1. 对 $u_1+u_2+...+u_n$ 进行缩放有两个常见的结论：
    * 当$n$为无穷大时，则 $n\cdot u_m\le\sum^{n}_{i=1}u_i\le n\cdot u_M$
    * 当$n$为有限数，且 $u_i\ge0$，则 $u_M\le\sum^{n}_{i=1}u_i\le n\cdot u_M$
-2. $\lim\limits_{n\to\infty}\sqrt[n]{a^n_1+a^n_2+...+a^n_k}=\max\set{a_i}\space(i=1,2,...,k)$
+2. $\lim\limits_{n\to\infty}\sqrt[n]{a^n_1+a^n_2+...+a^n_k}=\max\{a_i\}\space(i=1,2,...,k)$
 ### 1.11.3. 其他
 * 先用夹逼准则，再用定积分定义
 * 数列极限改为函数极限
@@ -209,7 +209,7 @@
 
 ## 2.3. 有关可导性的几个常用结论
 1. 设$f(x)$在$x_0$处可导，$g(x)$在$x_0$处连续但不可导，则$F(x)=f(x)g(x)$在$x_0$处可导的充要条件是$f(x_0)=0$
-   * 例：$f(x)=x\max\set{\sin x,\cos x}$，$x\in (0,2\pi)$，有两个不可导点（$x=\frac{\pi}{4}$，$x=\frac{5\pi}{4}$），若改成$(x-\frac{\pi}{4})\max\set{\sin x,\cos x}$，则只剩一个不可导点（$x=\frac{5\pi}{4}$）
+   * 例：$f(x)=x\max\{\sin x,\cos x\}$，$x\in (0,2\pi)$，有两个不可导点（$x=\frac{\pi}{4}$，$x=\frac{5\pi}{4}$），若改成$(x-\frac{\pi}{4})\max\{\sin x,\cos x\}$，则只剩一个不可导点（$x=\frac{5\pi}{4}$）
 2. 设$f(x)=(x-x_0)^k|x-x_0|$，则：
    * 当$k=0$时，$f(x)$在$x_0$处不可导
    * 当$k=1$时，$f(x)$在$x_0$处一阶可导但二阶不可导
