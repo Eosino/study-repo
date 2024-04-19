@@ -156,6 +156,7 @@
 1. 取右端点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^nf(\frac{i}{n})\frac{1}{n}$
 2. 取左端点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^nf(\frac{i-1}{n})\frac{1}{n}$
 2. 取中点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^nf(\frac{2i-1}{2n})\frac{1}{n}$
+>三者的变化其实是：$i\to i-1 \to i-\frac{1}{2}$
 ### 1.11.2. 夹逼准则
 1. 对 $u_1+u_2+...+u_n$ 进行缩放有两个常见的结论：
    * 当$n$为无穷大时，则 $n\cdot u_m\le\sum^{n}_{i=1}u_i\le n\cdot u_M$
