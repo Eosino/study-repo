@@ -49,3 +49,55 @@ $(a\pm b)^3=a^3\pm 3a^2b+3ab^2\pm b^3$
 | $\tan$  | $0$ | $\frac{\sqrt{3}}{3}$ | $1$ | $\sqrt{3}$ | $\infty$ |
 | $\cot$  | $\infty$ | $\sqrt{3}$ | $1$ | $\frac{\sqrt{3}}{3}$ | $0$ |
 |  |  |  |  |  |  |
+## 4.2. 基本转化
+|  |  |
+|--|--|
+| $\sin x=\frac{1}{\csc x}$ | $\sin^2 x+\cos^2 x=1$ |
+| $\cos x=\frac{1}{\sec x}$ | $\tan^2 x+1=\sec^2 x$ |
+| $\tan x=\frac{1}{\cot x}$ | $1+\cot^2 x=\csc^2 x$ |
+|  |  |
+
+<img src="./res/secondary-review-3.png" width="50%" />
+
+<img src="./res/secondary-review-4.png" width="50%" />
+
+<img src="./res/secondary-review-5.png" width="50%" />
+
+## 4.3. 二倍角公式
+$\begin{cases}
+\sin2x=2\sin{x}\cos{x} \rArr \sin{x}=\frac{2\tan{\frac{x}{2}}}{1+\tan^2\frac{x}{2}} \\
+\cos2x=\cos^2x-\sin^2x \rArr \begin{cases}
+\sin^2x=\frac{1-\cos2x}{2} \\
+\cos^2x=\frac{1+\cos2x}{2} \\
+\cos{x}=\frac{1-\tan^2\frac{x}{2}}{1+\tan^2\frac{x}{2}}
+\end{cases}
+\end{cases}$
+## 4.4. 和差化积
+$\begin{cases}
+\sin a+\sin b=2\sin(\frac{a+b}{2})cos(\frac{a-b}{2}) \\
+\sin a-\sin b=2\cos(\frac{a+b}{2})sin(\frac{a-b}{2}) \\
+\cos a+\cos b=2\cos(\frac{a+b}{2})cos(\frac{a-b}{2}) \\
+\cos a-\cos b=-2\sin(\frac{a+b}{2})sin(\frac{a-b}{2}) \\
+\end{cases}$
+## 4.5. 积化和差
+令$\begin{cases} x=\frac{a+b}{2} \\ y=\frac{a-b}{2} \end{cases}$两者加减可得$\begin{cases} a=x+y \\ b=x-y \end{cases}$然后代入和差化积即可推导出积化和差：  
+$\begin{cases}
+\sin x\cos y=\frac{1}{2}[\sin(x+y)+\sin(x-y)] \\
+\cos x\sin y=\frac{1}{2}[\sin(x+y)-\sin(x-y)] \\
+\cos x\cos y=\frac{1}{2}[\cos(x+y)+\cos(x-y)] \\
+\sin x\sin y=-\frac{1}{2}[\cos(x+y)-\cos(x-y)] \\
+\end{cases}$  
+积化和差的四个公式，后两者加减和前两者加减，可以推导出：  
+$\begin{cases}
+\sin(x+y)=\sin x\cos y+\cos x\sin y \\
+\sin(x-y)=\sin x\cos y-\cos x\sin y \\
+\cos(x+y)=\cos x\cos y-\sin x\sin y \\
+\cos(x-y)=\cos x\cos y+\sin x\sin y
+\end{cases}$  
+$\begin{cases}
+\tan(x+y)=\frac{\tan{x}+\tan{y}}{1-\tan{x}\tan{y}} \\
+\tan(x-y)=\frac{\tan{x}-\tan{y}}{1+\tan{x}\tan{y}} \\
+\end{cases}$  
+# 5. 极坐标
+极坐标转化为直角坐标：$\begin{cases} x=r\cos\theta \\ y=r\sin\theta \end{cases}$  
+直角坐标转化为极坐标：$\begin{cases} r=\sqrt{x^2+y^2} \\ \theta=\arctan\frac{y}{x} \end{cases}$  
