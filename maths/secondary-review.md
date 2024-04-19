@@ -65,8 +65,8 @@ $(a\pm b)^3=a^3\pm 3a^2b+3ab^2\pm b^3$
 
 ## 4.3. 二倍角公式
 $\begin{cases}
-\sin2x=2\sin{x}\cos{x} \rArr \sin{x}=\frac{2\tan{\frac{x}{2}}}{1+\tan^2\frac{x}{2}} \\
-\cos2x=\cos^2x-\sin^2x \rArr \begin{cases}
+\sin2x=2\sin{x}\cos{x} \implies \sin{x}=\frac{2\tan{\frac{x}{2}}}{1+\tan^2\frac{x}{2}} \\
+\cos2x=\cos^2x-\sin^2x \implies \begin{cases}
 \sin^2x=\frac{1-\cos2x}{2} \\
 \cos^2x=\frac{1+\cos2x}{2} \\
 \cos{x}=\frac{1-\tan^2\frac{x}{2}}{1+\tan^2\frac{x}{2}}
