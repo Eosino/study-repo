@@ -266,7 +266,7 @@ $\begin{cases}
       $\frac{f^{(n)}(x_0)}{n!}=a_n\implies f^{(n)}(x_0)=a_n\cdot n!$
 
 # 3. 一元函数积分学
-## 3.2 不定积分的公式法
+## 3.1 不定积分的公式法
 |  |  |
 |---|---|
 | $\int{e^x}dx$ | $e^x+C$ |
@@ -296,3 +296,20 @@ $\begin{cases}
 | $\int{\sqrt{x^2+a^2}}dx$ | $\frac{x}{2}\sqrt{x^2+a^2}+\frac{a^2}{2}\ln(x+\sqrt{x^2+a^2})+C$ |
 | $\int{\sqrt{x^2-a^2}}dx$ | $\frac{x}{2}\sqrt{x^2-a^2}-\frac{a^2}{2}\ln\|x+\sqrt{x^2-a^2}\|+C$ |
 | $\int{\sqrt{a^2-x^2}}dx$ | $\frac{x}{2}\sqrt{a^2-x^2}+\frac{a^2}{2}\arcsin\frac{x}{a}+C$ |
+
+## 3.2 定积分应用
+|  |  |
+|---|---|
+| 平面图形面积-直角坐标 | $S=\int^b_a[f(x)-g(x)]dx$ |
+| 平面图形面积-参数方程 | $S=\int^d_cy(t)x'(t)dt$ |
+| 平面图形面积-极坐标 | $S=\frac{1}{2}\int^\beta_\alpha r^2(\theta)d\theta$ |
+| 几何体体积-自变量x函数绕x轴转 | $V=\pi\int^b_af^2(x)dx$ |
+| 几何体体积-自变量x函数绕y轴转 | $V=2\pi\int^b_axf(x)dx$ |
+| 曲线弧长-直角坐标 | $l=\int^b_a\sqrt{1+f'^2(x)}dx$ |
+| 曲线弧长-参数方程 | $l=\int^d_c\sqrt{x'^2(t)+y'^2(t)}dt$ |
+| 曲线弧长-极坐标 | $l=\int^\beta_\alpha\sqrt{r^2(\theta)+r'^2(\theta)}d\theta$ |
+| 旋转曲面面积-直角坐标 | $S=2\pi\int^b_af(x)\sqrt{1+f'^2(x)}dx$ |
+| 旋转曲面面积-参数方程 | $S=2\pi\int^d_cy\sqrt{x'^2(t)+y'^2(t)}dt$ |
+| 旋转曲面面积-极坐标 | $S=2\pi\int^\beta_\alpha y\sqrt{r^2(\theta)+r'^2(\theta)}d\theta$ |
+| 区间平均值 | $\bar{y}=\frac{1}{b-a}\int^{b}_{a}f(x)dx$ |
+|  |  |
