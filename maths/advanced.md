@@ -313,3 +313,14 @@ $\begin{cases}
 | 旋转曲面面积-极坐标 | $S=2\pi\int^\beta_\alpha y\sqrt{r^2(\theta)+r'^2(\theta)}d\theta$ |
 | 区间平均值 | $\bar{y}=\frac{1}{b-a}\int^{b}_{a}f(x)dx$ |
 |  |  |
+
+# 4. 常微分方程
+## 4.1 一阶微分方程
+| 类型 | 方程 | 解法 | 备注 |
+|---|---|---|---|
+| 可分离变量方程 | $\frac{dy}{dx}=f(x)g(y)$ | $\int\frac{1}{g(y)}dy=\int f(x)dx$ |  |
+| 齐次方程 | $\frac{dy}{dx}=f(\frac{y}{x})$ | $\int\frac{1}{f(u)-u}du=\int\frac{1}{x}dx$，$(u=\frac{y}{x})$| 存在 $x^m,y^n,x^sy^t$，当 $m=n=s+t$ 时为齐次方程 |
+| 一阶线性微分方程 | $y'+p(x)y=q(x)$ | $y=e^{-\int p(x)dx}(\int q(x)e^{\int p(x)dx}dx+C)$ |  |
+| 伯努利方程 | $y'+p(x)y=q(x)y^n$，$(n\ne 0,1)$ | $z'+(n-1)p(x)z=(n-1)q(x)$，$(z=y^{1-n})$ |  |
+| 全微分方程 | $p(x,y)dx+q(x,y)dy=0$ | 待补充 |  |
+|  |  |  |  |
