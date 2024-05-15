@@ -350,7 +350,7 @@ $\begin{cases}
 2. $r1,r2$ 是重根，通解：$y=e^{rx}(C_1+C_2x)$
 3. $r1,r2$ 是复数，通解：$y=e^{\lambda x}(C_1\cos{\omega x}+C_2\sin{\omega x})$  
 
-二阶常系数非齐次方程：$y''+py'+qy=f(x)$，通解为：$y=Y+y^*$，其中：$Y$ 是齐次通解，$y^*$ 是非齐次特解，$y^*$ 用待定系数法求解：
+二阶常系数非齐次方程：$y''+py'+qy=f(x)$，通解为：$y=Y+y^*$，用待定系数法求解：
 1. 当 $f(x)=e^{\lambda x}P(x)$，设 $y^*=e^{\lambda x}x^kQ(x)$，其中：
    * 当 $\lambda$ 不是特征根，$k=0$
    * 当 $\lambda$ 是单根，$k=1$
