@@ -81,19 +81,29 @@ $\begin{cases}
 \end{cases}$
 ## 4.5. 积化和差
 令$\begin{cases} x=\frac{a+b}{2} \\ y=\frac{a-b}{2} \end{cases}$两者加减可得$\begin{cases} a=x+y \\ b=x-y \end{cases}$然后代入和差化积即可推导出积化和差：  
+
 $\begin{cases}
 \sin x\cos y=\frac{1}{2}[\sin(x+y)+\sin(x-y)] \\
 \cos x\sin y=\frac{1}{2}[\sin(x+y)-\sin(x-y)] \\
 \cos x\cos y=\frac{1}{2}[\cos(x+y)+\cos(x-y)] \\
 \sin x\sin y=-\frac{1}{2}[\cos(x+y)-\cos(x-y)] \\
 \end{cases}$  
+
+口诀：
+1. 同名函数取余弦
+2. 正弦相乘取负号
+3. 异名函数取正弦
+4. 余弦在后要相加
+
 积化和差的四个公式，后两者加减和前两者加减，可以推导出：  
+
 $\begin{cases}
 \sin(x+y)=\sin x\cos y+\cos x\sin y \\
 \sin(x-y)=\sin x\cos y-\cos x\sin y \\
 \cos(x+y)=\cos x\cos y-\sin x\sin y \\
 \cos(x-y)=\cos x\cos y+\sin x\sin y
-\end{cases}$  
+\end{cases}$ 
+
 $\begin{cases}
 \tan(x+y)=\frac{\tan{x}+\tan{y}}{1-\tan{x}\tan{y}} \\
 \tan(x-y)=\frac{\tan{x}-\tan{y}}{1+\tan{x}\tan{y}} \\
