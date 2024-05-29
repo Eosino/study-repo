@@ -379,6 +379,7 @@ $\begin{cases}
 \end{cases}$
 7. $\int_0^{\frac{\pi}{2}}f(\sin x)dx=\int_0^{\frac{\pi}{2}}f(\cos x)dx$
 8. $\int_0^\pi xf(\sin x)dx=\frac{\pi}{2}\int_0^\pi f(\sin x)dx$，$\frac{\pi}{2}$ 是 $(0,\pi)$ 的中点
+9. $\int_0^a\sqrt{2ax-x^2}dx=\frac{1}{4}\pi a^2$，几何意义是以 $(a,0)$ 为圆心，$a$ 为半径的四分之一圆
 
 ## 3.3. 定积分应用
 |  |  |
