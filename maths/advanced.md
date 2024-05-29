@@ -370,7 +370,7 @@ $\begin{cases}
 1. 奇函数时：$\int_{-a}^af(x)dx=0$
 2. 偶函数时：$\int_{-a}^af(x)dx=2\int_0^af(x)dx$
 3. 非奇非偶时：$\int_{-a}^af(x)dx=\int_0^a[f(x)+f(-x)]dx$
-4. $f(x+T)=f(x)$ 时：$\int_0^Tf(x)dx=\int_a^a+Tf(x)dx$
+4. $f(x+T)=f(x)$ 时：$\int_0^Tf(x)dx=\int_a^{a+T}f(x)dx$
 5. $\int_a^bf(x)dx=\int_a^bf(a+b-x)dx$
 6. $\int_0^{\frac{\pi}{2}}\sin^n xdx=\int_0^{\frac{\pi}{2}}\cos^n xdx=$
 $\begin{cases}
