@@ -366,7 +366,21 @@ $\begin{cases}
 | $\int{\sqrt{x^2-a^2}}dx$ | $\frac{x}{2}\sqrt{x^2-a^2}-\frac{a^2}{2}\ln\|x+\sqrt{x^2-a^2}\|+C$ |
 | $\int{\sqrt{a^2-x^2}}dx$ | $\frac{x}{2}\sqrt{a^2-x^2}+\frac{a^2}{2}\arcsin\frac{x}{a}+C$ |
 
-## 3.2. 定积分应用
+## 3.2. 定积分公式
+1. 奇函数时：$\int_{-a}^af(x)dx=0$
+2. 偶函数时：$\int_{-a}^af(x)dx=2\int_0^af(x)dx$
+3. 非奇非偶时：$\int_{-a}^af(x)dx=\int_0^a[f(x)+f(-x)]dx$
+4. $f(x+T)=f(x)$ 时：$\int_0^Tf(x)dx=\int_a^a+Tf(x)dx$
+5. $\int_a^bf(x)dx=\int_a^bf(a+b-x)dx$
+6. $\int_0^{\frac{\pi}{2}}\sin^n xdx=\int_0^{\frac{\pi}{2}}\cos^n xdx=$
+$\begin{cases}
+\frac{(n-1)!!}{n!!}\qquad n为奇数  \\
+\frac{(n-1)!!}{n!!}\cdot\frac{\pi}{2}\quad n为偶数  \\
+\end{cases}$
+7. $\int_0^{\frac{\pi}{2}}f(\sin x)dx=\int_0^{\frac{\pi}{2}}f(\cos x)dx$
+8. $\int_0^\pi xf(\sin x)dx=\frac{\pi}{2}\int_0^\pi f(\sin x)dx$，$\frac{\pi}{2}$ 是 $(0,\pi)$ 的中点
+
+## 3.3. 定积分应用
 |  |  |
 |---|---|
 | 平面图形面积-直角坐标 | $S=\int^b_a[f(x)-g(x)]dx$ |
