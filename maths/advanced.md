@@ -449,3 +449,17 @@ $n$ 阶常系数齐次方程：$y^{(n)}+P_1y^{(n-1)}+...+P_{n-1}y'+P_ny=0$，其
 1. 当 $r$ 是 $k$ 重根，$y=e^{rx}(C_1+C_2x+...+C_kx^{k-1})$
 2. 当 $r=\lambda\pm i\omega$ 是 $k$ 重共轭复根，$y=e^{\lambda x}[(C_1+C_2x+...+C_kx^{k-1})\cos{\omega x}+(D_1+D_2x+...+D_kx^{k-1})\sin{\omega x}]$  
 
+# 5. 多元函数微分学
+## 5.1. 概念
+|  |  |
+|---|---|
+| 二元函数 | $z=f(x,y)$ |
+| 二元函数的几何意义 | 一张曲面 |
+| 二元函数的极限 | 即二重极限：$\lim\limits_{(x,y)\to(x_0,y_0)}f(x,y)$<br>与一元函数某点只有左右极限不同，二元函数到某点的极限有无数路径，通常由两个不同路径的极限不同来反证其极限不存在<br>与本质为一元函数极限的二次极限 $\lim\limits_{x\to x_0}\lim\limits_{y\to y_0}f(x,y)$ 没有关系 |
+| 二元函数连续 | $\lim\limits_{(x,y)\to(x_0,y_0)}f(x,y)=f(x_0,y_0)$ |
+| 二元函数性质 | 不可用：洛必达法则、泰勒展开<br>可用：导数定义、无穷小替换、$1^\infty$<br>若在有界闭区间上连续，则有界、最值、介值 |
+| 二元函数的偏导数 | $f'_x(x_0,y_0)=\lim\limits_{\Delta x\to 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}$<br>$f'_y(x_0,y_0)=\lim\limits_{\Delta y\to 0}\frac{f(x_0,y_0+\Delta y)-f(x_0,y_0)}{\Delta y}$ |
+| 二元函数的偏导连续 | 对 $z=f(x,y)$ 求偏导得到的 $f'_x(x,y)$ 和 $f'_y(x,y)$ 是偏导函数，也常称为“偏导数”，而“偏导连续”则是指这里的偏导函数连续 |
+| $z=f(x,y)$ 在 $(x_0,y_0)$ 可微 | $\lim\limits_{(\Delta x,\Delta y)\to (0,0)}\frac{f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0)-\frac{\partial f}{\partial x}\Delta x-\frac{\partial f}{\partial y}\Delta y}{\sqrt{(\Delta x)^2+(\Delta y)^2}}$ <br> $\lim\limits_{(x,y)\to (x_0,y_0)}\frac{f(x,y)-f(x_0,y_0)-\frac{\partial f}{\partial x}(x-x_0)-\frac{\partial f}{\partial y}(y-y_0)}{\sqrt{(x-x_0)^2+(y-y_0)^2}}$ <br> 称 $dz=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy$ 为全微分 |
+| 关系 | 偏导连续 -> 可微 -> 连续 -> 二重极限存在 <br> 可微 -> 偏导存在 <br> 与一元函数不同，“偏导存在”与“连续”之间没有关系 |
+|  |  |
