@@ -99,6 +99,7 @@
 ### 1.9.2. 函数的极限
 1. $x\to\infty$时函数$f(x)$的极限：设有函数$y=f(x)$和常数$A$，对任意给定的$\varepsilon>0$，若存在$M>0$，使得当$|x|>M$时，恒有$|f(x)-A|<\varepsilon$成立，则称当$x\to\infty$时，$y=f(x)$的极限为A，记为：$\lim\limits_{x\to\infty}f(x)=A$ 或 $f(x)\to A\space(x\to\infty)$
 2. $x\to x_0$时函数$f(x)$的极限：设有函数$y=f(x)$和常数$A$，对任意给定的$\varepsilon>0$，若存在$M>0$，使得当$0<|x-x_0|<M$时，恒有$|f(x)-A|<\varepsilon$成立，则称当$x\to x_0$时，$y=f(x)$的极限为A，记为：$\lim\limits_{x\to x_0}f(x)=A$ 或 $f(x)\to A\space(x\to x_0)$
+3. 函数极限无穷小关系定理（去极限号定理）：$\lim\limits_{x\to x_0}f(x)=A$，则 $f(x)=A+\alpha$，其中 $\alpha$ 为无穷小
 ### 1.9.3. 极限的性质
 1. 唯一性：若极限存在，则极限值唯一
 2. 有界性：极限存在，则局部有界；另两个与有界性有关联的结论：
