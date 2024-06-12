@@ -518,3 +518,16 @@ $\begin{cases}
 2. 边界上的最值（条件极值）
 3. 对比 1 和 2 的结果，最大的为最大值，最小的为最小值
 
+# 6. 二重积分
+* 定义：$\iint_Df(x,y)dxdy=\lim\limits_{n\to\infty}\sum_{i=1}^n\sum_{j=1}^nf(\frac{i}{n},\frac{j}{n})\frac{1}{n^2}$
+* 二重积分中值定理：$\exists\space(\xi,\eta)$ 使 $\iint_Df(x,y)dxdy=f(\xi,\eta)S_D$
+* 偏心圆：
+  1. 右偏心圆：$\theta\in(-\frac{\pi}{2},\frac{\pi}{2})$，$r\in(0,2a\cos\theta)$
+  2. 上偏心圆：$\theta\in(0,\pi)$，$r\in(0,2a\sin\theta)$
+  3. 左偏心圆：$\theta\in(\frac{\pi}{2},\frac{3}{2}\pi)$，$r\in(0,-2a\cos\theta)$
+  4. 下偏心圆：$\theta\in(-\pi,0)$，$r\in(0,-2a\sin\theta)$
+* 轮换对称：若区域 $D$ 关于 $y=x$ 对称，则：$\iint_Df(x,y)dxdy=\iint_Df(y,x)dxdy=\frac{1}{2}\iint_D[f(x,y)+f(y,x)]dxdy$
+* 质心坐标：若区域 $D$ 的几何中心坐标为 $(\bar X,\bar Y)$ 则：
+   1. $\bar X=\frac{\iint_Dxdxdy}{S_D}$，$\bar Y=\frac{\iint_Dydxdy}{S_D}$
+   2. $\iint_Dxdxdy=\bar X \cdot S_D$，$\iint_Dydxdy=\bar Y \cdot S_D$
+

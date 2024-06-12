@@ -108,10 +108,30 @@ $\begin{cases}
 \tan(x+y)=\frac{\tan{x}+\tan{y}}{1-\tan{x}\tan{y}} \\
 \tan(x-y)=\frac{\tan{x}-\tan{y}}{1+\tan{x}\tan{y}} \\
 \end{cases}$  
+
+## 4.6. 正弦反函数转换
+>二重积分交互次序时需要用到  
+* $x_1$ 位于第1象限：$x_1=\arcsin y$
+* $x_2$ 位于第2象限：$x_1=\pi-\arcsin y$
+* $x_3$ 位于第3象限：$x_1=\pi-\arcsin y$
+* $x_4$ 位于第4象限：$x_1=2\pi+\arcsin y$
+
 # 5. 极坐标
 极坐标转化为直角坐标：$\begin{cases} x=r\cos\theta \\ y=r\sin\theta \end{cases}$  
 直角坐标转化为极坐标：$\begin{cases} r=\sqrt{x^2+y^2} \\ \theta=\arctan\frac{y}{x} \end{cases}$  
-# 6. 几何
+
+# 6. 对称性判断
+* 直角坐标系
+   1. $-x$ 代替 $x$，表达式不变 $\implies$ 关于 $y$ 轴对称
+   2. $-y$ 代替 $y$，表达式不变 $\implies$ 关于 $x$ 轴对称
+   3. $-x,-y$ 代替 $x,y$，表达式不变 $\implies$ 关于原点对称
+   4. $y,x$ 代替 $x,y$，表达式不变 $\implies$ 关于 $y=x$ 对称
+* 极坐标
+   1. $-\theta$ 代替 $\theta$，表达式不变 $\implies$ 关于极轴对称
+   2. $\pi+\theta$ 代替 $\theta$，表达式不变 $\implies$ 关于极点对称
+   2. $\frac{\pi}{2}-\theta$ 代替 $\theta$，表达式不变 $\implies$ 关于 $\theta=\frac{\pi}{4}$ 对称
+
+# 7. 几何
 |  |  |  |
 |--|--|--|
 | 1 | 两点距离 | $d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$ |
@@ -130,7 +150,7 @@ $\begin{cases}
 | 14 | 摆线 | 方程 $x=a(t-\sin t),\space y=a(1-\cos t)$ |
 | 15 | 星形线 | 方程 $x=a\cos^3t,\space y=a\sin^3t$，所围图形面积 $\frac{3}{8}\pi a^2$，绕x轴体积 $\frac{32}{105}\pi a^3$，弧长 $6a$，绕x轴表面积 $\frac{12}{5}\pi a^2$ |
 |  |  |  |
-# 7. 初等函数化简
+# 8. 初等函数化简
 |  |
 |--|
 | $e^{\ln x}=x$ |
