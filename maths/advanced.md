@@ -28,16 +28,16 @@
 ## 1.3. 泰勒公式求极限
 |  |  |  |
 |---|---|---|
-| $\sin x$ | $x-\frac{1}{3!}x^3+\frac{1}{5!}x^5$ | $\sum_{n=0}^\infty\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ |
-| $\arcsin x$ | $x+\frac{1}{3!}x^3+\frac{1}{5!}x^5$ | $\sum_{n=0}^\infty\frac{1}{(2n+1)!}x^{2n+1}$ |
-| $\tan x$ | $x+\frac{1}{3}x^3+\frac{1}{5}x^5$ | $\sum_{n=0}^\infty\frac{1}{2n+1}x^{2n+1}$ |
-| $\arctan x$ | $x-\frac{1}{3}x^3+\frac{1}{5}x^5$ |  $\sum_{n=0}^\infty\frac{(-1)^n}{2n+1}x^{2n+1}$|
-| $\ln(1+x)$ | $x-\frac{1}{2}x^2+\frac{1}{3}x^3$ | $\sum_{n=0}^\infty\frac{(-1)^n}{n+1}x^{n+1}$ |
-| $e^x$ | $1+x+\frac{1}{2}x^2+\frac{1}{3!}x^3$ | $\sum_{n=0}^\infty\frac{1}{n!}x^n$ |
-| $(1+x)^a$ | $1+ax+\frac{a(a-1)}{2}x^2$ | $\sum_{n=0}^\infty\frac{a(a-1)...(a-n+1)}{n!}x^n$ |
-| $\cos x$ | $1-\frac{1}{2}x^2+\frac{1}{4!}x^4$ | $\sum_{n=0}^\infty\frac{(-1)^n}{(2n)!}x^{2n}$ |
-| $\frac{1}{1-x}$ | $1+x+x^2+...+x^n$ | $\sum_{n=0}^\infty x^n$ |
-| $\frac{1}{1+x}$ | $1-x+x^2-x^3+...+(-1)^nx^n$ | $\sum_{n=0}^\infty (-1)^nx^n$ |
+| $\sin x$ | $x-\frac{1}{3!}x^3+\frac{1}{5!}x^5$ | $\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ |
+| $\arcsin x$ | $x+\frac{1}{3!}x^3+\frac{1}{5!}x^5$ | $\displaystyle\sum_{n=0}^\infty\frac{1}{(2n+1)!}x^{2n+1}$ |
+| $\tan x$ | $x+\frac{1}{3}x^3+\frac{1}{5}x^5$ | $\displaystyle\sum_{n=0}^\infty\frac{1}{2n+1}x^{2n+1}$ |
+| $\arctan x$ | $x-\frac{1}{3}x^3+\frac{1}{5}x^5$ |  $\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{2n+1}x^{2n+1}$|
+| $\ln(1+x)$ | $x-\frac{1}{2}x^2+\frac{1}{3}x^3$ | $\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{n+1}x^{n+1}$ |
+| $e^x$ | $1+x+\frac{1}{2}x^2+\frac{1}{3!}x^3$ | $\displaystyle\sum_{n=0}^\infty\frac{1}{n!}x^n$ |
+| $(1+x)^a$ | $1+ax+\frac{a(a-1)}{2}x^2$ | $\displaystyle\sum_{n=0}^\infty\frac{a(a-1)...(a-n+1)}{n!}x^n$ |
+| $\cos x$ | $1-\frac{1}{2}x^2+\frac{1}{4!}x^4$ | $\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{(2n)!}x^{2n}$ |
+| $\frac{1}{1-x}$ | $1+x+x^2+...+x^n$ | $\displaystyle\sum_{n=0}^\infty x^n$ |
+| $\frac{1}{1+x}$ | $1-x+x^2-x^3+...+(-1)^nx^n$ | $\displaystyle\sum_{n=0}^\infty (-1)^nx^n$ |
 
 令：$y=\ln(x+\sqrt{1+x^2})$，则：$y'=(1+x^2)^{-\frac{1}{2}}\sim 1-\frac{1}{2}x^2$，所以：$y\sim x-\frac{1}{6}x^3$
 ## 1.4. 等价无穷小替换求极限
