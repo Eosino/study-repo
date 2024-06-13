@@ -149,19 +149,19 @@
 ## 1.11. 计算数列极限
 ### 1.11.1. 使用定积分定义
 >分割、代替、求和、取极限
-1. 取右端点：$\int^b_af(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^n[f(a+\frac{b-a}{n}\cdot i)\cdot\frac{b-a}{n}]$
-2. 取左端点：$\int^b_af(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^n\{f[a+\frac{b-a}{n}\cdot(i-1)]\cdot\frac{b-a}{n}\}$
-2. 取中点：$\int^b_af(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^n\{f[a+\frac{b-a}{n}\cdot\frac{1}{2}\cdot(2i-1)]\cdot\frac{b-a}{n}\}$
+1. 取右端点：$\int^b_af(x)dx=\lim\limits_{n\to\infty}\displaystyle\sum_{i=1}^n[f(a+\frac{b-a}{n}\cdot i)\cdot\frac{b-a}{n}]$
+2. 取左端点：$\int^b_af(x)dx=\lim\limits_{n\to\infty}\displaystyle\sum_{i=1}^n\{f[a+\frac{b-a}{n}\cdot(i-1)]\cdot\frac{b-a}{n}\}$
+2. 取中点：$\int^b_af(x)dx=\lim\limits_{n\to\infty}\displaystyle\sum_{i=1}^n\{f[a+\frac{b-a}{n}\cdot\frac{1}{2}\cdot(2i-1)]\cdot\frac{b-a}{n}\}$
 
 特殊地，当$a=0、b=1$时：
-1. 取右端点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^nf(\frac{i}{n})\frac{1}{n}$
-2. 取左端点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^nf(\frac{i-1}{n})\frac{1}{n}$
-2. 取中点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\sum_{i=1}^nf(\frac{2i-1}{2n})\frac{1}{n}$
+1. 取右端点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\displaystyle\sum_{i=1}^nf(\frac{i}{n})\frac{1}{n}$
+2. 取左端点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\displaystyle\sum_{i=1}^nf(\frac{i-1}{n})\frac{1}{n}$
+2. 取中点：$\int^1_0f(x)dx=\lim\limits_{n\to\infty}\displaystyle\sum_{i=1}^nf(\frac{2i-1}{2n})\frac{1}{n}$
 >三者的变化其实是：$i\to i-1 \to i-\frac{1}{2}$
 ### 1.11.2. 夹逼准则
 1. 对 $u_1+u_2+...+u_n$ 进行缩放有两个常见的结论：
-   * 当$n$为无穷大时，则 $n\cdot u_m\le\sum^{n}_{i=1}u_i\le n\cdot u_M$
-   * 当$n$为有限数，且 $u_i\ge0$，则 $u_M\le\sum^{n}_{i=1}u_i\le n\cdot u_M$
+   * 当$n$为无穷大时，则 $n\cdot u_m\le\displaystyle\sum^{n}_{i=1}u_i\le n\cdot u_M$
+   * 当$n$为有限数，且 $u_i\ge0$，则 $u_M\le\displaystyle\sum^{n}_{i=1}u_i\le n\cdot u_M$
 2. $\lim\limits_{n\to\infty}\sqrt[n]{a^n_1+a^n_2+...+a^n_k}=\max\lbrace a_i\rbrace\space(i=1,2,...,k)$
 ### 1.11.3. 其他
 * 先用夹逼准则，再用定积分定义
@@ -519,7 +519,7 @@ $\begin{cases}
 3. 对比 1 和 2 的结果，最大的为最大值，最小的为最小值
 
 # 6. 二重积分
-* 定义：$\iint_Df(x,y)dxdy=\lim\limits_{n\to\infty}\sum_{i=1}^n\sum_{j=1}^nf(\frac{i}{n},\frac{j}{n})\frac{1}{n^2}$
+* 定义：$\iint_Df(x,y)dxdy=\lim\limits_{n\to\infty}\displaystyle\sum_{i=1}^n\displaystyle\sum_{j=1}^nf(\frac{i}{n},\frac{j}{n})\frac{1}{n^2}$
 * 二重积分中值定理：$\exists\space(\xi,\eta)$ 使 $\iint_Df(x,y)dxdy=f(\xi,\eta)S_D$
 * 偏心圆：
   1. 右偏心圆：$\theta\in(-\frac{\pi}{2},\frac{\pi}{2})$，$r\in(0,2a\cos\theta)$
