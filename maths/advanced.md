@@ -532,4 +532,32 @@ $\begin{cases}
    2. $\iint_Dxdxdy=\bar X \cdot S_D$，$\iint_Dydxdy=\bar Y \cdot S_D$
 
 # 7. 无穷级数
+# 7.1. 数项级数
 1. $\lim\limits_{n\to \infty}a_n$ 存在 $\iff \displaystyle\sum_{n=1}^\infty(a_{n+1}-a_n)$ 收敛
+2. 若 $k\ne 0$，$\displaystyle\sum_{n=1}^\infty a_n$ 与 $\displaystyle\sum_{n=1}^\infty ka_n$ 有相同的敛散性，若 $\displaystyle\sum_{n=1}^\infty a_n=S$ 则 $\displaystyle\sum_{n=1}^\infty ka_n=kS$
+3. 若 $\displaystyle\sum_{n=1}^\infty a_n$ 收敛，则 $\lim\limits_{n\to\infty}a_n=0$，因此若 $\lim\limits_{n\to\infty}a_n\ne 0$ 则 $\displaystyle\sum_{n=1}^\infty a_n$ 一定发散
+4. ：
+   * 前面增加或去掉有限项，级数的收敛性不变
+   * 收敛级数在不改变次序的情况下可以任意加括号，收敛性不变且其和不变
+   * 收敛级数去掉括号后不一定收敛
+   * 若级数加上括号后发散，则原级数必发散
+
+# 7.2. 正项级数
+1. 比较判别法
+   * 小于收敛的必收敛，大于发散的必发散
+   * P级数 $\displaystyle\sum_{n=1}^\infty\frac{1}{n^p}=\begin{cases}收敛，p>1 \\ 发散，p\le 1 \end{cases}$
+   * 等比级数 $\displaystyle\sum_{n=1}^\infty aq^n=\begin{cases}收敛，\frac{a}{1-q}，|q|<1 \\ 发散，|q|\ge 1 \end{cases}$ $(a\ne 0)$
+2. 比较判别法的极限形式；若 $\lim\limits_{n\to\infty}\frac{a_n}{b_n}=k$，则 $\displaystyle\sum_{n=1}^\infty a_n$ 和 $\displaystyle\sum_{n=1}^\infty b_n$：
+   * $0<k<+\infty$ 时，同敛散
+   * $k=0$ 时，同收敛
+   * $k=+\infty$ 时，同发散
+3. ：
+   * 比值判别法 $\displaystyle\sum_{n=1}^\infty\frac{a_{n+1}}{a_n}=k$
+   * 根值判别法 $\displaystyle\sum_{n=1}^\infty\sqrt[n]{a_n}=k$
+   * 比值是根值的充分条件：$\displaystyle\sum_{n=1}^\infty\frac{a_{n+1}}{a_n}=k \implies \displaystyle\sum_{n=1}^\infty\sqrt[n]{a_n}=k$
+   * $k<1$ 时，收敛
+   * $k>1$ 时，发散
+   * $k=1$ 时，不确定
+4. 积分判别法：若 $f(x)=a_n$，则广义积分 $\int_1^{+\infty}f(x)dx$ 与 $\displaystyle\sum_{n=1}^\infty{a_n}$ 同敛散
+5. 补充：
+   * 若正项级数 $\displaystyle\sum_{n=1}^\infty a_n$ 收敛，则 $\displaystyle\sum_{n=1}^\infty a_n^2$、$\displaystyle\sum_{n=1}^\infty\frac{\sqrt{a_n}}{n}$、$\displaystyle\sum_{n=1}^\infty\frac{a_n}{1+a_n}$ 均收敛
