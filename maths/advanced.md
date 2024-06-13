@@ -532,7 +532,7 @@ $\begin{cases}
    2. $\iint_Dxdxdy=\bar X \cdot S_D$，$\iint_Dydxdy=\bar Y \cdot S_D$
 
 # 7. 无穷级数
-# 7.1. 数项级数
+## 7.1. 数项级数
 1. $\lim\limits_{n\to \infty}a_n$ 存在 $\iff \displaystyle\sum_{n=1}^\infty(a_{n+1}-a_n)$ 收敛
 2. 若 $k\ne 0$，$\displaystyle\sum_{n=1}^\infty a_n$ 与 $\displaystyle\sum_{n=1}^\infty ka_n$ 有相同的敛散性，若 $\displaystyle\sum_{n=1}^\infty a_n=S$ 则 $\displaystyle\sum_{n=1}^\infty ka_n=kS$
 3. 若 $\displaystyle\sum_{n=1}^\infty a_n$ 收敛，则 $\lim\limits_{n\to\infty}a_n=0$，因此若 $\lim\limits_{n\to\infty}a_n\ne 0$ 则 $\displaystyle\sum_{n=1}^\infty a_n$ 一定发散
@@ -542,7 +542,7 @@ $\begin{cases}
    * 收敛级数去掉括号后不一定收敛
    * 若级数加上括号后发散，则原级数必发散
 
-# 7.2. 正项级数
+## 7.2. 正项级数
 1. 比较判别法
    * 小于收敛的必收敛，大于发散的必发散
    * P级数 $\displaystyle\sum_{n=1}^\infty\frac{1}{n^p}=\begin{cases}收敛，p>1 \\ 发散，p\le 1 \end{cases}$
