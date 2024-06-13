@@ -531,3 +531,5 @@ $\begin{cases}
    1. $\bar X=\frac{\iint_Dxdxdy}{S_D}$，$\bar Y=\frac{\iint_Dydxdy}{S_D}$
    2. $\iint_Dxdxdy=\bar X \cdot S_D$，$\iint_Dydxdy=\bar Y \cdot S_D$
 
+# 7. 无穷级数
+1. $\lim\limits_{n\to \infty}a_n$ 存在 $\iff \displaystyle\sum_{n=1}^\infty(a_{n+1}-a_n)$ 收敛
