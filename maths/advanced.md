@@ -532,17 +532,19 @@ $\begin{cases}
    2. $\iint_Dxdxdy=\bar X \cdot S_D$，$\iint_Dydxdy=\bar Y \cdot S_D$
 
 # 7. 无穷级数
-## 7.1. 数项级数
+## 7.1. 常数项级数
 1. $\lim\limits_{n\to \infty}a_n$ 存在 $\iff \displaystyle\sum_{n=1}^\infty(a_{n+1}-a_n)$ 收敛
 2. 若 $k\ne 0$，$\displaystyle\sum_{n=1}^\infty a_n$ 与 $\displaystyle\sum_{n=1}^\infty ka_n$ 有相同的敛散性，若 $\displaystyle\sum_{n=1}^\infty a_n=S$ 则 $\displaystyle\sum_{n=1}^\infty ka_n=kS$
-3. 若 $\displaystyle\sum_{n=1}^\infty a_n$ 收敛，则 $\lim\limits_{n\to\infty}a_n=0$，因此若 $\lim\limits_{n\to\infty}a_n\ne 0$ 则 $\displaystyle\sum_{n=1}^\infty a_n$ 一定发散
-4. ：
-   * 前面增加或去掉有限项，级数的收敛性不变
+3. 若两个收敛级数 $\displaystyle\sum_{n=1}^\infty a_n=A$、$\displaystyle\sum_{n=1}^\infty b_n=B$，则任给常数 $a,b$ 有 $\displaystyle\sum_{n=1}^\infty (aa_n+bb_n)=aA+bB$，此为收敛级数的线性性质
+   * 收敛+收敛=收敛；收敛+发散=发散；发散+发散=不一定发散
+4. 若 $\displaystyle\sum_{n=1}^\infty a_n$ 收敛，则 $\lim\limits_{n\to\infty}a_n=0$，因此若 $\lim\limits_{n\to\infty}a_n\ne 0$ 则 $\displaystyle\sum_{n=1}^\infty a_n$ 一定发散（通项的极限为零是级数收敛的必要非充分条件）
+5. ：
+   * 前面增加或去掉有限项，级数的收敛性不变（可能改变级数的和）
    * 收敛级数在不改变次序的情况下可以任意加括号，收敛性不变且其和不变
    * 收敛级数去掉括号后不一定收敛
    * 若级数加上括号后发散，则原级数必发散
 
-## 7.2. 正项级数
+### 7.1.1. 正项级数
 1. 比较判别法
    * 小于收敛的必收敛，大于发散的必发散
    * P级数 $\displaystyle\sum_{n=1}^\infty\frac{1}{n^p}=\begin{cases}收敛，p>1 \\ 发散，p\le 1 \end{cases}$
@@ -561,3 +563,36 @@ $\begin{cases}
 4. 积分判别法：若 $f(x)=a_n$，则广义积分 $\int_1^{+\infty}f(x)dx$ 与 $\displaystyle\sum_{n=1}^\infty{a_n}$ 同敛散
 5. 补充：
    * 若正项级数 $\displaystyle\sum_{n=1}^\infty a_n$ 收敛，则 $\displaystyle\sum_{n=1}^\infty a_n^2$、$\displaystyle\sum_{n=1}^\infty\frac{\sqrt{a_n}}{n}$、$\displaystyle\sum_{n=1}^\infty\frac{a_n}{1+a_n}$ 均收敛
+
+### 7.1.2. 交错与任意级数
+>若 $a_n>0$，称 $\displaystyle\sum_{n=1}^\infty(-1)^na_n$ 或 $\displaystyle\sum_{n=1}^\infty(-1)^{n-1}a_n$ 为交错级数  
+>若级数各项可正、可负、可零，称之为任意项级数  
+1. 莱布尼茨判别法：满足 ① $a_{n+1}\le a_n$，即单调递减；② $\lim\limits_{n\to\infty}a_n=0$；则交错级数 $\displaystyle\sum_{n=1}^\infty(-1)^na_n$ 收敛。
+   * 注：条件①为充分非必要，当②满足但①不满足时不能保证发散，要改用其他方法（定义、性质等）判断。
+2. 若 $\displaystyle\sum_{n=1}^\infty |a_n|$ 收敛，则称 $\displaystyle\sum_{n=1}^\infty a_n$ 绝对收敛，绝对收敛则原级数收敛。
+3. 若 $\displaystyle\sum_{n=1}^\infty a_n$ 收敛，但 $\displaystyle\sum_{n=1}^\infty |a_n|$ 发散，则称 $\displaystyle\sum_{n=1}^\infty a_n$ 条件收敛。
+4. 熟记 $\displaystyle\sum_{n=1}^\infty(-1)^n\frac{1}{n}$、$\displaystyle\sum_{n=1}^\infty(-1)^n\frac{1}{\sqrt{n}}$ 条件收敛，$\displaystyle\sum_{n=1}^\infty(-1)^n\frac{1}{n^2}$ 绝对收敛（选择题找特例的材料）。
+   * $\displaystyle\sum_{n=1}^\infty(-1)^n\frac{1}{n^p}$=$\begin{cases}
+      绝对收敛，p>1\\
+      条件收敛，0< p \le 1\\
+      发散，p < 0
+   \end{cases}$
+5. 若 $\displaystyle\sum_{n=1}^\infty a_n$ 绝对收敛，则 $\displaystyle\sum_{n=1}^\infty\frac{1}{2}(a_n+|a_n|)$ 和 $\displaystyle\sum_{n=1}^\infty\frac{1}{2}(a_n+|a_n|)$ 都收敛。（前者是提取所有正数项，后者是提取所有负数项）
+
+## 7.4. 幂级数
+### 7.4.1. 收敛半径和收敛域
+1. 阿贝尔定理：设 $\displaystyle\sum_{n=1}^\infty a_nx^n$ 在 $x=a$ $a\ne 0$ 点：
+   * 若收敛，则在 $|x|<|a|$ 绝对收敛
+   * 若发散，则在 $|x|>|a|$ 发散 
+2. 不缺项幂级数（如：$\displaystyle\sum_{n=1}^\infty a_nx^n$）的收敛半径：$r=\lim\limits_{n\to\infty}|\frac{a_n}{a_{n+1}}|$ 或 $r=\lim\limits_{n\to\infty}\frac{1}{\sqrt[n]{|a_n|}}$
+3. 缺项幂级数（如：$\displaystyle\sum_{n=1}^\infty a_nx^{2n}$）的收敛半径：$r=\lim\limits_{n\to\infty}|\frac{a_{n+1}x2(n+1)}{a_nx^{2n}}|<1$，解出 $x$ 的范围来确定收敛半径和收敛域。
+4. $x$ 的范围是收敛区间，收敛域=区间+端点，端点的敛散性需要带入原级数后按常数项级数来判断。
+5. $\displaystyle\sum_{n=1}^\infty a_n(x-x_0)^n$ ：
+   * 若在 $x_1$ 收敛，则收敛半径 $r\ge |x-x_0|$
+   * 若在 $x_1$ 发散，则收敛半径 $r\le |x-x_0|$
+   * 若在 $x_1$ 条件收敛，则收敛半径 $r=|x-x_0|$
+6. ：
+   * 对级数提出或乘以因式 $(x-x_0)^k$，或者平移等，收敛半径不变
+   * 对级数逐项求导，收敛半径不变，收敛域可能缩小（区间大小不变，端点可能改变）
+   * 对级数逐项积分，收敛半径不变，收敛域可能扩大（区间大小不变，端点可能改变）
+
