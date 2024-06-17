@@ -340,11 +340,12 @@ $\begin{cases}
 |  |  |
 |---|---|
 | $\int{e^x}dx$ | $e^x+C$ |
-| $\int{a^x}dx$ | $\frac{a^x}{lna}+C$ |
+| $\int{a^x}dx$ | $\frac{a^x}{\ln a}+C$ |
 | $\int{x^a}dx$ | $\frac{x^{a+1}}{a+1}+C\enspace(a\neq-1)$ |
 | $\int{\frac{1}{x^2}}dx$ | $-\frac{1}{x}+C$ |
 | $\int{\frac{1}{x}}dx$ | $ln{\|x\|}+C$ |
 | $\int{\frac{1}{\sqrt{x}}}dx$ | $2\sqrt{x}+C$ |
+| $\int\ln xdx$ | $x\ln x-x+C$ |
 | $\int{\sin x}dx$ | $-\cos x+C$ |
 | $\int{\cos x}dx$ | $\sin x+C$ |
 | $\int{\tan x}dx$ | $-\ln\|\cos x\|+C$ |
@@ -579,8 +580,8 @@ $\begin{cases}
    \end{cases}$
 5. 若 $\displaystyle\sum_{n=1}^\infty a_n$ 绝对收敛，则 $\displaystyle\sum_{n=1}^\infty\frac{1}{2}(a_n+|a_n|)$ 和 $\displaystyle\sum_{n=1}^\infty\frac{1}{2}(a_n+|a_n|)$ 都收敛。（前者是提取所有正数项，后者是提取所有负数项）
 
-## 7.4. 幂级数
-### 7.4.1. 收敛半径和收敛域
+## 7.2. 幂级数
+### 7.2.1. 收敛半径和收敛域
 1. 阿贝尔定理：设 $\displaystyle\sum_{n=1}^\infty a_nx^n$ 在 $x=a$ $a\ne 0$ 点：
    * 若收敛，则在 $|x|<|a|$ 绝对收敛
    * 若发散，则在 $|x|>|a|$ 发散 
@@ -595,4 +596,30 @@ $\begin{cases}
    * 对级数提出或乘以因式 $(x-x_0)^k$，或者平移等，收敛半径不变
    * 对级数逐项求导，收敛半径不变，收敛域可能缩小（区间大小不变，端点可能改变）
    * 对级数逐项积分，收敛半径不变，收敛域可能扩大（区间大小不变，端点可能改变）
+
+### 7.2.2. 求和函数
+|  |  |  |
+|--|--|--|
+| $\displaystyle\sum_{n=0}^\infty x^n$ | $\frac{1}{1-x}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=0}^\infty (-1)^nx^n$ | $\frac{1}{1+x}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=1}^\infty x^n$ | $\frac{x}{1-x}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=1}^\infty (-1)^nx^n$ | $\frac{-x}{1+x}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=1}^\infty nx^n$ | $\frac{x}{(1-x)^2}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=1}^\infty n^2x^n$ | $\frac{x(1+x)}{(1-x)^3}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=2}^\infty n(n-1)x^{n-2}$ | $\frac{2}{(1-x)^3}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=1}^\infty \frac{1}{n}x^n$ | $-\ln(1-x)$ | $x\in[-1,1)$ |
+|  |  |  |
+
+>基本原则：
+>1. 系数在分母，求导，如：$\displaystyle\sum_{n=1}^\infty\frac{1}{n}x^n$；
+>2. 系数在分子，积分，如：$\displaystyle\sum_{n=1}^\infty nx^n$；
+>3. 其他，变形为上述两者；
+
+求数项级数的和：构造一个相应的幂级数求和，把所求和的常数项级数看作幂级数在 $x$ 取某一值时所得。
+
+### 7.2.3. 求含阶乘因子的和函数
+1. 看到分母为 $n!$ 要联系 $e^x$ 的展开式；
+2. 看到分母为 $(2n)!$ 要联系 $\cos x$ 的展开式；
+3. 看到分母为 $(2n+1)!$ 要联系 $\sin x$ 的展开式；
+4. 下标恒等变形：$\displaystyle\sum_{n=1}^\infty a_nx^n=\displaystyle\sum_{n=0}^\infty a_{n+1}x^{n+1}=\displaystyle\sum_{n=2}^\infty a_{n-1}x^{n-1}$
 
