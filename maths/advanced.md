@@ -623,3 +623,140 @@ $\begin{cases}
 3. 看到分母为 $(2n+1)!$ 要联系 $\sin x$ 的展开式；
 4. 下标恒等变形：$\displaystyle\sum_{n=1}^\infty a_nx^n=\displaystyle\sum_{n=0}^\infty a_{n+1}x^{n+1}=\displaystyle\sum_{n=2}^\infty a_{n-1}x^{n-1}$
 
+# 8. 数一专题
+## 8.1. 傅里叶级数
+1. 以 $T=2t$ 为周期，在 $[-t,t]$ 可积的 $f(x)$ 的傅里叶级数：$f(x)\sim\frac{a_0}{2}+\displaystyle\sum_{n=1}^\infty(a_n\cos{\frac{n\pi x}{t}}+b_n\sin{\frac{n\pi x}{t}})$，其中：
+   * $a_0=\frac{1}{t}\int_{-t}^tf(x)dx$ &emsp; $(n=1,2,3,...)$
+   * $a_n=\frac{1}{t}\int_{-t}^tf(x)\cos{\frac{n\pi x}{t}}dx$ &emsp; $(n=1,2,3,...)$
+   * $b_n=\frac{1}{t}\int_{-t}^tf(x)\sin{\frac{n\pi x}{t}}dx$ &emsp; $(n=1,2,3,...)$
+2. 若 $T=2\pi$ 即 $t=\pi$，则 $f(x)\sim\frac{a_0}{2}+\displaystyle\sum_{n=1}^\infty(a_n\cos nx+b_n\sin nx)$，其中：
+   * $a_0=\frac{1}{\pi}\int_{-\pi}^\pi f(x)dx$ &emsp; $(n=1,2,3,...)$
+   * $a_n=\frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos nxdx$ &emsp; $(n=1,2,3,...)$
+   * $b_n=\frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin nxdx$ &emsp; $(n=1,2,3,...)$
+3. 在计算 $a_n$ 与 $b_n$ 时常用结论：$n\in Z \begin{cases}
+      \cos n\pi =(-1)^n \\
+      \sin n\pi =0 \\
+   \end{cases}$ &emsp; $n=2k+1 \begin{cases}
+      \cos \frac{n\pi}{2} =0 \\
+      \sin \frac{n\pi}{2} =(-1)^k \\
+   \end{cases}$ &emsp; $n=2k \begin{cases}
+      \cos \frac{n\pi}{2} =(-1)^k \\
+      \sin \frac{n\pi}{2} =0 \\
+   \end{cases}$
+4. ：
+   * 正弦级数：设 $f(x)$ 是以 $T=2t$ 为周期的奇函数（若是 $[0,t]$ 上的函数则奇延拓），则 $a_n=0$ 即：$f(x)\sim\frac{a_0}{2}+\displaystyle\sum_{n=1}^\infty b_n\sin\frac{n\pi x}{t}$
+   * 余弦级数：设 $f(x)$ 是以 $T=2t$ 为周期的偶函数（若是 $[0,t]$ 上的函数则偶延拓），则 $b_n=0$ 即：$f(x)\sim\frac{a_0}{2}+\displaystyle\sum_{n=1}^\infty a_n\cos\frac{n\pi x}{t}$
+5. 狄利克雷收敛定理：若 $f(x)$ 满足：①连续，或只有有限个第一类间断点；②只有有限个极值点；则其傅里叶级数就是其和函数 $s(x)$，求 $x=x_0$ 收敛的结果时：
+   * s(x_0)=$\begin{cases}
+      f(x_0), \space\space\space\space f(x)在x_0连续 \\
+      \frac{1}{2}[f_-(x_0)+f_+(x_0)], \space\space\space\space x_0是第一类间断点 \\
+      \frac{1}{2}[f(-t)+f(t)], \space\space\space\space x_0是区间端点 \\
+   \end{cases}$
+
+## 8.2. 空间解析几何
+1. 向量
+   1. 点 $A(x_1,y_1,z_1)$ 和 $B(x_2,y_2,z_2)$，向量 $\overrightarrow{AB}=(x_2-x_1,\space y_2-y_1,\space z_2-z_1)$
+   2. 向量的模，即向量的长度：$||\overrightarrow{AB}||=\sqrt{x^2+y^2+z^2}$
+   3. 单位向量：模长为1的向量
+   4. 两个向量 $\alpha,\beta$ 相乘（点乘）：$\alpha\cdot\beta=x_1x_2+y_1y_2+z_1z_2$
+   5. 两个向量 $\alpha,\beta$ 叉乘，也叫叉积、适量积，结果为一个向量：$\gamma=\alpha\times\beta=\begin{vmatrix}
+      i & j & k \\
+      x_1 & y_1 & z_1 \\
+      x_2 & y_2 & z_2 \\
+   \end{vmatrix}$，$\gamma$ 与 $\alpha,\beta$ 都垂直，即垂直于 $\alpha,\beta$ 决定的平面，$i,j,k$ 分别为x轴、y轴、z轴的单位向量
+   6. 两个向量的夹角 $\theta$：$\cos\theta=\frac{\alpha\cdot\beta}{||\alpha||||\beta||}$
+2. 平面方程
+   1. 一般式：$Ax+By+Cz+D=0$，&emsp; $(A,B,C)$ 是平面的法向量
+   2. 点法式：$A(x-x_0)+B(y-y_0)+C(z-z_0)=0$，&emsp; $(A,B,C)$ 是平面的法向量
+   3. 截距式：$\frac{x}{a}+\frac{y}{b}+\frac{z}{c}=1$，&emsp; $(\frac{1}{a},\frac{1}{b},\frac{1}{c})$ 是平面的法向量
+3. 直线方程
+   1. 一般式：$\begin{cases}
+      a_1x+b_1y+c_1z+d_1=0 \\
+      a_2x+b_2y+c_2z+d_2=0 \\
+   \end{cases}$，两平面相交于一条直线，直线的方向向量：$(a_1,b_1,c_1)\times(a_2,b_2,c_2)$
+   2. 对称式：$\frac{x-x_0}{a}=\frac{y-y_0}{b}=\frac{z-z_0}{c}$，直线的方向向量：$(a,b,c)$
+   3. 参数式：$\begin{cases}
+      x=x_0+at \\
+      y=y_0+bt \\
+      z=z_0+ct \\
+   \end{cases}$，令对称式=t得到，直线的方向向量：$(a,b,c)$
+   4. 点 $(x_1,y_1,z_1)$ 到直线 $\frac{x-x_0}{a}=\frac{y-y_0}{b}=\frac{z-z_0}{c}$ 的距离：$d=\frac{|(x_0-x_1,y_0-y_1,z_0-z_1)\times(a,b,c)|}{\sqrt{a^2+b^2+c^2}}$
+4. 三平面的位置关系
+   * $a_1x+b_1y+c_1z=d_1$
+   * $a_2x+b_2y+c_2z=d_2$
+   * $a_3x+b_3y+c_3z=d_3$
+   * 系数矩阵：$A=\begin{pmatrix}
+      a_1 & b_1 & c_1 \\
+      a_2 & b_2 & c_2 \\
+      a_3 & b_3 & c_3 \\
+   \end{pmatrix}$，系数矩阵的增广矩阵：$\bar A=\begin{pmatrix}
+      a_1 & b_1 & c_1 & d_1 \\
+      a_2 & b_2 & c_2 & d_2 \\
+      a_3 & b_3 & c_3 & d_3 \\
+   \end{pmatrix}$
+   * 三平面位置关系由 $A$ 和 $\bar A$ 的秩决定：
+      1. $r(A)=r(\bar A)=1$，三平面重合（1,1  三重）
+      2. $r(A)=1,r(\bar A)=2$，两平面重合并与另一平面平行（1,2  二重一平）
+      3. $r(A)=1,r(\bar A)=3$，三平面平行（1,3  三平）
+      4. $r(A)=r(\bar A)=2$：
+         * 若 $A$ 的行向量有两个线性相关，则两平面重合并与另一平面相交于一条直线（2,2,相  二重一交）
+         * 若 $A$ 的行向量任意两个都线性无关，则三平面相交于一条直线（2,2,无  三交一线）
+      5. $r(A)=2,r(\bar A)=3$：
+         * 若 $A$ 的行向量有两个线性相关，则两平面平行，并与另一平面相交于两条平行直线（2,3,相  二平一交）
+         * 若 $A$ 的行向量任意两个都线性无关，则三平面相交于三条平行直线（2,3,无  三交三线）
+      6. $r(A)=r(\bar A)=3$，三平面相交于一点（3,3  三交一点）  
+
+| 系数矩阵的秩 | 增广矩阵的秩 | 系数矩阵行向量 | 三平面位置关系 |
+|--|--|--|--|
+| 1 | 1 |  | 三重 |
+| 1 | 2 |  | 二重一平 |
+| 1 | 3 |  | 三平 |
+| 2 | 2 | 相关 | 二重一交 |
+| 2 | 3 | 相关 | 二平一交 |
+| 2 | 2 | 无关 | 三交一线 |
+| 2 | 3 | 无关 | 三交三线 |
+| 3 | 3 |  | 三交一点 |
+|  |  |  |  |
+
+5. 空间曲面：$F(x,y,z)=0$ 或 $z=F(x,y)$
+6. 空间曲线：
+   * 一般方程：$\begin{cases}
+      F(x,yz)=0 \\
+      G(x,yz)=0 \\
+   \end{cases}$，两曲面相交于一条曲线
+   * 参数方程：$\begin{cases}
+      x=x(t) \\
+      y=y(t) \\
+      z=z(t) \\
+   \end{cases}$
+7. 常见二次曲面（联系线代的二次型的正负惯性指数）：
+   * 椭球面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$，（三正）
+   * 单叶双曲面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$，（二正一负）
+   * 双叶双曲面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=-1$，（一正二负）
+   * 椭圆抛物面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}=\pm z$，（少见）
+   * 双曲抛物面：$\frac{x^2}{a^2}-\frac{y^2}{b^2}=\pm z$，（少见）
+8. 柱面：平行于定直线并沿定曲线 $c$ 移动的直线 $l$ 形成的轨迹为柱面，其中 $c$ 为准线，$l$ 为母线
+   * 圆柱面：准线 $c$ 为 $x0y$ 上的圆 $\begin{cases}
+      f(x,y) = 0 \\
+      z=0
+   \end{cases}$，过 $c$ 上一点且平行于 $z$ 轴的母线 $l$ 绕 $z$ 轴一周形成的轨迹为圆柱面 $f(x,y)=0$。（也可以是 $c$ 沿 $z$ 轴上下移动形成的轨迹）
+9. 旋转曲面：在 $y0z$ 坐标面上的曲线 $\begin{cases}
+      f(y,z)=0 \\
+      x=0 \\
+   \end{cases}$，绕 $z$ 轴旋转一周得到曲面 $f(\pm\sqrt{x^2+y^2},z)$，绕 $y$ 轴旋转一周得到曲面 $f(y,\pm\sqrt{x^2+z^2})$
+10. 空间曲线 $L=\begin{cases}
+   F(x,y,z)=0 \\
+   G(x,y,z)=0 \\
+\end{cases}$ 在坐标面上的投影曲线：
+    * 消去 $z$ 后得到 $L$ 在 $x0y$ 上的投影曲线 $\begin{cases}
+      H_1(x,y)=0 \\
+      z=0 \\
+   \end{cases}$，其中 $H_1(x,y)=0$ 为投影柱面
+    * 消去 $y$ 后得到 $L$ 在 $x0z$ 上的投影曲线 $\begin{cases}
+      H_2(x,z)=0 \\
+      y=0 \\
+   \end{cases}$，其中 $H_2(x,z)=0$ 为投影柱面
+    * 消去 $x$ 后得到 $L$ 在 $y0z$ 上的投影曲线 $\begin{cases}
+      H_3(y,z)=0 \\
+      x=0 \\
+   \end{cases}$，其中 $H_3(y,z)=0$ 为投影柱面
