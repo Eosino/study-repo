@@ -660,10 +660,10 @@ $\begin{cases}
    3. 单位向量：模长为1的向量
    4. 两个向量 $\alpha,\beta$ 相乘（点乘）：$\alpha\cdot\beta=x_1x_2+y_1y_2+z_1z_2$
    5. 两个向量 $\alpha,\beta$ 叉乘，也叫叉积、适量积，结果为一个向量：$\gamma=\alpha\times\beta=\begin{vmatrix}
-      i & j & k \\
+      \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k} \\
       x_1 & y_1 & z_1 \\
       x_2 & y_2 & z_2 \\
-   \end{vmatrix}$，$\gamma$ 与 $\alpha,\beta$ 都垂直，即垂直于 $\alpha,\beta$ 决定的平面，$i,j,k$ 分别为x轴、y轴、z轴的单位向量
+   \end{vmatrix}$，$\gamma$ 与 $\alpha,\beta$ 都垂直，即垂直于 $\alpha,\beta$ 决定的平面，$\overrightarrow{i},\overrightarrow{j},\overrightarrow{k}$ 分别为x轴、y轴、z轴的单位向量
    6. 两个向量的夹角 $\theta$：$\cos\theta=\frac{\alpha\cdot\beta}{||\alpha||||\beta||}$
 2. 平面方程
    1. 一般式：$Ax+By+Cz+D=0$，&emsp; $(A,B,C)$ 是平面的法向量
@@ -721,8 +721,8 @@ $\begin{cases}
 5. 空间曲面：$F(x,y,z)=0$ 或 $z=F(x,y)$
 6. 空间曲线：
    * 一般方程：$\begin{cases}
-      F(x,yz)=0 \\
-      G(x,yz)=0 \\
+      F(x,y,z)=0 \\
+      G(x,y,z)=0 \\
    \end{cases}$，两曲面相交于一条曲线
    * 参数方程：$\begin{cases}
       x=x(t) \\
@@ -731,8 +731,8 @@ $\begin{cases}
    \end{cases}$
 7. 常见二次曲面（联系线代的二次型的正负惯性指数）：
    * 椭球面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$，（三正）
-   * 单叶双曲面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$，（二正一负）
-   * 双叶双曲面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=-1$，（一正二负）
+   * 单叶双曲面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$，（两正一负）
+   * 双叶双曲面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=-1$，（一正两负）
    * 椭圆抛物面：$\frac{x^2}{a^2}+\frac{y^2}{b^2}=\pm z$，（少见）
    * 双曲抛物面：$\frac{x^2}{a^2}-\frac{y^2}{b^2}=\pm z$，（少见）
 8. 柱面：平行于定直线并沿定曲线 $c$ 移动的直线 $l$ 形成的轨迹为柱面，其中 $c$ 为准线，$l$ 为母线
@@ -760,3 +760,38 @@ $\begin{cases}
       H_3(y,z)=0 \\
       x=0 \\
    \end{cases}$，其中 $H_3(y,z)=0$ 为投影柱面
+
+## 8.3. 多元函数的几何应用
+1. 空间曲线的切线与法平面
+   * 由参数方程表示的曲线：$\begin{cases}
+      x=x(t) \\
+      y=y(t) \\
+      z=z(t) \\
+   \end{cases}$，当 $t=t_0$ 时，在点 $(x_0,y_0,z_0)$：
+      1. 切线方程：$\frac{x-x_0}{x'(t_0)}=\frac{y-y_0}{y'(t_0)}=\frac{z-z_0}{z'(t_0)}$
+      2. 法平面：$x'(t)(x-x_0)+y'(t)(y-y_0)+z'(t)(z-z_0)=0$
+   * 由两平面相交表示的曲线：$\begin{cases}
+      F(x,y,z)=0 \\
+      G(x,y,z)=0 \\
+   \end{cases}$：
+      1. 平面F的法向量：$\overrightarrow{n_1}=(F_x',F_y',F_z')$
+      2. 平面G的法向量：$\overrightarrow{n_2}=(G_x',G_y',G_z')$
+      3. 曲线在点 $(x_0,y_0,z_0)$ 的切向量$=\begin{vmatrix}
+         \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k} \\
+         F_x' & F_y' & F_z' \\
+         G_x' & G_y' & G_z' \\
+      \end{vmatrix}_{(x_0,y_0,z_0)}$
+2. 空间曲面的切平面与法线   
+   * 曲面方程为隐函数 $F(x,y,z)=0$：
+      1. 曲面任意点的法向量 $=\pm(F_x',F_y',F_z')$，$\pm$ 表示两个不同的方向
+      2. 曲面在点 $(x_0,y_0,z_0)$ 的：
+         * 法向量 $=(F_x'(x_0,y_0,z_0),F_y'(x_0,y_0,z_0),F_z'(x_0,y_0,z_0))=(A,B,C)$
+         * 切平面 $A(x-x_0)+B(y-y_0)+C(z-z_0)=0$
+         * 法线：$\frac{x-x_0}{A}=\frac{y-y_0}{B}=\frac{z-z_0}{C}$
+   * 曲面方程为显函数 $z=f(x,y)$：
+      1. 曲面任意点的法向量 $=\pm(f_x',f_y',-1)$，$\pm$ 表示两个不同的方向
+      2. 曲面在点 $(x_0,y_0,z_0),z_0=f(x_0,y_0)$ 的：
+         * 法向量 $=(f_x'(x_0,y_0),f_y'(x_0,y_0),-1)=(A,B,-1)$
+         * 切平面 $A(x-x_0)+B(y-y_0)-(z-z_0)=0$
+         * 法线：$\frac{x-x_0}{A}=\frac{y-y_0}{B}=\frac{z-z_0}{-1}$
+ 
