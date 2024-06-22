@@ -387,3 +387,26 @@ cat 1.txt | tr -d '\r' > 2.txt
 sed -i "s/^M$//" `grep "^M$" -lr .`
 ```
 >重现^M场景：linux下将一个ff=dos的文件用echo追加一行内容，再用vim打开即可看到^M。
+
+# 4. MySql
+```sql
+-- 查看数据库的字符集和排序规则
+show create database d_name;
+
+-- 查看表的字符集和排序规则
+show create table t_name;
+
+-- 查看库中所有表的字符集和排序规则
+SELECT TABLE_NAME, CCSA.character_set_name, CCSA.collation_name
+FROM information_schema.TABLES T,
+     information_schema.COLLATION_CHARACTER_SET_APPLICABILITY CCSA
+WHERE CCSA.collation_name = T.table_collation
+  AND T.table_schema = 'd_name';
+
+-- 修改库的字符集和排序规则
+ALTER DATABASE d_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+
+-- 修改表的字符集和排序规则
+ALTER TABLE t_name CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE t_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+```

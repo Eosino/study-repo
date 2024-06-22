@@ -663,7 +663,7 @@ $\begin{cases}
       \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k} \\
       x_1 & y_1 & z_1 \\
       x_2 & y_2 & z_2 \\
-   \end{vmatrix}$，$\gamma$ 与 $\alpha,\beta$ 都垂直，即垂直于 $\alpha,\beta$ 决定的平面，$\overrightarrow{i},\overrightarrow{j},\overrightarrow{k}$ 分别为x轴、y轴、z轴的单位向量
+   \end{vmatrix}$，$\gamma$ 与 $\alpha,\beta$ 都垂直，即垂直于 $\alpha,\beta$ 决定的平面，$\overrightarrow{i},\overrightarrow{j},\overrightarrow{k}$ 为 $x,y,z$ 轴的单位向量
    6. 两个向量的夹角 $\theta$：$\cos\theta=\frac{\alpha\cdot\beta}{||\alpha||||\beta||}$
 2. 平面方程
    1. 一般式：$Ax+By+Cz+D=0$，&emsp; $(A,B,C)$ 是平面的法向量
@@ -794,4 +794,96 @@ $\begin{cases}
          * 法向量 $=(f_x'(x_0,y_0),f_y'(x_0,y_0),-1)=(A,B,-1)$
          * 切平面 $A(x-x_0)+B(y-y_0)-(z-z_0)=0$
          * 法线：$\frac{x-x_0}{A}=\frac{y-y_0}{B}=\frac{z-z_0}{-1}$
- 
+
+## 8.4. 方向导数与梯度
+1. 方向导数的定义：$z=f(x,y)$ 在点 $(x,y)$ 沿某一方向 $\overrightarrow{l}$ 的方向导数为：
+   * $\frac{\partial f}{\partial l}=\lim\limits_{(\Delta x,\Delta y)\to(0,0)}\frac{f(x+\Delta x,y+\Delta y)-f(x,y)}{\sqrt{\Delta x^2+\Delta y^2}}$
+   * $\frac{\partial f}{\partial l}=\lim\limits_{t\to 0^+}\frac{f(x+t\cos\alpha,y+t\cos\beta)-f(x,y)}{t}$，$(\cos\alpha,\cos\beta)$ 为 $\overrightarrow{l}$ 的单位向量
+2. 方向导数的常用求法：
+   * 前提：若函数 $f(x,y,z) $ 在点 $(x_0,y_0,z_0)$ 可微，则函数在该点沿任一方向 $\overrightarrow{l}$ 的方向导数都存在
+   1. 求偏导：$f_x'(x_0,y_0,z_0)=a$，$f_y'(x_0,y_0,z_0)=b$，$f_z'(x_0,y_0,z_0)=c$
+   2. 将 $\overrightarrow{l}$ 单位化：$(A,B,C)$
+   3. $\frac{\partial f}{\partial l}|_(x_0,y_0,z_0)=aA+bB+cC$
+3. 梯度的定义：梯度是一个向量；某点的梯度是指该点的方向导数取得最大值的方向；导数值=梯度的模
+4. 函数 $f(x,y,z)$ 在点 $(x_0,y_0,z_0)$ 的梯度的求法：
+   1. 求偏导：$f_x'(x_0,y_0,z_0)=a$，$f_y'(x_0,y_0,z_0)=b$，$f_z'(x_0,y_0,z_0)=c$
+   2. $\overrightarrow{grad}f(x_0,y_0)=a\overrightarrow{i}+b\overrightarrow{j}+c\overrightarrow{k}$，$\overrightarrow{i},\overrightarrow{j},\overrightarrow{k}$ 是 $x,y,z$ 轴的单位向量
+
+## 8.5. 三重积分
+1. 直角坐标
+   * 积分空间 $\Omega$ 给出 $z_1(x,y)\le z\le z_2(x,y)$，先一后二投影法：$\iiint_\Omega f(x,y,z)dxdydz=\iint_D dxdy\int_{z_1(x,y)}^{z_2(x,y)}f(x,y,z)dz$
+   * 积分空间 $\Omega$ 给出 $a\le z\le b$，先二后一切片法：$\iiint_\Omega f(x,y,z)dxdydz=\int_a^bdz\iint_D f(x,y,z)dxdy$
+2. 柱面坐标：直角坐标与柱面坐标的转换 $\begin{cases}
+   x=r\cos\theta \\
+   y=r\sin\theta \\
+   z=z \\
+   dxdydz=rdrd\theta dz \\
+\end{cases}$
+3. 球面坐标：直角坐标与球面坐标的转换 $\begin{cases}
+   x=r\sin\varphi\cos\theta \\
+   y=r\sin\varphi\sin\theta \\
+   z=r\cos\varphi \\
+   dxdydz=r^2\sin\varphi drd\varphi d\theta \\
+\end{cases}$
+   * $\Omega：x^2+y^2+z^2\le r^2$，$\iiint_\Omega(x^2+y^2+z^2)dxdydz=\frac{4}{5}\pi r^5$
+4. 三重积分有奇偶对称性、轮换对称性
+5. ：
+   * 当 $\iiint_VdV=V$
+   * 当 $\rho(x,y,z)$ 表示空间几何体的体密度时：$m=\iiint_V\rho(x,y,z)dV$
+   * 空间几何体的质心坐标：
+      1. $\bar x=\frac{\iiint_Vx\rho(x,y,z)dV}{\iiint_V\rho(x,y,z)dV}$
+      2. $\bar y=\frac{\iiint_Vy\rho(x,y,z)dV}{\iiint_V\rho(x,y,z)dV}$
+      3. $\bar z=\frac{\iiint_Vz\rho(x,y,z)dV}{\iiint_V\rho(x,y,z)dV}$
+
+## 8.6. 第一类曲线积分
+>一代二换三计算  
+1. 一代：将积分曲线代入被积函数，从而简化计算；（但要注意二重积分、三重积分不可以把积分区域边界方程代入被积函数）
+2. 二换：
+   * $L: y=y(x),a\le x\le b$，$\int_L f(x,y)ds=\int_a^bf(x,y(x))\sqrt{1+y'^2(x)}dx$
+   * $L: x=x(y),c\le y\le d$，$\int_L f(x,y)ds=\int_c^df(x(y),y)\sqrt{1+x'^2(y)}dy$
+   * $L: r=r(\theta),\alpha\le r\le \beta$，$\int_L f(x,y)ds=\int_\alpha^\beta f(r\cos\theta,r\sin\theta)\sqrt{r^2(\theta)+r'^2(\theta)}d\theta$
+   * $L: \begin{cases} x=x(t) \\ y=y(t) \end{cases},\alpha\le t\le \beta$，$\int_L f(x,y)ds=\int_\alpha^\beta f(x(t),y(t))\sqrt{x'^2(t)+y'^2(t)}dt$
+   * 上述公式可推广到空间曲线积分：$L: \begin{cases} x=x(t) \\ y=y(t) \\ z=z(t) \end{cases},\alpha\le t\le \beta$，$\int_L f(x,y,z)ds=\int_\alpha^\beta f(x(t),y(t),z(t))\sqrt{x'^2(t)+y'^2(t)+z'^2(t)}dt$
+3. 第一类曲线积分有奇偶对称性、轮换对称性
+
+## 8.7. 第二类曲线积分
+1. 化为定积分（同样的一代二换三计算，但上下限不再按大小分，而是起点与终点）
+   * $L: y=y(x),x起点a，终点b$，$\int_L Pdx+Qdy=\int_a^b[P(x,y(x))+Q(x,y(x))y'(x)]dx$
+   * $L: x=x(y),y起点c，终点d$，$\int_L Pdx+Qdy=\int_c^d[P(x(y),y)x'(y)+Q(x(y),y)]dy$
+   * $L: \begin{cases} x=x(t) \\ y=y(t) \end{cases},\alpha\le t\le \beta$，$\int_L Pdx+Qdy=\int_\alpha^\beta[P(x(t),y(t))x'(t)+Q(x(t),y(t))y'(t)]dt$
+   * 注：
+      1. 同样的一代二换三计算
+      2. 上下限不再按大小分，而是起点与终点
+      3. 二类曲线积分一般不用对称性化简，因为不再满足“偶倍奇零”
+2. 格林公式
+   * $\oint_LPdx+Qdy=\iint_D(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})dxdy$，区域 $D$ 是由分段光滑曲线 $L$ 围成的闭区间。
+   * 公式成立的三个条件：
+      1. 曲线 $L$ 封闭
+      2. 正向，即逆时针（逆向时结果加负号即可）
+      3. $P,Q,\frac{\partial Q}{\partial x},\frac{\partial P}{\partial y}$ 在 $D$ 内连续
+   * 若 $L$ 不封闭，则添加一条辅助线 $l$ 使之封闭，则：$\oint_LPdx+Qdy=\oint_{L+l}Pdx+Qdy-\oint_lPdx+Qdy=\iint_D(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})dxdy-\oint_lPdx+Qdy$
+   * 若不满足在区域 $D$ 上连续，通常是分母为零的点不连续：
+      1. 先把曲线 $L$ 的方程代入曲线积分，看能否“去分母”。
+      2. 挖点法，本质是拐弯绕过不连续的点；具体做法是在 $D$ 内作一条包含不连续点的、逆向的封闭曲线 $l$，$L,l$ 围成的区域为 $d$，那么：
+         * $\oint_LPdx+Qdy=\oint_{L+l}Pdx+Qdy-\oint_lPdx+Qdy=\iint_d(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})-\oint_lPdx+Qdy$
+         * 若 $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$，则：$\oint_LPdx+Qdy=\oint_{l^-}Pdx+Qdy$，$l^-$ 表示 $l$ 的逆向：$\oint_l=-\oint_{l^-}$
+         * 结论：任何一条包含不连续点的分段光滑封闭区线的积分均相等。
+
+## 8.8. 平面曲线积分与路径无关
+* 设 $P,Q,\frac{\partial Q}{\partial x},\frac{\partial P}{\partial y}$ 在平面单连通区域 $D$ 上连续，则路径无关的六个等价条件：
+   1. $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$ 在 $D$ 内处处成立
+   2. $D$ 内任意一条封闭曲线 $L$ 有 $\oint_LPdx+Qdy=0$
+   3. $\oint_LPdx+Qdy=0$ 在 $D$ 内与路径无关，而只与 $L$ 的起点 $A$ 与终点 $B$ 有关，则该曲线积分可写为 $\int_A^BPdx+Qdy=U(x,y)|_A^B$，该等式也称为曲线积分的牛顿-莱布尼茨公式
+   4. 在 $D$ 内存在某一可微的单值数量函数 $U=U(x,y)$，使 $Pdx+Qdy$ 是它的全微分，即有：$dU=Pdx+Qdy$
+   5. 矢量函数 $\overrightarrow{A}=P\overrightarrow{i}+Q\overrightarrow{j}$ 为某一个单值数量函数 $U=U(x,y)$ 的梯度，即：$\overrightarrow{grad}U=A$
+   6. $Pdx+Qdy=0$ 是全微分方程
+* 求全微分的原函数
+   1. 因曲线积分与路径无关，故选取平行于坐标轴的折线得原函数：
+      * $U(x,y)=\int_{x_0}^xP(x,y_0)dx+\int_{y_0}^yQ(x,y)dy$
+      * $U(x,y)=\int_{y_0}^yQ(x_0,y)dy+\int_{x_0}^xP(x,y)dx$
+   2. ：
+      * 先对 $\frac{\partial U}{\partial x}=P(x,y)$ 关于 $x$ 积分得：$U(x,y)=\int P(x,y)dx+\varphi(y)$
+      * 再对上式两边关于 $y$ 求导：$\frac{\partial U}{\partial x}=Q(x,y)=\frac{\partial}{\partial y}\int P(x,y)dx+\varphi'(y)$
+      * 求解这个 $\varphi$ 关于 $y$ 的一阶常微分方程得：$\varphi(y)=f(y)+C$
+      * 故：$U(x,y)=\int P(x,y)dx+f(y)+C$
+   3. 利用凑微分的方法
