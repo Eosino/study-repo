@@ -867,7 +867,9 @@ $\begin{cases}
       2. 挖点法，本质是拐弯绕过不连续的点；具体做法是在 $D$ 内作一条包含不连续点的、逆向的封闭曲线 $l$，$L,l$ 围成的区域为 $d$，那么：
          * $\oint_LPdx+Qdy=\oint_{L+l}Pdx+Qdy-\oint_lPdx+Qdy=\iint_d(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})-\oint_lPdx+Qdy$
          * 若 $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$，则：$\oint_LPdx+Qdy=\oint_{l^-}Pdx+Qdy$，$l^-$ 表示 $l$ 的逆向：$\oint_l=-\oint_{l^-}$
-         * 结论：任何一条包含不连续点的分段光滑封闭区线的积分均相等。
+         * 结论：任何一条包含不连续点的分段光滑封闭区线的积分均相等。利用这个结论解题：$\oint_L\frac{xdy-ydx}{c_1x^2+c_2y^2}$，$c_1>0,c_2>0,\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$：
+            1. 当 $L$ 所围闭区间不包含分母为零的点 $(0,0)$，则 $\oint_L\frac{xdy-ydx}{c_1x^2+c_2y^2}=0$
+            2. 当 $L$ 所围闭区间包含分母为零的点 $(0,0)$，则作曲线 $l: c_1x^2+c_2y^2=1$，代入曲线积分得 $\oint_l xdy-ydx=2\oint_l dxdy=\frac{2\pi}{\sqrt{c_1c_2}}$
 
 ## 8.8. 平面曲线积分与路径无关
 * 设 $P,Q,\frac{\partial Q}{\partial x},\frac{\partial P}{\partial y}$ 在平面单连通区域 $D$ 上连续，则路径无关的六个等价条件：
@@ -887,3 +889,6 @@ $\begin{cases}
       * 求解这个 $\varphi$ 关于 $y$ 的一阶常微分方程得：$\varphi(y)=f(y)+C$
       * 故：$U(x,y)=\int P(x,y)dx+f(y)+C$
    3. 利用凑微分的方法
+* 结论：曲线积分 $\oint_L\frac{(a_1x+a_2y)dx+(b_1x+b_2y)dy}{c_1x^2+c_2y^2}$，$c_1>0,c_2>0$，当 $a_2=-b_1,a_1c_2=c_1b_2$ 时，路径无关：
+  1. 当 $L$ 所围区域不包含原点，曲线积分 $=0$
+  2. 当 $L$ 所围区域包含原点，曲线积分 $=\frac{2b_1\pi}{\sqrt{c_1c_2}}$
