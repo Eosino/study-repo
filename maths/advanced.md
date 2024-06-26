@@ -26,18 +26,18 @@
    3. 当 $x\to\infty$ 时，若$g(x)$是$n$次多项式，则$f(x)$也是$n$次多项式  
 3. 若 $\lim\limits_{x\to\forall}[f(x)-g(x)]$ 存在，则 $\lim\limits_{x\to\forall}f(x)=\infty\iff\lim\limits_{x\to\forall}g(x)=\infty$，二者为同阶无穷大；即：$f(x), g(x)$ 阶数相同，系数相反
 ## 1.3. 泰勒公式求极限
-|  |  |  |
-|---|---|---|
-| $\sin x$ | $x-\frac{1}{3!}x^3+\frac{1}{5!}x^5$ | $\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ |
-| $\arcsin x$ | $x+\frac{1}{3!}x^3+\frac{1}{5!}x^5$ | $\displaystyle\sum_{n=0}^\infty\frac{1}{(2n+1)!}x^{2n+1}$ |
-| $\tan x$ | $x+\frac{1}{3}x^3+\frac{1}{5}x^5$ | $\displaystyle\sum_{n=0}^\infty\frac{1}{2n+1}x^{2n+1}$ |
-| $\arctan x$ | $x-\frac{1}{3}x^3+\frac{1}{5}x^5$ |  $\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{2n+1}x^{2n+1}$|
-| $\ln(1+x)$ | $x-\frac{1}{2}x^2+\frac{1}{3}x^3$ | $\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{n+1}x^{n+1}$ |
-| $e^x$ | $1+x+\frac{1}{2}x^2+\frac{1}{3!}x^3$ | $\displaystyle\sum_{n=0}^\infty\frac{1}{n!}x^n$ |
-| $(1+x)^a$ | $1+ax+\frac{a(a-1)}{2}x^2$ | $\displaystyle\sum_{n=0}^\infty\frac{a(a-1)...(a-n+1)}{n!}x^n$ |
-| $\cos x$ | $1-\frac{1}{2}x^2+\frac{1}{4!}x^4$ | $\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{(2n)!}x^{2n}$ |
-| $\frac{1}{1-x}$ | $1+x+x^2+...+x^n$ | $\displaystyle\sum_{n=0}^\infty x^n$ |
-| $\frac{1}{1+x}$ | $1-x+x^2-x^3+...+(-1)^nx^n$ | $\displaystyle\sum_{n=0}^\infty (-1)^nx^n$ |
+| 函数 | 泰勒公式 | 幂级数 | 收敛域 |
+|---|---|---|---|
+| $\sin x$ | $x-\frac{1}{3!}x^3+\frac{1}{5!}x^5$ | $\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ | $(-\infty,+\infty)$ |
+| $\arcsin x$ | $x+\frac{1}{3!}x^3+\frac{1}{5!}x^5$ | $\displaystyle\sum_{n=0}^\infty\frac{1}{(2n+1)!}x^{2n+1}$，通项非幂级数？ | $(-1,1)$，端点的敛散性？ |
+| $\tan x$ | $x+\frac{1}{3}x^3+\frac{1}{5}x^5$ | $\displaystyle\sum_{n=0}^\infty\frac{1}{2n+1}x^{2n+1}$ | $(-1,1)$ |
+| $\arctan x$ | $x-\frac{1}{3}x^3+\frac{1}{5}x^5$ |  $\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{2n+1}x^{2n+1}$| $[-1,1]$ |
+| $\ln(1+x)$ | $x-\frac{1}{2}x^2+\frac{1}{3}x^3$ | $\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{n+1}x^{n+1}$ | $(-1,1]$ |
+| $e^x$ | $1+x+\frac{1}{2}x^2+\frac{1}{3!}x^3$ | $\displaystyle\sum_{n=0}^\infty\frac{1}{n!}x^n$ | $(-\infty,+\infty)$ |
+| $(1+x)^a$ | $1+ax+\frac{a(a-1)}{2}x^2$ | $\displaystyle\sum_{n=0}^\infty\frac{a(a-1)...(a-n+1)}{n!}x^n$ | $(-1,1)$，端点的敛散性？ |
+| $\cos x$ | $1-\frac{1}{2}x^2+\frac{1}{4!}x^4$ | $\displaystyle\sum_{n=0}^\infty\frac{(-1)^n}{(2n)!}x^{2n}$ | $(-\infty,+\infty)$ |
+| $\frac{1}{1-x}$ | $1+x+x^2+...+x^n$ | $\displaystyle\sum_{n=0}^\infty x^n$ | $(-1,1)$ |
+| $\frac{1}{1+x}$ | $1-x+x^2-x^3+...+(-1)^nx^n$ | $\displaystyle\sum_{n=0}^\infty (-1)^nx^n$ | $(-1,1)$ |
 
 令：$y=\ln(x+\sqrt{1+x^2})$，则：$y'=(1+x^2)^{-\frac{1}{2}}\sim 1-\frac{1}{2}x^2$，所以：$y\sim x-\frac{1}{6}x^3$
 ## 1.4. 等价无穷小替换求极限
@@ -589,9 +589,9 @@ $\begin{cases}
 3. 缺项幂级数（如：$\displaystyle\sum_{n=1}^\infty a_nx^{2n}$）的收敛半径：$r=\lim\limits_{n\to\infty}|\frac{a_{n+1}x2(n+1)}{a_nx^{2n}}|<1$，解出 $x$ 的范围来确定收敛半径和收敛域。
 4. $x$ 的范围是收敛区间，收敛域=区间+端点，端点的敛散性需要带入原级数后按常数项级数来判断。
 5. $\displaystyle\sum_{n=1}^\infty a_n(x-x_0)^n$ ：
-   * 若在 $x_1$ 收敛，则收敛半径 $r\ge |x-x_0|$
-   * 若在 $x_1$ 发散，则收敛半径 $r\le |x-x_0|$
-   * 若在 $x_1$ 条件收敛，则收敛半径 $r=|x-x_0|$
+   * 若在 $x_1$ 收敛，则收敛半径 $r\ge |x_1-x_0|$
+   * 若在 $x_1$ 发散，则收敛半径 $r\le |x_1-x_0|$
+   * 若在 $x_1$ 条件收敛，则收敛半径 $r=|x_1-x_0|$
 6. ：
    * 对级数提出或乘以因式 $(x-x_0)^k$，或者平移等，收敛半径不变
    * 对级数逐项求导，收敛半径不变，收敛域可能缩小（区间大小不变，端点可能改变）
@@ -646,8 +646,8 @@ $\begin{cases}
 4. ：
    * 正弦级数：设 $f(x)$ 是以 $T=2t$ 为周期的奇函数（若是 $[0,t]$ 上的函数则奇延拓），则 $a_n=0$ 即：$f(x)\sim\frac{a_0}{2}+\displaystyle\sum_{n=1}^\infty b_n\sin\frac{n\pi x}{t}$
    * 余弦级数：设 $f(x)$ 是以 $T=2t$ 为周期的偶函数（若是 $[0,t]$ 上的函数则偶延拓），则 $b_n=0$ 即：$f(x)\sim\frac{a_0}{2}+\displaystyle\sum_{n=1}^\infty a_n\cos\frac{n\pi x}{t}$
-5. 狄利克雷收敛定理：若 $f(x)$ 满足：①连续，或只有有限个第一类间断点；②只有有限个极值点；则其傅里叶级数就是其和函数 $s(x)$，求 $x=x_0$ 收敛的结果时：
-   * s(x_0)=$\begin{cases}
+5. 狄利克雷收敛定理：若 $f(x)$ 满足：①连续，或只有有限个第一类间断点；②只有有限个极值点；则其傅里叶级数就是其和函数 $S(x)$，求 $x=x_0$ 收敛的结果时：
+   * $S(x_0)=\begin{cases}
       f(x_0), \space\space\space\space f(x)在x_0连续 \\
       \frac{1}{2}[f_-(x_0)+f_+(x_0)], \space\space\space\space x_0是第一类间断点 \\
       \frac{1}{2}[f(-t)+f(t)], \space\space\space\space x_0是区间端点 \\
