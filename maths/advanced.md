@@ -649,8 +649,8 @@ $\begin{cases}
 5. 狄利克雷收敛定理：若 $f(x)$ 满足：①连续，或只有有限个第一类间断点；②只有有限个极值点；则其傅里叶级数就是其和函数 $S(x)$，求 $x=x_0$ 收敛的结果时：
    * $S(x_0)=\begin{cases}
       f(x_0), \space\space\space\space f(x)在x_0连续 \\
-      \frac{1}{2}[f_-(x_0)+f_+(x_0)], \space\space\space\space x_0是第一类间断点 \\
-      \frac{1}{2}[f(-t)+f(t)], \space\space\space\space x_0是区间端点 \\
+      \frac{1}{2}[f_-(x_0)+f_+(x_0)], \space\space\space\space x_0是第一类间断点，左极限+右极限 \\
+      \frac{1}{2}[f_+(-t)+f_-(t)], \space\space\space\space x_0是区间端点，左端点的右极限+右端点的左极限 \\
    \end{cases}$
 
 ## 8.2. 空间解析几何
