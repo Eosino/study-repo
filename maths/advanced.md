@@ -658,12 +658,12 @@ $\begin{cases}
    1. 点 $A(x_1,y_1,z_1)$ 和 $B(x_2,y_2,z_2)$，向量 $\overrightarrow{AB}=(x_2-x_1,\space y_2-y_1,\space z_2-z_1)$
    2. 向量的模，即向量的长度：$||\overrightarrow{AB}||=\sqrt{x^2+y^2+z^2}$
    3. 单位向量：模长为1的向量
-   4. 两个向量 $\alpha,\beta$ 相乘（点乘）：$\alpha\cdot\beta=x_1x_2+y_1y_2+z_1z_2$
+   4. 两个向量 $\alpha,\beta$ 相乘（点乘）：$\alpha\cdot\beta=x_1x_2+y_1y_2+z_1z_2$，点乘结果为一个数，为零则表示两个向量垂直
    5. 两个向量 $\alpha,\beta$ 叉乘，也叫叉积、适量积，结果为一个向量：$\gamma=\alpha\times\beta=\begin{vmatrix}
       \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k} \\
       x_1 & y_1 & z_1 \\
       x_2 & y_2 & z_2 \\
-   \end{vmatrix}$，$\gamma$ 与 $\alpha,\beta$ 都垂直，即垂直于 $\alpha,\beta$ 决定的平面，$\overrightarrow{i},\overrightarrow{j},\overrightarrow{k}$ 为 $x,y,z$ 轴的单位向量
+   \end{vmatrix}$，$\gamma$ 与 $\alpha,\beta$ 都垂直，即垂直于 $\alpha,\beta$ 决定的平面；$\gamma$ 的模为 $\alpha,\beta$ 组成的平行四边形的有向面积；$\overrightarrow{i},\overrightarrow{j},\overrightarrow{k}$ 为 $x,y,z$ 轴的单位向量
    6. 两个向量的夹角 $\theta$：$\cos\theta=\frac{\alpha\cdot\beta}{||\alpha||||\beta||}$
 2. 平面方程
    1. 一般式：$Ax+By+Cz+D=0$，&emsp; $(A,B,C)$ 是平面的法向量
