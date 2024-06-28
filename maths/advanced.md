@@ -908,14 +908,14 @@ $\begin{cases}
       * 二换：确定曲面 $\Sigma$ 在 $x0y$ 面上的投影区域 $D_{xy}$
       * 三定号：曲面 $\Sigma$ 取上侧为正，取下侧为负
          * 若 $\Sigma$ 与 $x0y$ 垂直，则 $\iiint_\Sigma Rdxdy=0$
-   2. 高斯公式：$\oint\oint_\Sigma Pdydz+Qdxdz+Rdxdy=\iiint_\Omega(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z})dV$
+   2. 高斯公式：$∯_\Sigma Pdydz+Qdxdz+Rdxdy=\iiint_\Omega(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z})dV$
       * 公式成立的三个条件：
          1. $\Sigma$ 为封闭曲面
          2. $\Sigma$ 是 $\Omega$ 的外侧
          3. $P,Q,R,\frac{\partial P}{\partial x},\frac{\partial Q}{\partial y},\frac{\partial R}{\partial z}$ 在 $\Omega$ 上连续
-      * 若 $\Sigma$ 不封闭，可添辅助曲面 $\Sigma_1$，则 $\iint_\Sigma=\oiiint_{\Sigma+\Sigma_1}-\iint_{\Sigma_1}$
+      * 若 $\Sigma$ 不封闭，可添辅助曲面 $\Sigma_1$，则 $\iint_\Sigma=∯_{\Sigma+\Sigma_1}-\iint_{\Sigma_1}$
       * 若 $\Sigma$ 取外侧，则三重积分前加负号
-      * 若 $P,Q,R,\frac{\partial P}{\partial x},\frac{\partial Q}{\partial y},\frac{\partial R}{\partial z}$ 在 $\Omega$ 上不连续，先看将曲面方程代入被积函数能否取消不连续点，若去不掉，则 $\Sigma$ 内作包含不连续点的封闭曲面 $\Sigma_1$，取内侧，那么 $\Sigma,\Sigma_1$ 形成的封闭曲面可用高斯公式，于是 $\oiint_\Sigma=\oiint_{\Sigma+\Sigma_1}-\oiint_{\Sigma_1}$
+      * 若 $P,Q,R,\frac{\partial P}{\partial x},\frac{\partial Q}{\partial y},\frac{\partial R}{\partial z}$ 在 $\Omega$ 上不连续，先看将曲面方程代入被积函数能否取消不连续点，若去不掉，则 $\Sigma$ 内作包含不连续点的封闭曲面 $\Sigma_1$，取内侧，那么 $\Sigma,\Sigma_1$ 形成的封闭曲面可用高斯公式，于是 $∯_\Sigma=∯_{\Sigma+\Sigma_1}-∯_{\Sigma_1}$
          * 技巧结论：任何一张包含不连续点在内的分段光滑闭曲面的积分均相等。
    3. 合一投影法（向量点积法）
       * $\Sigma: z=f(x,y)$，则：法向量 $(-f_x',-f_y',1)$，$\iint_\Sigma Pdydz+Qdxdz+Rdxdy=\iint_\Sigma(P,Q,R)\cdot(-f_x',-f_y',1)dxdy=\iint_{D_{xy}}(-Pf_x'-Qf_y'+R)dxdy$
