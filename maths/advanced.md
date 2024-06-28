@@ -918,9 +918,9 @@ $\begin{cases}
       * 若 $P,Q,R,\frac{\partial P}{\partial x},\frac{\partial Q}{\partial y},\frac{\partial R}{\partial z}$ 在 $\Omega$ 上不连续，先看将曲面方程代入被积函数能否取消不连续点，若去不掉，则 $\Sigma$ 内作包含不连续点的封闭曲面 $\Sigma_1$，取内侧，那么 $\Sigma,\Sigma_1$ 形成的封闭曲面可用高斯公式，于是 $\oiint_\Sigma=\oiint_{\Sigma+\Sigma_1}-\oiint_{\Sigma_1}$
          * 技巧结论：任何一张包含不连续点在内的分段光滑闭曲面的积分均相等。
    3. 合一投影法（向量点积法）
-      * $\Sigma: z=f(x,y)$，则：法向量 $(-f_x',-f_y',1)$，$\iint_\Sigma Pdydz+Qdxdz+Rdxdy=\iint_\Sigma(P,Q,R)\cdot(-f_x',-f_y',1)dxdy=\iint_\Sigma(-Pf_x'-Qf_y'+R)dxdy$
-      * $\Sigma: y=f(x,z)$，则：法向量 $(-f_x',1,-f_z')$，$\iint_\Sigma Pdydz+Qdxdz+Rdxdy=\iint_\Sigma(P,Q,R)\cdot(-f_x',1,-f_z')dxdz=\iint_\Sigma(-Pf_x'+Q-Rf_z')dxdz$
-      * $\Sigma: x=f(y,z)$，则：法向量 $(1,-f_y',-f_z')$，$\iint_\Sigma Pdydz+Qdxdz+Rdxdy=\iint_\Sigma(P,Q,R)\cdot(1,-f_y',-f_z')dxdz=\iint_\Sigma(P-Qf_y'-Rf_z')dydz$
+      * $\Sigma: z=f(x,y)$，则：法向量 $(-f_x',-f_y',1)$，$\iint_\Sigma Pdydz+Qdxdz+Rdxdy=\iint_\Sigma(P,Q,R)\cdot(-f_x',-f_y',1)dxdy=\iint_{D_{xy}}(-Pf_x'-Qf_y'+R)dxdy$
+      * $\Sigma: y=f(x,z)$，则：法向量 $(-f_x',1,-f_z')$，$\iint_\Sigma Pdydz+Qdxdz+Rdxdy=\iint_\Sigma(P,Q,R)\cdot(-f_x',1,-f_z')dxdz=\iint_{D_{xz}}(-Pf_x'+Q-Rf_z')dxdz$
+      * $\Sigma: x=f(y,z)$，则：法向量 $(1,-f_y',-f_z')$，$\iint_\Sigma Pdydz+Qdxdz+Rdxdy=\iint_\Sigma(P,Q,R)\cdot(1,-f_y',-f_z')dxdz=\iint_{D_{yz}}(P-Qf_y'-Rf_z')dydz$
    4. 转化为第一类曲面积分：$\iint_\Sigma Pdydz+Qdxdz+Rdxdy=\iint_\Sigma(P\cos\alpha+Q\cos\beta+R\cos\gamma)ds$
       * 其中 $\cos\alpha,\cos\beta,\cos\gamma$ 是法向量的方向余弦，对法向量单位化即为 $(\cos\alpha,\cos\beta,\cos\gamma)$
    5. 对称性化简：与其他时候相反，此处为“奇倍偶零”。
