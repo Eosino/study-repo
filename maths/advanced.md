@@ -892,3 +892,44 @@ $\begin{cases}
 * 结论：曲线积分 $\oint_L\frac{(a_1x+a_2y)dx+(b_1x+b_2y)dy}{c_1x^2+c_2y^2}$，$c_1>0,c_2>0$，当 $a_2=-b_1,a_1c_2=c_1b_2$ 时，路径无关：
   1. 当 $L$ 所围区域不包含原点，曲线积分 $=0$
   2. 当 $L$ 所围区域包含原点，曲线积分 $=\frac{2b_1\pi}{\sqrt{c_1c_2}}$
+
+## 8.9. 第一类曲面积分
+1. 投影：根据积分曲面 $\Sigma$ 的表示形式，将其投影到某个坐标平面，通常是 $x0y$，表示出投影区域，比如 $D_{xy}$
+2. 代替：若是投影到 $x0y$，则：$\iint_\Sigma f(x,y,z)ds=\iiint_{D_{xy}}f(x,y,z(x,y))\sqrt{1+z_x'^2+z_y'^2}dxdy$
+
+>注：二重积分、三重积分、第一类曲线积分、第一类曲面积分都是数量函数的积分，有类似的质心坐标公式、对称性。
+
+## 8.10. 第二类曲面积分
+* 曲面的侧：其实就是指法向量的方向，包括：上侧、下侧、左侧、右侧、前侧、后侧、内侧、外侧。
+* 当 $\{P,Q,R\}$ 为流速场的流速时，那么流量就等于：$\iint_\Sigma Pdydz+Qdxdz+Rdxdy$
+* 计算第二类曲面积分的5个方法：
+   1. 一代二换三定号
+      * 一代：曲面 $\Sigma$ 的方程 $z=f(x,y)$ 代入被积函数。
+      * 二换：确定曲面 $\Sigma$ 在 $x0y$ 面上的投影区域 $D_{xy}$
+      * 三定号：曲面 $\Sigma$ 取上侧为正，取下侧为负
+         * 若 $\Sigma$ 与 $x0y$ 垂直，则 $\iiint_\Sigma Rdxdy=0$
+   2. 高斯公式：$\oiint_\Sigma Pdydz+Qdxdz+Rdxdy=\iiint_\Omega(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z})dV$
+      * 公式成立的三个条件：
+         1. $\Sigma$ 为封闭曲面
+         2. $\Sigma$ 是 $\Omega$ 的外侧
+         3. $P,Q,R,\frac{\partial P}{\partial x},\frac{\partial Q}{\partial y},\frac{\partial R}{\partial z}$ 在 $\Omega$ 上连续
+      * 若 $\Sigma$ 不封闭，可添辅助曲面 $\Sigma_1$，则 $\iint_\Sigma=\oiint_{\Sigma+\Sigma_1}-\iint_{\Sigma_1}$
+      * 若 $\Sigma$ 取外侧，则三重积分前加负号
+      * 若 $P,Q,R,\frac{\partial P}{\partial x},\frac{\partial Q}{\partial y},\frac{\partial R}{\partial z}$ 在 $\Omega$ 上不连续，先看将曲面方程代入被积函数能否取消不连续点，若去不掉，则 $\Sigma$ 内作包含不连续点的封闭曲面 $\Sigma_1$，取内侧，那么 $\Sigma,\Sigma_1$ 形成的封闭曲面可用高斯公式，于是 $\oiint_\Sigma=\oiint_{\Sigma+\Sigma_1}-\oiint_{\Sigma_1}$
+         * 技巧结论：任何一张包含不连续点在内的分段光滑闭曲面的积分均相等。
+   3. 合一投影法（向量点积法）
+      * $\Sigma: z=f(x,y)$，则：法向量 $(-f_x',-f_y',1)$，$\iint_\Sigma Pdydz+Qdxdz+Rdxdy=\iint_\Sigma(P,Q,R)\cdot(-f_x',-f_y',1)dxdy=\iint_\Sigma(-Pf_x'-Qf_y'+R)dxdy$
+      * $\Sigma: y=f(x,z)$，则：法向量 $(-f_x',1,-f_z')$，$\iint_\Sigma Pdydz+Qdxdz+Rdxdy=\iint_\Sigma(P,Q,R)\cdot(-f_x',1,-f_z')dxdz=\iint_\Sigma(-Pf_x'+Q-Rf_z')dxdz$
+      * $\Sigma: x=f(y,z)$，则：法向量 $(1,-f_y',-f_z')$，$\iint_\Sigma Pdydz+Qdxdz+Rdxdy=\iint_\Sigma(P,Q,R)\cdot(1,-f_y',-f_z')dxdz=\iint_\Sigma(P-Qf_y'-Rf_z')dydz$
+   4. 转化为第一类曲面积分：$\iint_\Sigma Pdydz+Qdxdz+Rdxdy=\iint_\Sigma(P\cos\alpha+Q\cos\beta+R\cos\gamma)ds$
+      * 其中 $\cos\alpha,\cos\beta,\cos\gamma$ 是法向量的方向余弦，对法向量单位化即为 $(\cos\alpha,\cos\beta,\cos\gamma)$
+   5. 对称性化简：与其他时候相反，此处为“奇倍偶零”。
+
+## 8.11. 空间曲线积分
+
+## 8.12. 多元函数积分学应用
+
+## 8.13. 场论
+
+## 8.14. 求质量、转动惯量及做功
+
