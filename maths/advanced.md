@@ -968,8 +968,8 @@ $\begin{cases}
 
 ## 8.14. 求质量、转动惯量及做功
 1. $\iiint_\Omega f(x,y,z)dxdydz$ 的物理意义：密度为 $f(x,y,z)$ 的空间形体 $\Omega$ 的质量
-2. $\int_{\mathop{AB}\limits^{\frown}}f(x,y,z)ds$ 的物理意义：密度为 $f(x,y,z)$ 的空间曲线段 $\mathop{\frown}\limits_{AB}$ 的质量
-3. $\int_{\overgroup{AB}}Pdx+Qdy+Rdz$ 的物理意义：质点在外力 $\overrightarrow{F}=P\overrightarrow{i}+Q\overrightarrow{j}+R\overrightarrow{k}$ 作用下自点 $A$ 沿曲线 $\overgroup{AB}$ 移动到点 $B$ 时 $\overrightarrow{F}$ 对质点所做的功
+2. $\int_{\mathop{AB}\limits^{\frown}}f(x,y,z)ds$ 的物理意义：密度为 $f(x,y,z)$ 的空间曲线段 $\mathop{AB}\limits^{\frown}$ 的质量
+3. $\int_{\mathop{AB}\limits^{\frown}}Pdx+Qdy+Rdz$ 的物理意义：质点在外力 $\overrightarrow{F}=P\overrightarrow{i}+Q\overrightarrow{j}+R\overrightarrow{k}$ 作用下自点 $A$ 沿曲线 $\mathop{AB}\limits^{\frown}$ 移动到点 $B$ 时 $\overrightarrow{F}$ 对质点所做的功
 4. $\iint_\Sigma f(x,y,z)ds$ 的物理意义：密度为 $f(x,y,z)$ 的空间曲面薄片 $s$ 的质量
 5. 转动惯量
    * 平面薄片所占的平面区域为 $D$，密度函数为 $f(x,y)$，则对 $x,y$ 轴及原点的转动惯量分别为： 
