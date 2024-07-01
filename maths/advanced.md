@@ -968,7 +968,7 @@ $\begin{cases}
 
 ## 8.14. 求质量、转动惯量及做功
 1. $\iiint_\Omega f(x,y,z)dxdydz$ 的物理意义：密度为 $f(x,y,z)$ 的空间形体 $\Omega$ 的质量
-2. $\int_{\overgroup{AB}}f(x,y,z)ds$ 的物理意义：密度为 $f(x,y,z)$ 的空间曲线段 $\overgroup{AB}$ 的质量
+2. $\int_{\mathop{AB}\limits^{\frown}}f(x,y,z)ds$ 的物理意义：密度为 $f(x,y,z)$ 的空间曲线段 $\mathop{\frown}\limits_{AB}$ 的质量
 3. $\int_{\overgroup{AB}}Pdx+Qdy+Rdz$ 的物理意义：质点在外力 $\overrightarrow{F}=P\overrightarrow{i}+Q\overrightarrow{j}+R\overrightarrow{k}$ 作用下自点 $A$ 沿曲线 $\overgroup{AB}$ 移动到点 $B$ 时 $\overrightarrow{F}$ 对质点所做的功
 4. $\iint_\Sigma f(x,y,z)ds$ 的物理意义：密度为 $f(x,y,z)$ 的空间曲面薄片 $s$ 的质量
 5. 转动惯量
