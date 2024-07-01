@@ -804,7 +804,7 @@ $\begin{cases}
    1. 求偏导：$f_x'(x_0,y_0,z_0)=a$，$f_y'(x_0,y_0,z_0)=b$，$f_z'(x_0,y_0,z_0)=c$
    2. 将 $\overrightarrow{l}$ 单位化：$(A,B,C)$
    3. $\frac{\partial f}{\partial l}|_(x_0,y_0,z_0)=aA+bB+cC$
-3. 梯度的定义：梯度是一个向量；某点的梯度是指该点的方向导数取得最大值的方向；导数值=梯度的模
+3. 梯度的定义：梯度是一个向量；某点的梯度是指该点的方向导数取得最大值的方向；梯度的模=该方向导数的值
 4. 函数 $f(x,y,z)$ 在点 $(x_0,y_0,z_0)$ 的梯度的求法：
    1. 求偏导：$f_x'(x_0,y_0,z_0)=a$，$f_y'(x_0,y_0,z_0)=b$，$f_z'(x_0,y_0,z_0)=c$
    2. $\overrightarrow{grad}f(x_0,y_0)=a\overrightarrow{i}+b\overrightarrow{j}+c\overrightarrow{k}$，$\overrightarrow{i},\overrightarrow{j},\overrightarrow{k}$ 是 $x,y,z$ 轴的单位向量
@@ -926,10 +926,58 @@ $\begin{cases}
    5. 对称性化简：与其他时候相反，此处为“奇倍偶零”。
 
 ## 8.11. 空间曲线积分
+1. 斯托克斯公式：$\oint_L Pdx+Qdy+Rdz=\iint_\Sigma\begin{vmatrix}
+   dydz & dxdz & dxdy \\
+   \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+   P & Q & R \\
+\end{vmatrix}=\iint_\Sigma\begin{vmatrix}
+   \cos\alpha & \cos\beta & \cos\gamma \\
+   \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+   P & Q & R \\
+\end{vmatrix}ds$
+   * $L$ 是有向封闭的空间曲线，$\Sigma$ 是以 $L$ 为边界的有向曲面
+   * $L$ 的正向与 $\Sigma$ 的正侧符合右手法则
+   * $\Sigma$ 的选取不是唯一的，应以便于计算为原则
+2. 把空间曲线积分，转化为，在某坐标平面上投影的平面曲线积分；例如，若空间曲线 $L$ 在曲面 $z=z(x,y)$ 上，$L$ 在 $x0y$ 上的投影为平面曲线 $L_1$，则：
+   * $\int_L P(x,y,z)dx+Q(x,y,z)dy+R(x,y,z)dz=\int_{L_1}P(x,y,z(x,y))dx+Q(x,y,z(x,y))dy+R(x,y,z(x,y))(\frac{\partial z}{\partial x}dx+\frac{\partial z}{\partial y}dy)$
 
 ## 8.12. 多元函数积分学应用
+* 求质心坐标：
+   1. 平面区域：$\bar X=\frac{\iint_D xdxdy}{S_D}$，$\bar Y=\frac{\iint_D ydxdy}{S_D}$（$S_D$ 为 $D$ 的面积）
+   2. 平面曲线：$\bar X=\frac{\int_L xds}{L_L}$，$\bar Y=\frac{\int_L yds}{L_L}$（$L_L$ 为 $L$ 的长度）
+   3. 空间区域：$\bar X=\frac{\iiint_\Omega xdV}{V_\Omega}$，$\bar Y=\frac{\iiint_\Omega ydV}{V_\Omega}$，$\bar Z=\frac{\iiint_\Omega zdV}{V_\Omega}$（$V_\Omega$ 为 $\Omega$ 的体积）
+   4. 空间曲面：$\bar X=\frac{\iint_\Sigma xds}{S_\Sigma}$，$\bar Y=\frac{\iint_\Sigma yds}{S_\Sigma}$，$\bar Z=\frac{\iiint_\Sigma zds}{S_\Sigma}$（$S_\Sigma$ 为 $\Sigma$ 的面积）
+* 不仅要会求各种质心坐标，还要能用来化简积分，比如要求 $\iiint_\Omega xdV$，若 $\bar X$ 易得，则 $\iiint_\Omega xdV=\bar X V_\Omega$
 
 ## 8.13. 场论
+1. 哈密顿算子：
+   * 符号：$\nabla$
+   * 公式：$(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z})$
+2. :
+   * 函数 $f(x,y,z)$ 的梯度：$\overrightarrow{grad}f=\nabla f=(f_x',f_y',f_z')$，（梯度= $\nabla$ 数乘 函数，得到的是一个向量）
+   * 向量 $\overrightarrow{F}(P,Q,R)$ 的散度：$div\overrightarrow{F}=\nabla\cdot\overrightarrow{F}=(P_x',Q_y',R_z')$，（散度= $\nabla$ 点乘 向量，得到的是一个数）
+   * 向量 $\overrightarrow{F}(P,Q,R)$ 的散度：$\overrightarrow{rot}\overrightarrow{F}=\nabla\times\overrightarrow{F}=\begin{vmatrix}
+      \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k} \\
+      \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+      P & Q & R \\
+   \end{vmatrix}$，（旋度= $\nabla$ 叉乘 向量，得到的是一个向量）
+   * $div[\overrightarrow{grad}f]=\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}+\frac{\partial^2f}{\partial z^2}$
+   * $div[\overrightarrow{rot}\overrightarrow{F}]=0$
+   * $\overrightarrow{rot}[\overrightarrow{grad}f]=0$
+3. 设流体的流速为 $\overrightarrow{F}(P,Q,R)$，则流体通过曲面 $\Sigma$ 的通量（亦称流量）是：$\iint_\Sigma Pdydz+Qdxdz+Rdxdy$
 
 ## 8.14. 求质量、转动惯量及做功
-
+1. $\iiint_\Omega f(x,y,z)dxdydz$ 的物理意义：密度为 $f(x,y,z)$ 的空间形体 $\Omega$ 的质量
+2. $\int_{\overgroup{AB}}f(x,y,z)ds$ 的物理意义：密度为 $f(x,y,z)$ 的空间曲线段 $\overgroup{AB}$ 的质量
+3. $\int_{\overgroup{AB}}Pdx+Qdy+Rdz$ 的物理意义：质点在外力 $\overrightarrow{F}=P\overrightarrow{i}+Q\overrightarrow{j}+R\overrightarrow{k}$ 作用下自点 $A$ 沿曲线 $\overgroup{AB}$ 移动到点 $B$ 时 $\overrightarrow{F}$ 对质点所做的功
+4. $\iint_\Sigma f(x,y,z)ds$ 的物理意义：密度为 $f(x,y,z)$ 的空间曲面薄片 $s$ 的质量
+5. 转动惯量
+   * 平面薄片所占的平面区域为 $D$，密度函数为 $f(x,y)$，则对 $x,y$ 轴及原点的转动惯量分别为： 
+      1. $I_x=\iint_D y^2f(x,y)dxdy$
+      2. $I_y=\iint_D x^2f(x,y)dxdy$
+      3. $I=\iint_D (x^2+y^2)f(x,y)dxdy$
+   * 以此类推，空间物体对 $x,y$ 轴及原点的转动惯量分别为：
+      1. $I_x=\iint_\Omega (y^2+z^2)f(x,y)dV$
+      2. $I_y=\iint_\Omega (x^2+z^2)f(x,y)dV$
+      3. $I_z=\iint_\Omega (x^2+y^2)f(x,y)dV$
+      4. $I=\iint_\Omega (x^2+y^2+z^2)f(x,y)dV$
