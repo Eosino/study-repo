@@ -94,7 +94,7 @@
         \vdots && \vdots && \vdots && && \vdots \\
         a_1 && a_2 && a_3 && \dots && a_n+b \\
     \end{vmatrix}=b^{n-1}(b+\displaystyle\sum_{i=1}^na_i)$
-    * 爪形行列式（第2列乘$-\frac{c_2}{a_2}$加到第1列使$c_2$变为0，第3列乘$-\frac{c_3}{a_3}$加到第1列使$c_3$变为0，依此类推即可化为三角行列式）：  
+6. 爪形行列式（第2列乘$-\frac{c_2}{a_2}$加到第1列使$c_2$变为0，第3列乘$-\frac{c_3}{a_3}$加到第1列使$c_3$变为0，依此类推即可化为三角行列式）：  
     $D_n=\begin{vmatrix}
         a_1 && b_2 && b_3 && \dots && b_n \\
         c_2 && a_2 && 0 && \dots && 0 \\
@@ -102,11 +102,48 @@
         \vdots && \vdots && \vdots &&  && \vdots \\
         c_n && 0 && 0 && \dots && a_n \\
     \end{vmatrix}=\displaystyle\prod_{i=2}^na_i(a_1-\displaystyle\sum_{j=2}^n\frac{b_jc_j}{a_j})$
-    * 更多：
-        1. $D_n=\begin{vmatrix}
-            a_1 && b_1 && 0 && \dots && 0 \\
-            0 && a_2 && b_2 && \dots && 0 \\
-            0 && 0 && a_3 && \dots && 0 \\
-            \vdots && \vdots && \vdots &&  && \vdots \\
-            b_n && 0 && 0 && \dots && a_n \\
-        \end{vmatrix}=\displaystyle\prod_{i=1}^na_i+(-1)^{n-1}\displaystyle\prod_{j=1}^nb_j$
+7. 用定义法更简单的行列式：$D_n=\begin{vmatrix}
+        a_1 && b_1 && 0 && \dots && 0 \\
+        0 && a_2 && b_2 && \dots && 0 \\
+        0 && 0 && a_3 && \dots && 0 \\
+        \vdots && \vdots && \vdots &&  && \vdots \\
+        b_n && 0 && 0 && \dots && a_n \\
+    \end{vmatrix}=\displaystyle\prod_{i=1}^na_i+(-1)^{n-1}\displaystyle\prod_{j=1}^nb_j$
+8. 用差分方程求三对角行列式：$D_n=\begin{vmatrix}
+        a && b &&   &&        &&   &&   \\
+        c && a && b &&        &&   &&   \\
+          && c && a && \ddots &&   &&   \\
+          &&   && c && \ddots && b &&   \\
+          &&   &&   && \ddots && a && b \\
+          &&   &&   &&        && c && a \\
+    \end{vmatrix}$：
+    * 按第一列展开：$D_n = aD_{n-1}-bcD_{n-2}$，即求二阶差分方程 $D_n-aD_{n-1}+bcD_{n-2}=0$
+    * 已知 $D_1=a$，$D_2=a^2-bc$
+    * 特征方程：$\lambda^2-a\lambda+bc=0$（若 $a,b,c$ 是具体数，直接解即可）
+        * 当 $\Delta>0$，解得 $\lambda_1\ne\lambda_2$，那么 $D_n=c_1\lambda_1^n+c_2\lambda_2^n$：
+            * $\begin{cases}
+                \lambda_1+\lambda_2=a \\
+                \lambda_1\lambda_2=bc \\
+                D_1=a \\
+                D_2=a^2-bc \\
+            \end{cases}\implies\begin{cases}
+                c_1\lambda_1+c_2\lambda_2=\lambda_1+\lambda_2\\
+                c_1\lambda_1^2+c_2\lambda_2^2=\lambda_1^2+\lambda_2^2+\lambda_1\lambda_2\\
+            \end{cases}\implies\begin{cases}
+                c_1=\frac{\lambda_1}{\lambda_1-\lambda_2} \\
+                c_2=\frac{\lambda_2}{\lambda_2-\lambda_1} \\
+            \end{cases}$
+        * 当 $\Delta=0$，解得 $\lambda_1=\lambda_2=\lambda$，那么 $D_n=(c_1+c_2n)\lambda^n$
+            * $\begin{cases}
+                2\lambda=a \\
+                \lambda^2=bc \\
+                D_1=a \\
+                D_2=a^2-bc \\
+            \end{cases}\implies\begin{cases}
+                (c_1+c_2)\lambda=2\lambda \\
+                (c_1+2c_2)\lambda^2=3\lambda^2 \\
+            \end{cases}\implies c_1=c_2=1$
+    * 综上：$D_n=\begin{cases}
+        \frac{\lambda_1^{n+1}-\lambda_2^{n+1}}{\lambda_1-\lambda_2}, \quad a^2-4bc>0 \\
+        (n+1)\lambda^n, \quad a^2-4bc=0 \\
+    \end{cases}$
