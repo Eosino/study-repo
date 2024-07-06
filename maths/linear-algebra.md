@@ -176,7 +176,7 @@
     2. $\iff 1\le r(A)<3$
     3. $A=(\alpha_1,\alpha_2,\alpha_3)$，向量组 $\alpha_1,\alpha_2,\alpha_3$ 线性相关
     4. $\iff Ax=0$ 有非零解
-    5. $\iff AA^2=0$，且 $A^*$ 的每一列为 $Ax=0$ 的解
+    5. $\iff AA^* =0$，且 $A^*$ 的每一列为 $Ax=0$ 的解
     6. $\iff |A|=\lambda_1\lambda_2\lambda_3=0$，则矩阵 $A$ 至少有一个特征值为零
     7. $\iff$ 二次型正交化标准型为 $f=\lambda_1 y_1^2+\lambda_2 y_2^2$ 或 $f=\lambda_1 y_1^2$
 6. 证明 $|A|=0$ 的方法：
