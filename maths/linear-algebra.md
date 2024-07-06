@@ -147,3 +147,44 @@
         \frac{\lambda_1^{n+1}-\lambda_2^{n+1}}{\lambda_1-\lambda_2}, \quad a^2-4bc>0 \\
         (n+1)\lambda^n, \quad a^2-4bc=0 \\
     \end{cases}$
+
+## 1.4. 公式
+1. 行列式的拆分性质：$|\alpha_1,\alpha_2+\alpha_3,\beta|=|\alpha_1,\alpha_2,\beta|+|\alpha_1,\alpha_3,\beta|$
+2. 方阵：
+    * $|kA|=k^n|A|$
+    * $|AB|=|BA|=|A||B|$
+    * $|A^{-1}|=|A|^{-1}$
+    * $|AA^*|=|A^*A|=|A|E$
+    * $A^*=|A|A^{-1}$
+    * $|A^*|=|A|^{n-1}$
+    * 若 $A$ 可逆，则 $A^*,(A^*)^*$ 也可逆：
+        * $(A^*)^*=|A^*|(A^*)^{-1}=|A|^{n-2}A$
+        * $|(A^*)^*|=|A|^{(n-1)^2}$
+    * 若 $\lambda_i$ 是方阵 $A=(a_{ij})$ 的特征值，则：
+        * $|A|=\displaystyle\prod_{i=1}^n\lambda_i$
+        * $\displaystyle\sum_{i=1}^na_{ii}=\displaystyle\sum_{i=1}^n\lambda_i$
+    * 相似 $A\sim B$ 则 $|P^{-1}AP|=|B|\implies|A|=|B|$
+    * 正交 $AA^T=A^TA=E\implies |A|=\pm1$
+3. 行列式与矩阵的秩：
+    * $|A|=0 \iff A不可逆 \iff r(A)<n$
+    * $|A|\ne 0 \iff A可逆 \iff r(A)=n$
+4. :
+    * $aE-A不可逆 \iff |aE-A|=0 \iff a是A的一个特征值$
+    * $aA+bE不可逆(a\ne 0) \iff |-\frac{b}{a}E-A|=0 \iff -\frac{b}{a}是A的一个特征值$
+5. 讨论 $|A|=0$ 的问题，以三阶非零方阵 $A_{3x3}, |A|=0$ 为例：
+    1. $\iff A$ 不可逆
+    2. $\iff 1\le r(A)<3$
+    3. $A=(\alpha_1,\alpha_2,\alpha_3)$，向量组 $\alpha_1,\alpha_2,\alpha_3$ 线性相关
+    4. $\iff Ax=0$ 有非零解
+    5. $\iff AA^*=0$，且 $A^*$ 的每一列为 $Ax=0$ 的解
+    6. $\iff |A|=\lambda_1\lambda_2\lambda_3=0$，则矩阵 $A$ 至少有一个特征值为零
+    7. $\iff$ 二次型正交化标准型为 $f=\lambda_1 y_1^2+\lambda_2 y_2^2$ 或 $f=\lambda_1 y_1^2$
+6. 证明 $|A|=0$ 的方法：
+    1. 转化为齐次线性方程组 $Ax=0$ 有非零解
+    2. 利用 $A^{-1}$ 找矛盾来反证
+    3. $r(A)<n$
+    4. 列向量组线性相关
+    5. $0$ 是 $A$ 的特征值
+    6. $|A|=-|A|$
+
+
