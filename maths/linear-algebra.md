@@ -187,4 +187,36 @@
     5. $0$ 是 $A$ 的特征值
     6. $|A|=-|A|$
 
+## 1.5. 技巧
+1. $A=(\alpha_1,\alpha_2,\alpha_3)$，则 $B=(\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix} 1 && 1 && 1 \\ 1 && 2 && 3 \\ 1 && 4 && 9 \\ \end{pmatrix}$
+2. $A$ 是三阶矩阵，$\alpha_1,\alpha_2,\alpha_3$ 线性无关，且 $A\alpha_1=\alpha_1+\alpha_2,A\alpha_2=\alpha_2+\alpha_3,A\alpha_3=\alpha_1+\alpha_3$，则：
+    * 设 $A(\alpha_1,\alpha_2,\alpha_3)=(\alpha_1+\alpha_2,\alpha_2+\alpha_3,\alpha_1+\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}
+        1 && 0 && 1 \\
+        1 && 1 && 0 \\
+        0 && 1 && 1 \\
+    \end{pmatrix}=PB$，即 $AP=PB$
+    * $\alpha_1,\alpha_2,\alpha_3$ 线性无关，所以 $P$ 可逆，所以 $P^{-1}AP=B$，即 $A\sim B$，$|A|=|B|$
+3. 若所求式子中既有伴随又有逆，则利用 $A^* = |A|A^{-1}$ 化为一种再计算
+4. 若所求式子中有矩阵之和，需要化和为积：
+    * $AA^T=E$，则 $|A|=\pm 1$，且 $|A+E|=|A+AA^T|=|A(E+A^T)|=|A||E+A|$；当 $|A|=1$ 时 $|A+E|$ 为任意值，当 $|A|=-1$ 时 $|A+E|=0$
+    * $A,B$ 为三阶可逆方阵，则 $|A+B^{-1}|=|ABB^{-1}+AA^{-1}B^{-1}|=|A(B+A^{-1})B^{-1}|=\frac{|A|}{|B|}|B+A^{-1}|$
+5. 若 $A_{ij}$ 是 非零矩阵 $A=(a_{ij})_{3\times 3}$ 的代数余子式：
+    * $a_{ij}=A_{ij}\implies A^T=A^* \implies |A|=|A^T|=|A^* |=|A|^2\implies |A|=1$ （非零矩阵）
+    * 同理 $a_{ij}=-A_{ij}\implies A^T=-A^* \implies |A|=-1$
+6. 若 $A$ 是三阶矩阵，$Ax=0$ 有非零解，矩阵 $A-E$ 与 $A+2E$ 均不可逆，求 $|A-3E|$：
+    * $Ax=0$ 有非零解，则 $|A|=0$，所以 $A$ 至少有一个特征值为零
+    * $A-E$ 与 $A+2E$ 均不可逆，则 $|A-E|=0,|A+2E|=0$，所以存在两个特征值：$1,-2$
+    * $|A-3E|=(0-3)(1-3)(-2-3)=-30$
+7. 出现条件 $A_{m\pm n}B_{n\pm s}=0$，要想到利用下面的结论：
+    * $r(A)+r(B)\le n$，若 $B$ 是非零矩阵要利用 $r(B)\gt 1$ 得到 $r(A)\le n-1<n$ 即 $A$ 不可逆，$|A|=0$
+    * $B$ 的每一列均是 $Ax=0$ 的解
+    * 示例：
+        * 设 $A,B$ 均为 $n$ 阶非零矩阵，满足 $AB=0$ ，证明 $|A|=|B|=0$：
+            1. 反证：若 $|A|\ne 0$ 则 $A$ 可逆，在 $AB=0$ 两边乘 $A^{-1}$ 得 $B=0$，与已知矛盾，故必有 $|A|=0$，同理得 $|B|=0$
+            2. 用秩：由 $AB=0$ 知 $r(A)+r(B)\le n$，由 $B\ne 0$ 知 $r(B)\ge 1$，那么 $r(A)\le n-1<n$，所以 $|A|=0$，同理得 $|B|=0$
+            3. 用齐次方程：设 $B=(\beta_1,\beta_2,...,\beta_n)$，则 $A\beta_i=0$ 即 $\beta_i$ 是 $Ax=0$ 的解，由 $B\ne 0$ 知 至少有一个 $\beta_i\ne 0$ 即 $Ax=0$ 有非零解，所以 $|A|=0$；又由 $AB=0$ 得 $B^TA^T=0$，同理可得 $|B^T|=0$，所以 $|B|=0$
+        * 设 $A$ 为 $n$ 阶矩阵，满足 $A^2=A$，且 $A\ne E$，证明 $|A|=0$：
+            1. 反证：若 $|A|\ne 0$，则 $A$ 可逆，在 $A^=A$ 两边同乘 $A^{-1}$ 得 $A=E$ 与已知矛盾，所以 $|A|=0$
+            2. 用秩：$A^2=A\implies A(A-E)=0\implies r(A)+r(A-E)\le n$，由 $A\ne E$ 知 $A-E\ne 0$ 即 $r(A-E)\le 1$，所以 $r(A)\le n-1<n$，故 $|A|=0$
+            3. 用齐次方程：$A^2=A\implies A(A-E)=0$，可知 $A-E$ 的每一列都是 $Ax=0$ 的解，又因为 $A\ne E$，$A-E\ne 0$，所以 $Ax=0$ 有非零解，故 $|A|=0$
 
