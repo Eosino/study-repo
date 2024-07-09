@@ -255,15 +255,15 @@
 ## 2.3. 伴随
 1. $AA^*=A^*A=|A|E$
 2. $A^*=|A|A^{-1}$
-3. $(AB)^*=B^*A^*$
-4. $(kA)*=k^{n-1}A^*$
+3. $(AB)^* =B^* A^*$
+4. $(kA)* =k^{n-1}A^*$
 5. $|A^*|=|A|^{n-1}$
-6. $(A^*)^T=(A^T)*$
-7. $(A^*)^{-1}=(A^{-1})^*=\frac{A}{|A|}$
-8. $(A^*)^*=|A|^{n-2}A$
+6. $(A^* )^T=(A^T)*$
+7. $(A^* )^{-1}=(A^{-1})^* =\frac{A}{|A|}$
+8. $(A^* )^* =|A|^{n-2}A$
 9. 分块：
-    * $\begin{pmatrix} A && 0 \\ 0 && B \\ \end{pmatrix}^*=\begin{vmatrix} A && 0 \\ 0 && B \\ \end{vmatrix}\begin{pmatrix} A && 0 \\ 0 && B \\ \end{pmatrix}^{-1}=\begin{pmatrix} |B|A^* && 0 \\ 0 && |A|B^* \\ \end{pmatrix}$
-    * $\begin{pmatrix} 0 && A_{m\times m} \\ B_{n\times n} && 0 \\ \end{pmatrix}^*=(-1)^{mn}\begin{pmatrix}  0 && |A|B^* \\ |B|A^* && 0 \\ \end{pmatrix}$
+    * $\begin{pmatrix} A && 0 \\ 0 && B \\ \end{pmatrix}^* =\begin{vmatrix} A && 0 \\ 0 && B \\ \end{vmatrix}\begin{pmatrix} A && 0 \\ 0 && B \\ \end{pmatrix}^{-1}=\begin{pmatrix} |B|A^* && 0 \\ 0 && |A|B^* \\ \end{pmatrix}$
+    * $\begin{pmatrix} 0 && A_{m\times m} \\ B_{n\times n} && 0 \\ \end{pmatrix}^* =(-1)^{mn}\begin{pmatrix}  0 && |A|B^* \\ |B|A^* && 0 \\ \end{pmatrix}$
 
 ## 2.4. 初等变换与初等矩阵
 * 对矩阵进行以下三种变换，称为矩阵的初等行（列）变换，统称初等变换。
