@@ -220,3 +220,63 @@
             2. 用秩：$A^2=A\implies A(A-E)=0\implies r(A)+r(A-E)\le n$，由 $A\ne E$ 知 $A-E\ne 0$ 即 $r(A-E)\le 1$，所以 $r(A)\le n-1<n$，故 $|A|=0$
             3. 用齐次方程：$A^2=A\implies A(A-E)=0$，可知 $A-E$ 的每一列都是 $Ax=0$ 的解，又因为 $A\ne E$，$A-E\ne 0$，所以 $Ax=0$ 有非零解，故 $|A|=0$
 
+# 2. 矩阵
+## 2.1. 秩
+1. 若 $A$ 是 $m\times n$ 的矩阵，则 $r(A)\le \min\{m,n\}$
+2. $r(A+B)\le r(A)+r(B)$
+3. $r(AB)\le \min\{r(A),r(B)\}$
+4. $r(A)=r(kA)$，$(k\ne 0)$
+5. 矩阵乘可逆矩阵，秩不变
+6. $r(A)=r(A^T)=r(AA^T)=r(A^TA)$
+7. 若存在 $A_{m\times n},B_{n\times s},AB=0$，则 $r(A)+r(B)\le n$
+8. $r(A^*)=\begin{cases}
+    n, \quad r(A)=n \\
+    1, \quad  r(A)=n-1 \\
+    0, \quad  r(A)\le n-1 \\
+\end{cases}$
+
+## 2.2. 逆
+* 逆的求法：
+    1. $AA^{-1}=A^{-1}A=E$
+    2. $A^{-1}=\frac{A^*}{|A|}$
+    3. 分块：
+        * $\begin{pmatrix} A && 0 \\ 0 && B \\ \end{pmatrix}^{-1}=\begin{pmatrix} A^{-1} && 0 \\ 0 && B^{-1} \\ \end{pmatrix}$
+        * $\begin{pmatrix} 0 && A \\ B && 0 \\ \end{pmatrix}^{-1}=\begin{pmatrix} 0 && B^{-1} \\ A^{-1} && 0 \\ \end{pmatrix}$
+        * $\begin{pmatrix} A && C \\ 0 && B \\ \end{pmatrix}^{-1}=\begin{pmatrix} A^{-1} && -A^{-1}CB^{-1} \\ 0 && B^{-1} \\ \end{pmatrix}$
+        * $\begin{pmatrix} A && 0 \\ C && B \\ \end{pmatrix}^{-1}=\begin{pmatrix} A^{-1} && 0 \\ -B^{-1}CA^{-1} && B^{-1} \\ \end{pmatrix}$
+    4. $(A\vdots E) \xrightarrow{初等行变换} (E\vdots A^{-1})$
+* 逆的性质：
+    1. $(kA)^{-1}=\frac{1}{k}A^{-1} \quad (k\ne 0)$
+    2. $(AB)^{-1}=B^{-1}A^{-1}$
+    3. $|A^{-1}|=\frac{1}{|A|}$
+    4. $(A^{-1})^T=(A^T)^{-1}$
+    5. $(A^{-1})^{-1}=A$
+
+## 2.3. 伴随
+1. $AA^*=A^*A=|A|E$
+2. $A^*=|A|A^{-1}$
+3. $(AB)^*=B^*A^*$
+4. $(kA)*=k^{n-1}A^*$
+5. $|A^*|=|A|^{n-1}$
+6. $(A^*)^T=(A^T)*$
+7. $(A^*)^{-1}=(A^{-1})^*=\frac{A}{|A|}$
+8. $(A^*)^*=|A|^{n-2}A$
+9. 分块：
+    * $\begin{pmatrix} A && 0 \\ 0 && B \\ \end{pmatrix}^*=\begin{vmatrix} A && 0 \\ 0 && B \\ \end{vmatrix}\begin{pmatrix} A && 0 \\ 0 && B \\ \end{pmatrix}^{-1}=\begin{pmatrix} |B|A^* && 0 \\ 0 && |A|B^* \\ \end{pmatrix}$
+    * $\begin{pmatrix} 0 && A_{m\times m} \\ B_{n\times n} && 0 \\ \end{pmatrix}^*=(-1)^{mn}\begin{pmatrix}  0 && |A|B^* \\ |B|A^* && 0 \\ \end{pmatrix}$
+
+## 2.4. 初等变换与初等矩阵
+* 对矩阵进行以下三种变换，称为矩阵的初等行（列）变换，统称初等变换。
+    1. 两行（列）互换
+    2. 一行（列）乘非零常数 $c$
+    3. 一行（列）乘 $k$ 加到另一行（列）
+* 单位矩阵 $E$ 经过一次初等变换所得到的矩阵称为初等矩阵。
+* 性质：
+    1. 初等行（列）变换相当于左（右）乘相应的初等矩阵
+    2. 初等矩阵均可逆，且其逆为同类型的初等矩阵：
+        * $E_{ij}^{-1}=E_{ij}$
+        * $E_i^{-1}(c)=E_i(\frac{1}{c})$
+        * $E_{ij}^{-1}(k)=E_{ij}(-k)$
+
+
+
