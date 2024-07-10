@@ -278,5 +278,19 @@
         * $E_i^{-1}(c)=E_i(\frac{1}{c})$
         * $E_{ij}^{-1}(k)=E_{ij}(-k)$
 
-
+## 2.5. 求高次幂
+1. 利用矩阵乘法结合律：若矩阵 $A$ 成比例（或 $r(A)=0$），则 $A$ 可以写成一列乘一行，即 $A=\alpha\beta^T$，那么：
+    * $A^n=\alpha\beta^T\alpha\beta^T...\alpha\beta^T=\alpha(\beta^T\alpha)...(\beta^T\alpha)\beta^T=k^{n-1}\alpha\beta^T=k^{n-1}A$
+    * 其中 $k=\beta^T\alpha$
+2. 归纳法：写出 $A^2,A^3,...$，找出规律求 $A^n$
+    * 例：$A=\begin{pmatrix} 1 && a \\ 0 && 1 \\ \end{pmatrix},A^2=\begin{pmatrix} 1 && 2a \\ 0 && 1 \\ \end{pmatrix},A^3=\begin{pmatrix} 1 && 3a \\ 0 && 1 \\ \end{pmatrix}$，假设 $A^n=\begin{pmatrix} 1 && na \\ 0 && 1 \\ \end{pmatrix}$，则 $A^{n+1}=\begin{pmatrix} 1 && (n+1)a \\ 0 && 1 \\ \end{pmatrix}$，假设成立
+    * 可背结论：
+      * $\begin{pmatrix} 1 && a \\ 0 && 1 \\ \end{pmatrix}^n=\begin{pmatrix} 1 && na \\ 0 && 1 \\ \end{pmatrix}$
+      * $\begin{pmatrix} 1 && 0 \\ a && 1 \\ \end{pmatrix}^n=\begin{pmatrix} 1 && 0 \\ na && 1 \\ \end{pmatrix}$
+3. 二项式展开定理：$A^n=(E+A)^n=E^n+C_n^1E^{n-1}B+C_n^2E^{n-2}B^2+...+C_n^{n-1}EB^{n-1}+C_n^nB^n$
+    * 常用于 $A$ 可分解为 $E$ 和一个移位矩阵的和
+    * 移位矩阵可以在某次幂后全为零，如：$B=\begin{pmatrix} 0 && 2 && 3 \\ 0 && 0 && 4 \\ 0 && 0 && 0 \\ \end{pmatrix},B^2=\begin{pmatrix} 0 && 0 && 8 \\ 0 && 0 && 0 \\ 0 && 0 && 0 \\ \end{pmatrix},B^i=0\space(i\ge 3)$
+    * $C_n^k=\frac{n(n-1)...(n-k+1)}{k!}$
+4. 分块矩阵法：$\begin{pmatrix} A && 0 \\ 0 && B \\ \end{pmatrix}^n=\begin{pmatrix} A^n && 0 \\ 0 && B^n \\ \end{pmatrix}$
+5. 相似对角化：若 $A$ 可相似对角化，则 $A^n=P\Lambda P^{-1}P\Lambda P^{-1}...P\Lambda P^{-1}=P\Lambda (P^{-1}P)\Lambda ...\Lambda P^{-1}=P\Lambda^nP^{-1}$
 
