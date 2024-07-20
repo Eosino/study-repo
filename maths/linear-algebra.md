@@ -232,7 +232,7 @@
 8. $r(A^*)=\begin{cases}
     n, \quad r(A)=n \\
     1, \quad  r(A)=n-1 \\
-    0, \quad  r(A)\le n-1 \\
+    0, \quad  r(A)<n-1 \\
 \end{cases}$
 
 ## 2.2. 逆
@@ -294,3 +294,94 @@
 4. 分块矩阵法：$\begin{pmatrix} A && 0 \\ 0 && B \\ \end{pmatrix}^n=\begin{pmatrix} A^n && 0 \\ 0 && B^n \\ \end{pmatrix}$
 5. 相似对角化：若 $A$ 可相似对角化，则 $A^n=P\Lambda P^{-1}P\Lambda P^{-1}...P\Lambda P^{-1}=P\Lambda (P^{-1}P)\Lambda ...\Lambda P^{-1}=P\Lambda^nP^{-1}$
 
+# 3. 向量
+## 3.1. 基础
+1. 设 $n$ 维向量 $\alpha=(a_1,a_2,...,a_n)^T,\beta=(b_1,b_2,...,b_n)^T$，则：
+    * 加法：$\alpha+\beta=(a_1+b_1,a_2+b_2,...,a_n+b_n)^T$
+    * 数乘：$k\alpha=(ka_1,ka_2,...,ka_n)^T$
+    * 内积：$(\alpha,\beta)=\alpha^T\beta=\beta^T\alpha=a_1b_1+a_2b_2+...+a_nb_n$
+        1. 内积为零的两个向量正交（垂直）：$(\alpha,\beta)=0\iff\alpha,\beta$ 正交
+        2. 与自己的内积为零的向量是零向量：$\alpha^T\alpha=0\iff\alpha=0$
+           * 零向量与任意向量正交
+    * 向量的模（长度）：$||\alpha||=\sqrt{\alpha^T\alpha}=\sqrt{a_1^2+a_2^2+...+a_n^2}$
+        * 向量的单位化：$\alpha\to\frac{1}{||\alpha||}\alpha$
+2. 方阵 $A$ 与非零向量 $\alpha$ 满足 $\alpha^TA^TA\alpha=0 \implies (A\alpha)^T(A\alpha)=0 \implies A\alpha=0$ 有非零解 $\implies \begin{cases}
+            A 不可逆 \\
+            |A|=0 \\
+            r(A)<n \\
+            0为A的特征值 \\
+        \end{cases}$
+3. 施密特正交化：设向量组 $\alpha_1,\alpha_2,\alpha_3$ 线性无关，令：$\begin{cases}
+        \beta_1=\alpha_1 \\
+        \beta_2=\alpha_2-\frac{(\alpha_2,\beta_1)}{(\beta_1,\beta_1)}\beta_1 \\
+        \beta_3=\alpha_3-\frac{(\alpha_3,\beta_1)}{(\beta_1,\beta_1)}\beta_1-\frac{(\alpha_3,\beta_2)}{(\beta_2,\beta_2)}\beta_2 \\
+    \end{cases}$ 则 $\beta_1,\beta_2,\beta_3$ 两两正交（正交向量组），然后单位化：$\gamma$$\begin{cases}
+        \gamma_1=\frac{\beta_1}{||\beta_1||} \\
+        \gamma_2=\frac{\beta_2}{||\beta_2||} \\
+        \gamma_3=\frac{\beta_3}{||\beta_3||} \\
+    \end{cases}$
+4. 正交矩阵：若 $n$ 阶矩阵 $A$ 满足 $AA^T=A^TA=E$，则称 $A$ 为正交矩阵。
+    * 充要条件：
+        1. A^T=A^{-1}
+        2. $A$ 的行（列）向量组为单位正交向量组
+    * 性质：
+        1. $|A|^2=1$
+        2. $A^T,A^{-1},A^* ,A^2$ 均为正交矩阵
+        3. $A,B$ 为正交矩阵，则 $AB$ 仍为正交矩阵
+
+## 3.2. 线性
+1. 若 $\beta=k_1\alpha_1+k_2\alpha_2+...+k_n\alpha_n$，则称 $\beta$ 是 $\alpha_1,\alpha_2,...,\alpha_n$ 的一个线性组合，或称 $\beta$ 可由 $\alpha_1,\alpha_2,...,\alpha_n,$ 线性表示（线性表出）。
+   1. 判断向量组 $\alpha_1,\alpha_2,...,\alpha_n$ 能否表示 $\beta$：
+      1. 设 $x_1\alpha_1+x_2\alpha_2+...+x_n\alpha_n=\beta$，即 $(\alpha_1,\alpha_2,...,\alpha_n)\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}=\beta$
+      2. 令 $A=(\alpha_1,\alpha_2,...,\alpha_n),X=(x_1,x_2,...,x_n)^T$，解方程 $AX=\beta$
+         1. 若 $r(A)=r(A|\beta)=n$，$AX=\beta$ 有唯一解，即 $\beta$ 可由 $\alpha_1,\alpha_2,...,\alpha_n$ 线性表示，且表示方法唯一
+         2. 若 $r(A)=r(A|\beta)<n$，$AX=\beta$ 有无穷多解，即 $\beta$ 可由 $\alpha_1,\alpha_2,...,\alpha_n$ 线性表示，且表示方法无穷多种
+         3. 若 $r(A)\ne r(A|\beta)$，$AX=\beta$ 无解，即 $\beta$ 不可由 $\alpha_1,\alpha_2,...,\alpha_n$ 线性表示
+   2. $\beta_1,\beta_2,...,\beta_t$ 可由 $\alpha_1,\alpha_2,...,\alpha_s$ 线性表示，则：
+       * $r(\beta_1,\beta_2,...,\beta_t)=r(\alpha_1,\alpha_2,...,\alpha_s)$
+   3. 两个向量组可以互相线性表示，则称向量组等价（等价的向量组秩相等）
+   4. $\alpha_1,\alpha_2,...,\alpha_n$ 线性无关，且 $\alpha_1,\alpha_2,...,\alpha_n,\beta$ 线性相关，令 $A=(\alpha_1,\alpha_2,...,\alpha_n)$，则：
+      * $r(A)=r(A|\beta)=n$，即 $\beta$ 可由 $\alpha_1,\alpha_2,...,\alpha_n$ 线性表示，且表示方法唯一
+      * 推论：$n$ 个无关的 $n$ 维向量可以表示任何一个 $n$ 维向量
+2. 若存在一组不全为零的 $k_1,k_2,...,k_n$ 使 $k_1\alpha_1+k_2\alpha_2+...+k_n\alpha_n=0$，则称向量组 $\alpha_1,\alpha_2,...,\alpha_n$ 线性相关，否则线性无关。
+   1. 线性无关，指向量之间没有任何关系，即：组内任何一个向量均不可由其余向量线性表示
+   2. 线性相关，指向量之间存在某种关系，即：组内至少有一个向量可由其余向量线性表示
+   3. 特殊向量组的线性相关性：
+      1. 只有一个向量的向量组，若是零向量则线性相关，否则线性无关
+      2. 只有两个向量的向量组，若成比例则线性相关，否则线性无关
+      3. 一个向量组中若包含零向量，必线性相关
+      4. 部分相关，整体相关（整体无关，部分无关）
+      5. 高维相关，低维相关（低维无关，高维无关）
+      6. 若 $\alpha_1,\alpha_2,...,\alpha_n,\alpha_{n+1}$ 线性相关，而 $\alpha_1,\alpha_2,...,\alpha_n$ 线性无关$，则 $\alpha_{n+1}$ 可由 $\alpha_1,\alpha_2,...,\alpha_n$ 线性表示，且表示法唯一
+      7. 多数向量若能由少数向量线性表示，则前者必相关（反之，若 $\alpha_1,...,\alpha_s$ 可由 $\beta_1,...,\beta_t$ 线性表示，若前者线性无关，则 $s\le t$）
+      8. $n+1$ 个 $n$ 维向量必线性相关（即：向量组的个数大于维数时必相关）
+      9. 设 $A$ 是 $n \times n$ 向量组构成的矩阵，若向量组线性无关，则 $|A|\ne 0$，若线性相关，则 $|A|=0$
+      10. 两两正交的非零向量组必无关
+      11. 不同特征值的特征向量线性无关
+   4. 判断 $s$ 个 $n$ 维向量 $\alpha_1,\alpha_2,...,\alpha_s$ 的相关性：设 $x_1\alpha_1+x_2\alpha_2+...+x_s\alpha_s=0$，令 $A=(\alpha_1,\alpha_2,...,\alpha_s),X=(x_1,x_2,...,x_s)^T$，解方程 $AX=0$：
+      1. 若 $n<s$，必相关（方程个数<未知数个数时，$AX=0$ 必有非零解）
+      2. 若 $n=s$，当 $|A|=0$ 则相关，否则无关
+      3. 若 $n>s$，两个方法：
+         1. 通过变化 $A$ 为阶梯形判断 $AX=0$ 有非零解则相关，否则无关
+         2. 求秩 $r(A)\begin{cases} <s, \quad 相关 \\ =s, \quad 无关 \end{cases}$
+## 3.3. 秩与极大线性无关组
+1. 向量组的极大线性无关组一般不唯一，只由一个零向量组成的向量组不存在极大线性无关组，一个线性无关组的极大线性无关组就是该向量组本身。
+2. 极大线性无关组中向量的个数就是向量组的秩。
+3. 三秩相等：$r(A)$（矩阵的行列式秩）$=A$ 的行秩（$A$ 的行向量组的秩）$=A$ 的列秩（$A$ 的列向量组的秩）
+4. 初等变换不改变矩阵的秩
+5. 有关等式与不等式，设 $A$ 是 $m\times n$ 的矩阵，$B$ 是满足有关矩阵运算要求的矩阵，则：
+   1. $r(A)\le \min(m,n)$
+   2. $r(A)=r(A^T)=r(AA^T)=r(A^TA)$
+   3. $r(kA)=r(A)$（$k\ne 0$）
+   4. $r(A\pm B)\le r(A)+r(B)$
+   5. ：
+      1. $r(AB)\le \min(r(A),r(B))$
+      2. $r(AB)\ge r(A)+r(B)-n$
+      3. 若 $AB=0$，则 $r(A)+r(B)\le n$（$n$ 是 $A$ 的列数，$B$ 的行数）
+   6. $r(A^* )=\begin{cases} n, \quad r(A)=n \\ 1, \quad  r(A)=n-1 \\ 0, \quad  r(A)<n-1 \\ \end{cases}$
+   7. :
+      1. 若 $r(A_{m\times n})=n$，则 $r(B_{n\times s})=r(AB)$
+      2. 若 $r(B_{n\times s})=n$，则 $r(A_{m\times n})=r(AB)$
+   8. $r(A,B)\le r(A)+r(B)$，$r\begin{pmatrix} A \\ B \end{pmatrix} \le r(A)+r(B)$
+   9. $r\begin{pmatrix} A && 0 \\ 0 && B \end{pmatrix}=r(A)+r(B)$
+   9. $r\begin{pmatrix} A && C \\ 0 && B \end{pmatrix}\ge r(A)+r(B)$，$r\begin{pmatrix} A && 0 \\ C && B \end{pmatrix}\ge r(A)+r(B)$
