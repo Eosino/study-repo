@@ -400,4 +400,22 @@
    * $P=A^{-1}B$（计算技巧：$(A\vdots B)\xrightarrow{初等行变换} (E\vdots A^{-1}B)$）
    * 设向量 $\gamma$ 在 $A,B$ 的坐标分别是 $x_1,x_2,...,x_m$ 和 $y_1,y_2,...,y_m$，则：$\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_m \end{pmatrix}=P\begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_m \end{pmatrix}$
 
+# 4. 线性方程组
+## 4.1. 解的判定
+1. 齐次方程组 $A_{m\times n}x=0$
+   1. 必有解，至少有零解
+   2. $\begin{cases} r(A)=n,\quad 只有零解 \\ r(A)<n,\quad 有非零解\end{cases}$
+   3. 当 $m=n$ 时可以通过行列式判断：$\begin{cases} |A|\ne 0,\quad 只有零解 \\ |A|=0,\quad 有非零解\end{cases}$
+   4. 当 $m<n$ 时，$r(A)\le m<n$，必有非零解
+   5. 基础解系：所有解的极大线性无关组
+      1. 基础解系中包含 $n-r(A)$ 个解向量
+      2. 基础解系不唯一
+   6. 通解：基础解系的全体线性组合，表示齐次方程组的全部解。
+      * 设 $\alpha_1,\alpha_2,...,\alpha_s$ 为一个基础解系，则通解为：$k_1\alpha_1+k_2\alpha_2+...+k_s\alpha_s$，其中 $k_1,k_2,...,k_s$ 是任意常数
+2. 非齐次方程组 $A_{m\times n}x=b$
+   1. $\begin{cases} r(A)=r(A\vdots b)=n,\quad 有唯一解 \\ r(A)=r(A\vdots b)<n,\quad 有无穷多解 \\ r(A)\ne r(A\vdots b),\quad 无解 \end{cases}$
+   2. 当 $m=n$ 时可以通过行列式判断：$\begin{cases} |A|\ne 0,\quad 有唯一解 \\ |A|=0,\quad 无解或无穷多解 \end{cases}$
+   3. 当 $r(A)=m$ 时，$r(A)=r(A\vdots b)=m$，必有解（唯一解或无穷多解）
+   4. 通解：对应齐次方程组的通解+特解
+      * 设 $\alpha_1,\alpha_2,...,\alpha_s$ 为 $Ax=0$ 一个基础解系，$\beta$ 是 $Ax=b$ 的一个特解，则通解为：$k_1\alpha_1+k_2\alpha_2+...+k_s\alpha_s+\beta$，其中 $k_1,k_2,...,k_s$ 是任意常数
 
