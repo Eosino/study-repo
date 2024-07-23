@@ -337,10 +337,11 @@
          1. 若 $r(A)=r(A|\beta)=n$，$AX=\beta$ 有唯一解，即 $\beta$ 可由 $\alpha_1,\alpha_2,...,\alpha_n$ 线性表示，且表示方法唯一
          2. 若 $r(A)=r(A|\beta)<n$，$AX=\beta$ 有无穷多解，即 $\beta$ 可由 $\alpha_1,\alpha_2,...,\alpha_n$ 线性表示，且表示方法无穷多种
          3. 若 $r(A)\ne r(A|\beta)$，$AX=\beta$ 无解，即 $\beta$ 不可由 $\alpha_1,\alpha_2,...,\alpha_n$ 线性表示
-   2. $\beta_1,\beta_2,...,\beta_t$ 可由 $\alpha_1,\alpha_2,...,\alpha_s$ 线性表示，则：
-       * $r(\beta_1,\beta_2,...,\beta_t)=r(\alpha_1,\alpha_2,...,\alpha_s)$
-   3. 两个向量组可以互相线性表示，则称向量组等价（等价的向量组秩相等）
-   4. $\alpha_1,\alpha_2,...,\alpha_n$ 线性无关，且 $\alpha_1,\alpha_2,...,\alpha_n,\beta$ 线性相关，令 $A=(\alpha_1,\alpha_2,...,\alpha_n)$，则：
+   2. 若 $\beta_1,\beta_2,...,\beta_t$ 可由 $\alpha_1,\alpha_2,...,\alpha_s$ 线性表示，则：$r(\beta_1,\beta_2,...,\beta_t)\le r(\alpha_1,\alpha_2,...,\alpha_s)$
+   1. 两个向量组可以互相线性表示，则称向量组等价
+      * 向量组等价 $\implies$ 秩相等
+      * 向量组(Ⅰ)可由向量组(Ⅱ)线性表示，且 $r(Ⅰ)=r(Ⅱ)\iff$ 向量组等价
+   2. $\alpha_1,\alpha_2,...,\alpha_n$ 线性无关，且 $\alpha_1,\alpha_2,...,\alpha_n,\beta$ 线性相关，令 $A=(\alpha_1,\alpha_2,...,\alpha_n)$，则：
       * $r(A)=r(A|\beta)=n$，即 $\beta$ 可由 $\alpha_1,\alpha_2,...,\alpha_n$ 线性表示，且表示方法唯一
       * 推论：$n$ 个无关的 $n$ 维向量可以表示任何一个 $n$ 维向量
 2. 若存在一组不全为零的 $k_1,k_2,...,k_n$ 使 $k_1\alpha_1+k_2\alpha_2+...+k_n\alpha_n=0$，则称向量组 $\alpha_1,\alpha_2,...,\alpha_n$ 线性相关，否则线性无关。
@@ -384,4 +385,19 @@
       2. 若 $r(B_{n\times s})=n$，则 $r(A_{m\times n})=r(AB)$
    8. $r(A,B)\le r(A)+r(B)$，$r\begin{pmatrix} A \\ B \end{pmatrix} \le r(A)+r(B)$
    9. $r\begin{pmatrix} A && 0 \\ 0 && B \end{pmatrix}=r(A)+r(B)$
-   9. $r\begin{pmatrix} A && C \\ 0 && B \end{pmatrix}\ge r(A)+r(B)$，$r\begin{pmatrix} A && 0 \\ C && B \end{pmatrix}\ge r(A)+r(B)$
+   10. $r\begin{pmatrix} A && C \\ 0 && B \end{pmatrix}\ge r(A)+r(B)$，$r\begin{pmatrix} A && 0 \\ C && B \end{pmatrix}\ge r(A)+r(B)$
+   11. 若 $AB=C$，且 $B$ 可逆，则 $C$ 的列向量组与 $A$ 的列向量组等价（将 $A,C$ 按列分块可证）
+       1.  推论1：$AB$ 的列向量可由 $A$ 的列向量组线性表示，即 $(A,AB)$ 可经列变换化为 $(A,0)$
+       2.  推论2：$BA$ 的行向量可由 $A$ 的行向量组线性表示，即 $\begin{pmatrix} A \\ BA \end{pmatrix}$ 可经列变换化为 $\begin{pmatrix} A \\ 0 \end{pmatrix}$
+       3.  显然秩都相等：$r(A)=r(A,AB)=r\begin{pmatrix} A \\ BA \end{pmatrix}$
+## 3.4. 向量空间
+1. 若向量空间 $V$ 中任意向量 $\beta$ 均可由 $m$ 个线性无关的向量 $\alpha_1,\alpha_2,...,\alpha_m$ 线性表示，即：$\beta=x_1\alpha_1+x_2\alpha_2+...+x_m\alpha_m$，则称 $\alpha_1,\alpha_2,...,\alpha_m$ 为 $V$ 的一组基，$m$ 为 $V$ 的维数（$dimV=m$），$x_1,x_2,...,x_m$ 为 $\beta$ 在基 $\alpha_1,\alpha_2,...,\alpha_m$ 下的坐标。
+   * 基与维数，相当于向量组的极大线性无关组与秩。
+   * 齐次线性方程组 $Ax=0$ 的解向量的集合，称为解空间，解空间的维数是 $n-r(A)$，基础解系则为解空间的一组基。
+2. 设 $E_1,E_2,...,E_m$ 是向量空间的一组基，若满足：$(E_i,E_j)=\begin{cases} 1,\quad i=j \\ 0,\quad i\ne j \end{cases}$，则称其为规范正交基。
+   * 求规范正交基就是把基内向量正交化。
+3. 同空间的两个基 $\alpha_1,\alpha_2,...,\alpha_m$（设为 $A$）和 $\beta_1,\beta_2,...,\beta_m$（设为 $B$），则存在一个可逆矩阵 $P$ 使 $B=AP$，$P$ 称为 $A$ 到 $B$ 的过渡矩阵。
+   * $P=A^{-1}B$
+   * 设向量 $\gamma$ 在 $A,B$ 的坐标分别是 $x_1,x_2,...,x_m$ 和 $y_1,y_2,...,y_m$，则：$\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_m \end{pmatrix}=P\begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_m \end{pmatrix}$
+
+
