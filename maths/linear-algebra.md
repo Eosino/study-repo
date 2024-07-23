@@ -397,7 +397,7 @@
 2. 设 $E_1,E_2,...,E_m$ 是向量空间的一组基，若满足：$(E_i,E_j)=\begin{cases} 1,\quad i=j \\ 0,\quad i\ne j \end{cases}$，则称其为规范正交基。
    * 求规范正交基就是把基内向量正交化。
 3. 同空间的两个基 $\alpha_1,\alpha_2,...,\alpha_m$（设为 $A$）和 $\beta_1,\beta_2,...,\beta_m$（设为 $B$），则存在一个可逆矩阵 $P$ 使 $B=AP$，$P$ 称为 $A$ 到 $B$ 的过渡矩阵。
-   * $P=A^{-1}B$
+   * $P=A^{-1}B$（计算技巧：$(A\vdots B)\xrightarrow{初等行变换} (E\vdots A^{-1}B)$）
    * 设向量 $\gamma$ 在 $A,B$ 的坐标分别是 $x_1,x_2,...,x_m$ 和 $y_1,y_2,...,y_m$，则：$\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_m \end{pmatrix}=P\begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_m \end{pmatrix}$
 
 
