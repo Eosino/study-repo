@@ -418,4 +418,10 @@
    3. 当 $r(A)=m$ 时，$r(A)=r(A\vdots b)=m$，必有解（唯一解或无穷多解）
    4. 通解：对应齐次方程组的通解+特解
       * 设 $\alpha_1,\alpha_2,...,\alpha_s$ 为 $Ax=0$ 一个基础解系，$\beta$ 是 $Ax=b$ 的一个特解，则通解为：$k_1\alpha_1+k_2\alpha_2+...+k_s\alpha_s+\beta$，其中 $k_1,k_2,...,k_s$ 是任意常数
-
+## 4.2. 解的性质
+1. 若 $\eta_1,\eta_2$ 是 $Ax=0$ 的解，则 $k_1\eta_1+k_2\eta_2$ 也为 $Ax=0$ 的解
+2. 若 $\eta_1,\eta_2$ 是 $Ax=b$ 的解，则 $\eta_1-\eta_2$ 也为 $Ax=0$ 的解
+3. 若 $\eta_1,\eta_2,...,\eta_s$ 是 $Ax=b$ 的解，令 $\beta=k_1\eta_1+k_2\eta_2+...+k_s\eta_s$，则：
+   1. 当 $k_1+k_2+...+k_s=0$ 时，$\beta$ 为 $Ax=0$ 的解；
+   1. 当 $k_1+k_2+...+k_s=1$ 时，$\beta$ 为 $Ax=b$ 的解；
+   1. 当 $k_1+k_2+...+k_s=k \quad (k\ne 0)$ 时，$\frac{\beta}{k}$ 为 $Ax=b$ 的解；
