@@ -425,3 +425,16 @@
    1. 当 $k_1+k_2+...+k_s=0$ 时，$\beta$ 为 $Ax=0$ 的解；
    1. 当 $k_1+k_2+...+k_s=1$ 时，$\beta$ 为 $Ax=b$ 的解；
    1. 当 $k_1+k_2+...+k_s=k \quad (k\ne 0)$ 时，$\frac{\beta}{k}$ 为 $Ax=b$ 的解；
+## 4.3. 公共解与同解
+1. 公共解：$Ax=0$ 与 $Bx=0$ 有非零公共解 $\iff \begin{pmatrix} A \\ B \end{pmatrix}x=0$ 有非零解 $\iff r\begin{pmatrix} A \\ B \end{pmatrix}<n$
+2. 同解：$Ax=0$ 与 $Bx=0$ 同解 $\iff r(A)=r(B)=r\begin{pmatrix} A \\ B \end{pmatrix}$
+3. 证明：$r(A)=r(A^T)=r(A^TA)=r(AA^T)$
+   1. 显然：$Ax=0$ 的每一个解都是 $A^TAx=0$ 的解；
+   2. 设 $\alpha$ 是 $A^TAx=0$ 的解，可推导 $A^TA\alpha=0\implies \alpha^TA^TA\alpha=0\implies (A\alpha)^TA\alpha=0\implies A\alpha=0$，即 $\alpha$ 也是 $Ax=0$ 的解；
+   3. 所以 $Ax=0$ 与 $A^TAx=0$ 同解，则 $r(A)=r(A^TA)$；
+   4. 在 $r(A)=r(A^TA)$ 两边同取转置得 $r(A^T)=r(AA^T)$，所以 $r(A)=r(A^T)=r(A^TA)=r(AA^T)$。
+4. 若 $A_{mxn},B_{n,s},r(A)=n$，证明 $r(AB)=r(B)$
+   1. 显然 $Bx=0$ 的每一个解都是 $ABx=0$ 的解；
+   2. 设 $\alpha$ 是 $ABx=0$ 的解，可推导 $AB\alpha=0\implies A(B\alpha)=0$；
+   3. 由于 $r(A)=n$，所以 $Ax=0$ 只有零解，即 $B\alpha=0$，所以 $\alpha$ 也是 $Bx=0$ 的解；
+   4. 所以 $Bx=0$ 与 $ABx=0$ 同解，则 $r(B)=r(AB)$
