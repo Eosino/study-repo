@@ -438,3 +438,36 @@
    2. 设 $\alpha$ 是 $ABx=0$ 的解，可推导 $AB\alpha=0\implies A(B\alpha)=0$；
    3. 由于 $r(A)=n$，所以 $Ax=0$ 只有零解，即 $B\alpha=0$，所以 $\alpha$ 也是 $Bx=0$ 的解；
    4. 所以 $Bx=0$ 与 $ABx=0$ 同解，则 $r(B)=r(AB)$
+
+# 5. 特征值与特征向量
+1. 定义：$A\alpha=\lambda\alpha \quad (\alpha\ne 0)$
+2. 求法：
+   * $A$ 为数值型矩阵
+     1. $|\lambda E-A|=0$，求出特征值；
+     2. $(\lambda E-A)x=0$，求出特征向量；
+     3. 若 $(\lambda E-A)x=0$ 的基础解系为 $\alpha_1,\alpha_2,...,\alpha_t$，其中 $t=n-r(\lambda E-A)$，则特征值 $\lambda$ 对应的全部特征向量是 $k_1\alpha_1+k_2\alpha_2+...+k_t\alpha_t$，其中 $k_1,k_2,...,k_t$ 不全为零。
+   * $A$ 为抽象型矩阵：用定义来求
+3. 性质
+   1. 不同特征值的特征向量必线性无关。
+   2. ：
+      * $|A|=\displaystyle\prod_{i=1}^n\lambda_i$
+      * $\displaystyle\sum_{i=1}^na_{ii}=\displaystyle\sum_{i=1}^n\lambda_i=tr(A)$
+   3. $k$ 重特征值对应的线性无关的特征向量个数 $\le k$
+   4. 成比例的矩阵 $A_{3x3}$ 可写成 $A=\alpha\beta^T$，有一个特征值是 $A$ 的迹 $tr(A)=\alpha^T\beta=\beta^T\alpha$，也就是对角线之和；另两个特征值是 $0$
+   5. 行和相等的矩阵 $A_{nxn}$，则该和是 $A$ 的一个特征值，对应的特征向量有 $(1,1,...,1)^T$
+   6. 矩阵 $A$ 两个不等的特征值所对应的两个特征向量 $\alpha_1,\alpha_2$，则 $\alpha_1+\alpha_2$ 一定不是 $A$ 的特征向量
+   7. 若 $A$ 为正交矩阵，则当 $|A|=-1$ 时必有特征值 $-1$，当 $|A|=1$ 且 阶数 $n$ 为奇数时必有特征值 $1$
+   8. ： 
+      * $|A|=0 \iff 0$ 是 $A$ 的特征值
+      * $A$ 可逆 $\iff A$ 所有特征值都不为零
+   9. 幂等矩阵 $A^2=A$ 的特征值只可能是 $0$ 或 $1$
+   10. 对合矩阵 $A^2=E$ 的特征值只可能是 $1$ 或 $-1$
+4. 公式
+
+| 矩阵 | $A$ | $A^2$ | $f(A)$ | $A^{-1}$ | $A^*$ | $P^{-1}AP$ | $PAP^{-1}$ | $A^T$ |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| 特征值 | $\lambda$ | $\lambda^2$ | $f(\lambda)$ | $\frac{1}{\lambda}$ | $\frac{\|A\|}{\lambda}$ | $\lambda$ | $\lambda$ | $\lambda$ |
+| 特征向量 | $\alpha$ | $\alpha$ | $\alpha$ | $\alpha$ | $\alpha$ | $P^{-1}\alpha$ | $P\alpha$ | - |
+
+> 设 $A_{3x3}$ 有特征值 $a,b,c$，则 $|A|=abc$，那么 $A^*$ 的特征值是 $bc,ac,ab$
+
