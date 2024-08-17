@@ -72,7 +72,7 @@
    4. 右连续性：$F(x_0)=F(x_0+0)$
 > 注：$F(x_0-0)=\lim\limits_{x\to x_0^-}F(x)$，$F(x_0+0)=\lim\limits_{x\to x_0^+}F(x)$
 2. 运算，已知分布函数 $X\sim F(x)$ 则：
-   1. $P\{X\le a\}=F(a)$
+   1. $P\lbrace X\le a\ \rbrace=F(a)$
    2. $P\{X>a\}=1-F(a)$
    3. $P\{X<a\}=F(a-0)$
    4. $P\{X\ge a\}=1-F(a-0)$
