@@ -72,15 +72,15 @@
    4. 右连续性：$F(x_0)=F(x_0+0)$
 > 注：$F(x_0-0)=\lim\limits_{x\to x_0^-}F(x)$，$F(x_0+0)=\lim\limits_{x\to x_0^+}F(x)$
 2. 运算，已知分布函数 $X\sim F(x)$ 则：
-   1. $P\lbrace X\le a\ \rbrace=F(a)$
-   2. $P\{X>a\}=1-F(a)$
-   3. $P\{X<a\}=F(a-0)$
-   4. $P\{X\ge a\}=1-F(a-0)$
-   5. $P\{X=a\}=F(a)-F(a-0)$
-   6. $P\{a<X\le b\}=F(b)-F(a)$
-   7. $P\{a\le X<b\}=F(b-0)-F(a-0)$
-   8. $P\{a<X<b\}=F(b-0)-F(a)$
-   9. $P\{a\le X\le b\}=F(b)-F(a-0)$
+   1. $P\lbrace X\le a\rbrace=F(a)$
+   2. $P\lbrace X>a\rbrace=1-F(a)$
+   3. $P\lbrace X<a\rbrace=F(a-0)$
+   4. $P\lbrace X\ge a\rbrace=1-F(a-0)$
+   5. $P\lbrace X=a\rbrace=F(a)-F(a-0)$
+   6. $P\lbrace a<X\le b\rbrace=F(b)-F(a)$
+   7. $P\lbrace a\le X<b\rbrace=F(b-0)-F(a-0)$
+   8. $P\lbrace a<X<b\rbrace=F(b-0)-F(a)$
+   9. $P\lbrace a\le X\le b\rbrace=F(b)-F(a-0)$
 
 
 
