@@ -62,3 +62,27 @@
    1. 某试验只有两个结果 $A,\bar(A)$，则称为伯努利试验
    2. 把伯努利试验独立重复 $n$ 次，则称为 $n$ 重伯努利试验
    3. 设 $P(A)=p$，则 $n$ 重伯努利试验中 $A$ 发生的 $k$ 次的概率用二项概率公式计算：$C_n^kp^n(1-p)^{n-k}$
+
+# 1. 一维随机变量
+## 1.1. 分布函数
+1. 性质：
+   1. 非负性：$\infty0\le F(x)\le 1$
+   2. 规范性：$\begin{cases} F(-\infty)=\lim\limits_{x\to -\infty}F(x)=0 \\ F(+\infty)=\lim\limits_{x\to +\infty}F(x)=1 \end{cases}$
+   3. 单调不减：任意 $x_1<x_2$ 有 $F(x_1)\le F(x_2)$
+   4. 右连续性：$F(x_0)=F(x_0+0)$
+> 注：$F(x_0-0)=\lim\limits_{x\to x_0^-}F(x)$，$F(x_0+0)=\lim\limits_{x\to x_0^+}F(x)$
+2. 运算，已知分布函数 $X\sim F(x)$ 则：
+   1. $P\{X\le a\}=F(a)$
+   2. $P\{X>a\}=1-F(a)$
+   3. $P\{X<a\}=F(a-0)$
+   4. $P\{X\ge a\}=1-F(a-0)$
+   5. $P\{X=a\}=F(a)-F(a-0)$
+   6. $P\{a<X\le b\}=F(b)-F(a)$
+   7. $P\{a\le X<b\}=F(b-0)-F(a-0)$
+   8. $P\{a<X<b\}=F(b-0)-F(a)$
+   9. $P\{a\le X\le b\}=F(b)-F(a-0)$
+
+
+
+
+
