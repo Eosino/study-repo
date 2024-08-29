@@ -82,10 +82,10 @@
    8. $P\lbrace a<X<b\rbrace=F(b-0)-F(a)$
    9. $P\lbrace a\le X\le b\rbrace=F(b)-F(a-0)$
 ## 2.2. 一维离散型随机变量
-1. 分布律：$P\{X=x_k\}=p_k$ $(k=1,2,...,n)$
+1. 分布律：$P\lbrace X=x_k\rbrace=p_k$ $(k=1,2,...,n)$
    1. 非负性：$p_k \ge 0$
    2. 归一性：$\displaystyle\sum_{k=1}^np_k=1$
-2. 分布函数：$F(x)=P\{X\le x\}=\displaystyle\sum_{x_i\le x}p_i$
+2. 分布函数：$F(x)=P\lbrace X\le x\rbrace=\displaystyle\sum_{x_i\le x}p_i$
    1. $F(x)=\begin{cases}
       0, \quad\quad\quad x<x_1 \\
       p_1, \quad\quad\quad x_1\le x<x_2 \\
@@ -100,31 +100,31 @@
 3. 常见离散型分布
    1. 二项分布 $X\sim B(n,p)$
       * 表示在 $n$ 重伯努利试验中（每次试验成功率 $p$）成功 $k$ 次的概率
-      * $P\{X=k\}=C_n^kp^k(1-p)^{n-k},\quad (k=0,1,...,n)$
+      * $P\lbrace X=k\rbrace=C_n^kp^k(1-p)^{n-k},\quad (k=0,1,...,n)$
    2. $0-1$ 分布
       * 即二项分布 $n=1$ 时的特例
-      * $P\{X=k\}=p^k(1-p)^{1-k}, \quad (k=0,1)$
+      * $P\lbrace X=k\rbrace=p^k(1-p)^{1-k}, \quad (k=0,1)$
    3. 几何分布 $X\sim G(p)$
       * 表示在 $n$ 重伯努利试验中（每次试验成功率 $p$）第 $k$ 次才首次成功的概率
-      * $P\{X=k\}=p(1-p)^{k-1}, \quad (k=0,1,...,n)$
+      * $P\lbrace X=k\rbrace=p(1-p)^{k-1}, \quad (k=0,1,...,n)$
    4. 超几何分布 $X\sim H(n,M,N)$
       * $N$ 件产品中含 $M$ 件次品，从中任取 $n$ 件（一次取 $n$ 件或一件件不放回的取 $n$ 件），则 $n$ 件中包含 $k$ 件次品的概率服从超几何分布
-      * $P\{X=k\}=\frac{C_M^kC_{N-M}^{n-k}}{C_N^n},\quad (k=0,1,...,n)$
+      * $P\lbrace X=k\rbrace=\frac{C_M^kC_{N-M}^{n-k}}{C_N^n},\quad (k=0,1,...,n)$
       * 注：若有放回地取 $n$ 件，则 $n$ 件中包含 $k$ 件次品的概率 $X\sim B(n,\frac{M}{N})$
    5. 泊松分布 $X\sim P(\lambda), \quad (\lambda>0)$
       * 在一段时间内电话总机接到的呼叫次数、候车的旅客数、保险索赔的次数等都服从泊松分布
-      * $P\{X=k\}=\frac{\lambda^ke^{-\lambda}}{k!}, \quad (k=0,1,...,n)$
+      * $P\lbrace X=k\rbrace=\frac{\lambda^ke^{-\lambda}}{k!}, \quad (k=0,1,...,n)$
       * 泊松定理：若 $X\sim B(n,p)$，当 $n$ 充分大（$n\ge 20$）$p$ 充分小（$p\le 0.1$）时，二项分布近似泊松分布：
         * $C_n^kp^k(1-p)^{n-k}\approx \frac{\lambda^ke^{-\lambda}}{k!}, \quad (\lambda=np)$
 ## 2.3. 一维连续型随机变量
-1. 存在 $F(x)=P\{X\le x\}=\int_{-\infty}^xf(t)dt$ 则称 $X$ 为连续型随机变量，$F(x)$ 为分布函数，$f(x)$ 为概率密度函数
+1. 存在 $F(x)=P\lbrace X\le x\rbrace=\int_{-\infty}^xf(t)dt$ 则称 $X$ 为连续型随机变量，$F(x)$ 为分布函数，$f(x)$ 为概率密度函数
 2. 性质：
    1. 非负性：$f(x)\ge 0$
    2. 规范性：$\int_{-\infty}^{+\infty}f(x)dx=1$
-   3. 对任意 $a<b$ 有 $P\{a<X\le b\}=\int_a^bf(x)dx$
+   3. 对任意 $a<b$ 有 $P\lbrace a<X\le b\rbrace=\int_a^bf(x)dx$
    4. $F(x)$ 是连续函数
    5. 在 $f(x)$ 的连续点处存在 $F'(x)=f(x)$
-   6. $P\{X=x_0\}=0$
+   6. $P\lbrace X=x_0\rbrace=0$
 3. 常见连续型分布
    1. 均匀分布 $X\sim U(a,b)$
       1. 对应几何概型
@@ -134,7 +134,7 @@
       1. 寿命问题
       2. $f(x)=\begin{cases} \lambda e^{-\lambda x}, \quad x>0 \\ 0, \quad\quad x\le 0 \end{cases}$
       3. $F(x)=\begin{cases} 1-e^{-\lambda x}, \quad x>0 \\ 0, \quad\quad x\le 0 \end{cases}$
-      4. 无记忆性：对任意 $s>0,t>0$ 有 $P\{X>s+t|X>s\}=P\{X>t\}$
+      4. 无记忆性：对任意 $s>0,t>0$ 有 $P\lbrace X>s+t|X>s\rbrace=P\lbrace X>t\rbrace$
          * 如果把 $X$ 理解为寿命，已知某人年龄为 $s$，则再活 $t$ 年的概率与 $s$ 无关
          * 离散型随机变量中，服从几何分布的具有无记忆性
    3. 一般正态分布 $X\sim N(\mu,\sigma^2),\quad (\sigma>0,\mu\in R)$
@@ -148,8 +148,8 @@
          3. $\varPhi(x_0)$ 题目可能会给出，不给出也可以认为是一个已知数
          4. $\varPhi(0)=\frac{1}{2}$
          5. $\varPhi(-x)=1-\varPhi(x)$
-         6. $P\{|X|\le a\}=2\varPhi(a)-1$
-      3. 设 $\mu_\alpha$ 为标准正态分布的上 $\alpha$ 分位点，则：$P\{X>\mu_\alpha\}=\alpha$，即 $\varphi(x)$ 图形中 $x=\mu_\alpha$ 右边的面积为 $\alpha$
+         6. $P\lbrace |X|\le a\rbrace=2\varPhi(a)-1$
+      3. 设 $\mu_\alpha$ 为标准正态分布的上 $\alpha$ 分位点，则：$P\lbrace X>\mu_\alpha\rbrace=\alpha$，即 $\varphi(x)$ 图形中 $x=\mu_\alpha$ 右边的面积为 $\alpha$
       4. 一般正态分布 $X\sim N(\mu,\sigma^2)$ 可通过线性变换转化为标准正态分布 $Z=\frac{X-\mu}{\sigma}\sim N(0,1)$
 ## 2.4. 函数的分布
 1. 离散型随机变量的函数 $Y=g(X)$ 的分布，需要通过函数得出 $Y$ 的取值，然取值相同则概率相加
@@ -162,38 +162,38 @@
       3. 求出 $g(X)$ 的值域 $(\alpha,\beta)$
       4. 公式 $f_Y(y)=\begin{cases} f_x(h(y))|h'(y)|, \quad \alpha<y<\beta \\ 0, \quad\quad 其他 \end{cases}$
    3. 方法二（分布函数法）
-      1. 通过 $\begin{cases} 将 $x$ 的分段代入 $y=g(x)$ \\ 求 $y=g(x)$ 的最值 \end{cases}$ 找出自变量 $y$ 的分段点
-      2. 根据分段点，分区间求 $F_Y(y)=P\{Y\le y\}=P\{g(X)\le y\}=\int_{g(x)\le y}f(x)dx$
+      1. 通过 $\begin{cases} 将 x 的分段代入 y=g(x) \\ 求 y=g(x) 的最值 \end{cases}$ 找出自变量 $y$ 的分段点
+      2. 根据分段点，分区间求 $F_Y(y)=P\lbrace Y\le y\rbrace=P\lbrace g(X)\le y\rbrace=\int_{g(x)\le y}f(x)dx$
       3. 最后 $f_Y(y)=F_Y^{'}(y)$
 
 # 3. 二维随机变量
 ## 3.1. 联合分布函数
-1. $F(x,y)=P\{X\le x,Y\le y\}$，表示随机事件 $\{X\le x\}$ 与 $\{Y\le y\}$ 同时发生的概率
+1. $F(x,y)=P\lbrace X\le x,Y\le y\rbrace$，表示随机事件 $\lbrace X\le x\rbrace$ 与 $\lbrace Y\le y\rbrace$ 同时发生的概率
 2. 性质
    1. 非负性：对于任意 $x,y\in R$ 有 $0\le F(x,y) \le 1$
    2. 规范性：$\begin{cases} F(+\infty,+\infty)=\lim\limits_{(x,y)\to (+\infty,+\infty)}F(x,y)=1 \\ F(x,-\infty)=F(-\infty,y)=F(-\infty,-\infty)=0 \end{cases}$
    3. 单调不减性：$F(x,y)$ 关于 $x$ 和关于 $y$ 均单调不减
    4. 右连续性：$F(x,y)$ 关于 $x$ 和关于 $y$ 均右连续
-   5. $P\{a<X\le b,c<Y\le d\}=F(a,c)+F(b,d)-F(a,d)-F(b,c)$
+   5. $P\lbrace a<X\le b,c<Y\le d\rbrace=F(a,c)+F(b,d)-F(a,d)-F(b,c)$
 ## 3.2. 边缘分布函数
-* 二维随机变量关于 $X$ 和关于 $Y$ 的边缘分布函数：$\begin{cases} F_X(x)=P\{X\le x\}=P\{X\le x,Y<+\infty\}=F(x,+\infty) \\ F_Y(y)=P\{Y\le y\}=P\{X<+\infty,Y\le y\}=F(+\infty,y) \end{cases}$
+* 二维随机变量关于 $X$ 和关于 $Y$ 的边缘分布函数：$\begin{cases} F_X(x)=P\lbrace X\le x\rbrace=P\lbrace X\le x,Y<+\infty\rbrace=F(x,+\infty) \\ F_Y(y)=P\lbrace Y\le y\rbrace=P\lbrace X<+\infty,Y\le y\rbrace=F(+\infty,y) \end{cases}$
 * 独立性：若对于任意实数 $x,y$，有 $F(x,y)=F_X(x)F_Y(y)$，则称随机变量 $X$ 和 $Y$ 相互独立
 ## 3.3. 二维离散型随机变量
 1. 联合分布律
-   1. $P\{X=x_i,Y=y_j\}=p_{ij},\quad (i,j=1,2,...)$
+   1. $P\lbrace X=x_i,Y=y_j\rbrace=p_{ij},\quad (i,j=1,2,...)$
    2. $p_{ij}\ge 0$
    3. $\displaystyle\sum_{i=1}^{+\infty}\sum_{j=1}^{+\infty}p_{ij}=1$
 2. 边缘分布律
-   1. $p_{i·}=p\{X=x_i\}=\displaystyle\sum_{j=1}^\infty p_{ij}$，表示联合分布律表中第 $i$ 行各数之和
-   2. $p_{·j}=p\{Y=y_j\}=\displaystyle\sum_{i=1}^\infty p_{ij}$，表示联合分布律表中第 $j$ 列各数之和
+   1. $p_{i·}=p\lbrace X=x_i\rbrace=\displaystyle\sum_{j=1}^\infty p_{ij}$，表示联合分布律表中第 $i$ 行各数之和
+   2. $p_{·j}=p\lbrace Y=y_j\rbrace=\displaystyle\sum_{i=1}^\infty p_{ij}$，表示联合分布律表中第 $j$ 列各数之和
    3. 边缘分布函数
-      1. $F_X(x)=P\{X\le x\}=\displaystyle\sum_{x_i\le x} p_{i·}$
-      2. $F_Y(y)=P\{Y\le y\}=\displaystyle\sum_{y_j\le y} p_{·j}$
+      1. $F_X(x)=P\lbrace X\le x\rbrace=\displaystyle\sum_{x_i\le x} p_{i·}$
+      2. $F_Y(y)=P\lbrace Y\le y\rbrace=\displaystyle\sum_{y_j\le y} p_{·j}$
 3. 条件分布律
-   1. $P\{X=x_i|Y=y_j\}=\frac{P\{X=x_i,Y=y_j\}}{P\{Y=y_j\}}=\frac{p_{ij}}{p_{·j}}$
-   2. $P\{Y=y_j|X=x_i\}=\frac{P\{X=x_i,Y=y_j\}}{P\{X=x_i\}}=\frac{p_{ij}}{p_{i·}}$
+   1. $P\lbrace X=x_i|Y=y_j\rbrace=\frac{P\lbrace X=x_i,Y=y_j\rbrace}{P\lbrace Y=y_j\rbrace}=\frac{p_{ij}}{p_{·j}}$
+   2. $P\lbrace Y=y_j|X=x_i\rbrace=\frac{P\lbrace X=x_i,Y=y_j\rbrace}{P\lbrace X=x_i\rbrace}=\frac{p_{ij}}{p_{i·}}$
 4. 独立性
-   1. $X,Y$ 独立 $\iff P\{X=x_i,Y=y_j\}=P\{X=x_i\}P\{Y=y_j\}$
+   1. $X,Y$ 独立 $\iff P\lbrace X=x_i,Y=y_j\rbrace=P\lbrace X=x_i\rbrace P\lbrace Y=y_j\rbrace$
    2. 独立，则联合分布律组成的矩阵成比例
 ## 3.4. 二维连续型随机变量
 1. 联合概率密度
@@ -201,7 +201,7 @@
    2. 性质
       1. $f(x,y)\ge 0$
       2. $\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)dxdy=1$
-      3. 点 $(x,y)$ 落在任一区域 $D$ 内的概率是：$P\{(X,Y)\in D\}=\iint_D f(x,y)d\sigma$
+      3. 点 $(x,y)$ 落在任一区域 $D$ 内的概率是：$P\lbrace (X,Y)\in D\rbrace=\iint_D f(x,y)d\sigma$
       4. 若 $f(x,y)$ 在点 $(x,y)$ 处连续，则有 $f(x,y)=\frac{\partial^2 F(x,y)}{\partial x\partial y}$
 2. 边缘概率密度
    1. $f_X(x)=\int_{-\infty}^{+\infty}f(x,y)dy$
@@ -214,7 +214,7 @@
 5. 二维均匀分布
    1. $f(x,y)=\begin{cases} \frac{1}{S_G}, \quad (x,y)\in G \\ 0, \quad\quad (x,y)\notin G \end{cases}$
    2. 其中 $S_G$ 是区域 $G$ 的面积
-   3. 性质：若 $(X,Y)$ 在区域 $G=\{(x,y)|a\le x\le b,c\le y\le d\}$ 服从均匀分布，则 $X,Y$ 相互独立，且分布服从区间 $[a,b],[c,d]$ 上的一维均匀分布
+   3. 性质：若 $(X,Y)$ 在区域 $G=\lbrace (x,y)|a\le x\le b,c\le y\le d\rbrace$ 服从均匀分布，则 $X,Y$ 相互独立，且分布服从区间 $[a,b],[c,d]$ 上的一维均匀分布
 6. 二维正态分布
    1. $f(x,y)=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}e^{\frac{-1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}+\frac{(y-\mu_2)^2}{\sigma_2^2}-\frac{2\rho(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}]}$
    2. 其中：$x,y\in R$，$\mu_1,\mu_2,\sigma_1,\sigma_2>0$，$-1<\rho<1$
@@ -229,10 +229,10 @@
 ## 3.5. 函数的分布
 1. 离散型随机变量函数的分布
    1. 写出 $Z=g(X,Y)$ 的所有可能取值
-   2. 求事件 $\{Z=k\}$ 发生的概率，若取值相同，则概率相加，要注意合并
+   2. 求事件 $\lbrace Z=k\rbrace$ 发生的概率，若取值相同，则概率相加，要注意合并
 2. 连续型随机变量函数的分布
    1. 一般方法（分布函数法）
-      1. 函数 $Z=g(X,Y)$ 的分布函数 $F_Z(z)=P\{Z\le z\}=P\{g(X,Y)\le z\}=\iint_{g(x,y)\le z}f(x,y)dxdy$
+      1. 函数 $Z=g(X,Y)$ 的分布函数 $F_Z(z)=P\lbrace Z\le z\rbrace=P\lbrace g(X,Y)\le z\rbrace=\iint_{g(x,y)\le z}f(x,y)dxdy$
    2. 四则运算公式法
       1. $Z=X+Y$
          1. $f_Z(z)=\int_{-\infty}^{+\infty}f(x,z-x)dx$
@@ -255,9 +255,9 @@
 3. 离散与连续混合型随机变量函数的分布
    1. 分布函数法：运用全概率公式，将离散型随机变量的所有取值作为完备事件组
 ## 3.6. 最值分布
-1. 设 $X_1,X_2$ 相互独立，其分布函数分布为 $F_{X_1}(x_1),F_{X_2}(x_2)$，求 $M=\max\{X_1,X_2\},N=\min\{X_1,X_2\}$
-2. $F_M(z)=P\{\max\{X_1,X_2\}\le z\}=P\{X_1\le z,X_2\le z\}=P\{X_1\le z\}P\{X_2\le z\}=F_{X_1}(z)F_{X_2}(z)$
-3. $F_N(z)=P\{\min\{X_1,X_2\}\le z\}=1-P\{\min\{X_1,X_2\}>z\}=1-P\{X_1>z,X_2>z\}=1-P\{X_1>z\}P\{X_2>z\}=1-[1-F_{X_1}(z)][1-F_{X_2}(z)]$
+1. 设 $X_1,X_2$ 相互独立，其分布函数分布为 $F_{X_1}(x_1),F_{X_2}(x_2)$，求 $M=\max\lbrace X_1,X_2\rbrace,N=\min\lbrace X_1,X_2\rbrace$
+2. $F_M(z)=P\lbrace \max\lbrace X_1,X_2\rbrace\le z\rbrace=P\lbrace X_1\le z,X_2\le z\rbrace=P\lbrace X_1\le z\rbrace P\lbrace X_2\le z\rbrace=F_{X_1}(z)F_{X_2}(z)$
+3. $F_N(z)=P\lbrace \min\lbrace X_1,X_2\rbrace\le z\rbrace=1-P\lbrace \min\lbrace X_1,X_2\rbrace >z\rbrace=1-P\lbrace X_1>z,X_2>z\rbrace=1-P\lbrace X_1>z\rbrace P\lbrace X_2>z\rbrace=1-[1-F_{X_1}(z)][1-F_{X_2}(z)]$
 4. 特别地，当 $X_1,X_2$ 独立且同分布，即 $X_1,X_2\sim F(x)$ 时：
    1. $F_M(z)=F^2(z)$
    2. $F_N(z)=1-[1-F(z)]^2$
