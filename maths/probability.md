@@ -89,7 +89,7 @@
    1. $F(x)=\begin{cases}
       0, \quad\quad\quad x<x_1 \\
       p_1, \quad\quad\quad x_1\le x<x_2 \\
-      p_1+p_2, \quad\quad x_2\le x<x_3 \\
+      p_1+p_2, \quad x_2\le x<x_3 \\
       ... \\
       1, \quad\quad\quad x\ge x_n \\
    \end{cases}$
