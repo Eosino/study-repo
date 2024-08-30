@@ -262,3 +262,84 @@
    1. $F_M(z)=F^2(z)$
    2. $F_N(z)=1-[1-F(z)]^2$
 
+# 4. 随机变量的数字特征
+## 4.1. 数学期望
+1. 离散型随机变量 $X$ 的分布律为 $P\lbrace X=x_k \rbrace =p_k$，则其数学期望 $E(X)=\displaystyle\sum_{k=1}^\infty x_kp_k$
+2. 连续型随机变量 $X$ 的概率密度为 $f(x)$，则其数学期望 $E(X)=\int_{-\infty}^{+\infty}xf(x)dx$
+3. 注：数学期望存在的前提，离散型要求无穷级数绝对收敛，连续型要求广义积分绝对收敛。
+4. 数学期望的性质
+   1. $E(C)=C$
+   2. $E(CX)=CE(X)$
+   3. $E(X+C)=E(X)+C$
+   4. $E(X\pm Y)=E(X)\pm E(Y)$
+   5. 若 $X,Y$ 相互独立，则 $E(XY)=E(X)E(Y)$
+## 4.2. 方差
+1. $D(X)=E\lbrace [X-E(X)]^2 \rbrace =E(X^2)-E^2(X)$
+   1. 显然有 $D(X)\ge 0$，$\sqrt{D(X)}$ 称为 $X$ 的标准差（或均方差）
+2. 方差的性质
+   1. $D(C)=0$（注：$D(X)=0$ 不能得出 $X$ 为常数的结论）
+   2. $D(X+C)=D(X)$
+   3. $D(CX)=C^2D(X)$
+   4. $D(X\pm Y)=D(X)+D(Y)\pm 2[E(XY)-E(X)E(Y)]$
+      1. $cov(X,Y)=E(XY)-E(X)E(Y)$
+   5. 若 $X,Y$ 相互独立，则 $D(X\pm Y)=D(X)+D(Y)$
+      1. 独立时，$E(XY)=E(X)E(Y)$
+      2. 独立时可拓展为：$D(aX\pm bY)=a^2D(X)+b^2D(Y)$
+## 4.3. 函数的数学期望
+1. 一维离散：设 $X$ 的分布律 $P\lbrace X=x_i\rbrace =p_i$，函数 $Y=g(x)$，则 $E(Y)=\displaystyle\sum_I g(x_i)P\lbrace X=x_i \rbrace$
+2. 一维连续：设 $X$ 的概率密度 $f(x)$，函数 $Y=g(x)$，则 $E(Y)=\int_{-\infty}^{+\infty}g(x)f(x)dx$
+3. 二维离散：设 $Z=g(X,Y)$，先求 $Z$ 的分布律，再求 $Z$ 的期望
+4. 二维连续：设 $(X,Y)$ 的概率密度为 $f(x,y)$，且 $Z=g(X,Y)$ 则：
+   1. $E(x)=\int_{-\infty}^{+\infty}xf(x,y)dxdy$
+   2. $E(Y)=\int_{-\infty}^{+\infty}yf(x,y)dxdy$
+   3. $E(Z)=\int_{-\infty}^{+\infty}g(x,y)f(x,y)dxdy$
+   4. $D(X)=E(X^2)-E^2(X)=\int_{-\infty}^{+\infty}x^2f(x,y)dxdy-[\int_{-\infty}^{+\infty}xf(x,y)dxdy]^2$
+   5. $D(Y)=E(Y^2)-E^2(Y)=\int_{-\infty}^{+\infty}y^2f(x,y)dxdy-[\int_{-\infty}^{+\infty}yf(x,y)dxdy]^2$
+## 4.4. 常见分布的期望与方差
+
+|分布|分布律或概率密度|期望|方差|
+|:-:|:-|:-:|:-:|
+|$(0-1)$ 分布|$P\lbrace X=k \rbrace =p^k(1-p)^{1-k},\quad (k=0,1)$|$p$|$p(1-p)$|
+|二项分布|$P\lbrace X=k \rbrace =C_n^kp^k(1-p)^{n-k},\quad (k=0,1,...,n)$|$np$|$np(1-p)$|
+|几何分布|$P\lbrace X=k\rbrace =p(1-p)^{1-k},\quad (k=1,2,...)$|$\frac{1}{p}$|$\frac{1-p}{p^2}$|
+|泊松分布|$P\lbrace X=k \rbrace =\frac{\lambda^ke^{-\lambda}}{k!},\quad (\lambda>0,k=0,1,...)$|$\lambda$|$\lambda$|
+|均匀分布|$f(x)=\begin{cases} \frac{1}{b-a}, \quad a<x<b \\ 0, \quad\quad 其他 \end{cases}$|$\frac{a+b}{2}$|$\frac{(b-a)^2}{12}$|
+|指数分布|$f(x)=\begin{cases} \lambda e^{-\lambda x}, \quad x>0 \\ 0, \quad\quad x\le 0 \end{cases},\quad (\lambda >0)$|$\frac{1}{\lambda}$|$\frac{1}{\lambda^2}$|
+|正态分布|$f(X)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},\quad (\sigma >0,x\in R)$|$\mu$|$\sigma^2$|
+
+## 4.5. 协方差
+1. 矩
+   1. 随机变量 $X$ 的 $k$ 次幂的数学期望称为 $X$ 的 $k$ 阶原点矩，记为 $\nu_k,\quad (k=1,2,...)$
+      1. $\nu_k=E(X^k)=\begin{cases} \displaystyle\sum_i x_i^kp_i,\quad\quad X 为离散型 \\ \int_{-\infty}^{+\infty}x^kf(x)dx,\quad X 为连续型 \end{cases}$
+   2. 随机变量 $X$ 与 $E(X)$ 差的 $k$ 次幂的数学期望称为 $X$ 的 $k$ 阶中心矩，记为 $\mu_k,\quad (k=2,3,...)$
+      1. $\mu_k=E\lbrace [X-E(X)]^k\rbrace =\begin{cases} \displaystyle\sum_i (x_i-E(X))^kp_i,\quad X 为离散型 \\ \int_{-\infty}^{+\infty}(x-E(X))^kf(x)dx,\quad X 为连续型 \end{cases}$
+   3. 随机变量 $X,Y$ 的混合原点矩：$\nu_{kl}=E(X^kY^l)$，（如果存在）
+   4. 随机变量 $X,Y$ 的混合中心矩 $\mu_{kl}=E\lbrace [X-E(X)]^k[Y-E(Y)]^l\rbrace$，（如果存在）
+2. 协方差
+   1. $cov(X,Y)=E\lbrace [X-E(X)][Y-E(Y)]\rbrace=E(XY)-E(X)E(Y)$
+   2. 性质：
+      1. $cov(X,C)=0$
+      2. $cov(X,X)=D(X)$
+      3. $cov(X,Y)=cov(Y,X)$
+      4. $cov(aX,bY)=abcov(X,Y)$
+      5. $cov(X_1\pm X_2,Y)=cov(X_1,Y)\pm cov(X_2,Y)$
+      6. 若 $X,Y$ 相互独立，则 $cov(X,Y)=0$
+3. 相关系数
+   1. $\rho_{XY}=\frac{cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}=\frac{E(XY)-E(X)E(Y)}{\sqrt{D(X)}\sqrt{D(Y)}}$
+      1. $\rho_{XX}=1$
+      2. $-1\le \rho_{XY}\le 1$
+      3. $\rho_{XY}=\rho_{YX}$
+      4. 若 $X,Y$ 相互独立，则 $\rho_{XY}=0$
+      6. $|\rho_{XY}|=1 \iff X,Y$ 以概率 $1$ 线性相关，即存在常数 $a,b$ 且 $a\ne 0$ 使 $P\lbrace X=aY+b\rbrace =1$
+   2. 不相关的定义：若 $X,Y$ 的相关系数 $\rho_{XY}=0$，则称 $X,Y$ 不相关
+      1. 独立一定不相关，但不相关不一定独立
+      2. $X,Y$ 相互独立 $\implies X,Y$ 不相关 $\iff \rho_{XY}=0$
+      3. 对于二维正态随机变量 $(X,Y)$
+         1. $X,Y$ 相互独立 $\iff$ $X,Y$ 不相关 $\iff \rho=0$
+
+   3. 常用结论
+      1. $D(X\pm Y)=D(X)+D(Y)\pm 2cov(X,Y)$
+         1. 当 $X,Y$ 相互独立时，$D(X\pm Y)=D(X)+D(Y)$
+      2. $cov(X,Y)=0\iff \rho_{XY}=0\iff E(XY)=E(X)E(Y)\iff D(X\pm Y)=D(X)+D(Y)$
+
+
