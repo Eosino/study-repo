@@ -1,5 +1,5 @@
 # 0. 常用高数知识
-1. $\int_{-\infty}^{+\infty}e^{-\frac{x^2}{A}}dx=\sqrt{A\pi}$
+1. $\int_{-\infty}^{+\infty}e^{-\frac{x^2}{a}}dx=\sqrt{a\pi}$
 2. $\int_0^{+\infty}x^ke^{-x}dx=k!$
 3. $\displaystyle\sum_{n=0}^{+\infty}\frac{x^n}{n!}=e^x$
 
