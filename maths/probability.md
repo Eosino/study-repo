@@ -1,3 +1,8 @@
+# 0. 常用高数知识
+1. $\int_{-\infty}^{+\infty}e^{-\frac{x^2}{A}}dx=\sqrt{A\pi}$
+2. $\int_0^{+\infty}x^ke^{-x}dx=k!$
+3. $\displaystyle\sum_{n=0}^{+\infty}\frac{x^n}{n!}=e^x$
+
 # 1. 事件与概率
 ## 1.1. 事件关系
 
@@ -303,8 +308,8 @@
 |二项分布|$P\lbrace X=k \rbrace =C_n^kp^k(1-p)^{n-k},\quad (k=0,1,...,n)$|$np$|$np(1-p)$|
 |几何分布|$P\lbrace X=k\rbrace =p(1-p)^{1-k},\quad (k=1,2,...)$|$\frac{1}{p}$|$\frac{1-p}{p^2}$|
 |泊松分布|$P\lbrace X=k \rbrace =\frac{\lambda^ke^{-\lambda}}{k!},\quad (\lambda>0,k=0,1,...)$|$\lambda$|$\lambda$|
-|均匀分布|$f(x)=\begin{cases} \frac{1}{b-a}, \quad a<x<b \\ 0, \quad\quad 其他 \end{cases}$|$\frac{a+b}{2}$|$\frac{(b-a)^2}{12}$|
 |指数分布|$f(x)=\begin{cases} \lambda e^{-\lambda x}, \quad x>0 \\ 0, \quad\quad x\le 0 \end{cases},\quad (\lambda >0)$|$\frac{1}{\lambda}$|$\frac{1}{\lambda^2}$|
+|均匀分布|$f(x)=\begin{cases} \frac{1}{b-a}, \quad a<x<b \\ 0, \quad\quad 其他 \end{cases}$|$\frac{a+b}{2}$|$\frac{(b-a)^2}{12}$|
 |正态分布|$f(X)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},\quad (\sigma >0,x\in R)$|$\mu$|$\sigma^2$|
 
 ## 4.5. 协方差
