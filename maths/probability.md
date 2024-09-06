@@ -1,7 +1,19 @@
 # 0. 常用高数知识
+## 0.1. 结论
 1. $\int_{-\infty}^{+\infty}e^{-\frac{x^2}{a}}dx=\sqrt{a\pi}$
 2. $\int_0^{+\infty}x^ke^{-x}dx=k!$
-3. $\displaystyle\sum_{n=0}^{+\infty}\frac{x^n}{n!}=e^x$
+## 0.2. 幂级数求和
+|  |  |  |
+|--|--|--|
+| $\displaystyle\sum_{n=0}^\infty x^n$ | $\frac{1}{1-x}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=0}^\infty (-1)^nx^n$ | $\frac{1}{1+x}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=1}^\infty x^n$ | $\frac{x}{1-x}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=1}^\infty (-1)^nx^n$ | $\frac{-x}{1+x}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=1}^\infty nx^n$ | $\frac{x}{(1-x)^2}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=1}^\infty n^2x^n$ | $\frac{x(1+x)}{(1-x)^3}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=2}^\infty n(n-1)x^{n-2}$ | $\frac{2}{(1-x)^3}$ | $\|x\|<1$ |
+| $\displaystyle\sum_{n=1}^\infty \frac{1}{n}x^n$ | $-\ln(1-x)$ | $x\in[-1,1)$ |
+|  |  |  |
 
 # 1. 事件与概率
 ## 1.1. 事件关系
