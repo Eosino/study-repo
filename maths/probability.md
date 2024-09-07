@@ -242,6 +242,7 @@
          1. 当 $X,Y$ 独立，$k_1X+k_2Y\sim N(k_1\mu_1+k_2\mu_2,k_1^2\sigma_1^2+k_2^2\sigma_2^2)$
          2. 当 $X,Y$ 不独立，$k_1X+k_2Y\sim N(k_1\mu_1+k_2\mu_2,k_1^2\sigma_1^2+k_2^2\sigma_2^2+2k_1k_2\rho\sigma_1\sigma_2)$
       4. $X_1,Y_1$ 是 $X,Y$ 的线性函数，则 $(X_1,Y_1)$ 也服从二维正态分布
+         1. 线性函数，即可逆线性变换：$(X_1,Y_1)=(X,Y)\begin{pmatrix} a & b \\ c & d \end{pmatrix}$，其中 $\begin{vmatrix} a & b \\ c & d \end{vmatrix}\ne 0$
       5. 注：若 $X,Y$ 分布服从一维正态分布且相互独立，则 $(X,Y)$ 服从二维正态分布，且 $aX+bY\sim N(a\mu_1+b\mu_2,a^2\sigma_1^2,b^2\sigma_2^2)$；但若 $X,Y$ 分别服从一维正态分布但不独立，则 $aX+bY$ 不服从正态分布
 ## 3.5. 函数的分布
 1. 离散型随机变量函数的分布
