@@ -288,20 +288,23 @@
    1. $E(C)=C$
    2. $E(CX)=CE(X)$
    3. $E(X+C)=E(X)+C$
-   4. $E(X\pm Y)=E(X)\pm E(Y)$
-   5. 若 $X,Y$ 相互独立，则 $E(XY)=E(X)E(Y)$
+   4. $E(aX+b)=aE(X)+b$
+   5. $E(X\pm Y)=E(X)\pm E(Y)$
+   6. 若 $X,Y$ 相互独立，则 $E(XY)=E(X)E(Y)$
 ## 4.2. 方差
 1. $D(X)=E\lbrace [X-E(X)]^2 \rbrace =E(X^2)-E^2(X)$
    1. 显然有 $D(X)\ge 0$，$\sqrt{D(X)}$ 称为 $X$ 的标准差（或均方差）
 2. 方差的性质
    1. $D(C)=0$（注：$D(X)=0$ 不能得出 $X$ 为常数的结论）
-   2. $D(X+C)=D(X)$
-   3. $D(CX)=C^2D(X)$
-   4. $D(X\pm Y)=D(X)+D(Y)\pm 2[E(XY)-E(X)E(Y)]$
+   2. $D(CX)=C^2D(X)$
+   3. $D(X+C)=D(X)$
+   4. $D(aX+b)=a^2D(X)$
+   5. $D(X\pm Y)=D(X)+D(Y)\pm 2[E(XY)-E(X)E(Y)]$
       1. $cov(X,Y)=E(XY)-E(X)E(Y)$
-   5. 若 $X,Y$ 相互独立，则 $D(X\pm Y)=D(X)+D(Y)$
+   6. 若 $X,Y$ 相互独立，则 $D(X\pm Y)=D(X)+D(Y)$
       1. 独立时，$E(XY)=E(X)E(Y)$
       2. 独立时可拓展为：$D(aX\pm bY)=a^2D(X)+b^2D(Y)$
+      3. 不独立时，$D(aX\pm bY)=a^2D(X)+b^2D(Y)\pm 2abcov(X,Y)$
 ## 4.3. 函数的数学期望
 1. 一维离散：设 $X$ 的分布律 $P\lbrace X=x_i\rbrace =p_i$，函数 $Y=g(x)$，则 $E(Y)=\displaystyle\sum_I g(x_i)P\lbrace X=x_i \rbrace$
 2. 一维连续：设 $X$ 的概率密度 $f(x)$，函数 $Y=g(x)$，则 $E(Y)=\int_{-\infty}^{+\infty}g(x)f(x)dx$
