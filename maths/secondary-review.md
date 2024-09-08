@@ -27,6 +27,8 @@ $a^2-b^2=(a+b)(a-b)$
 $a^3\pm b^3=(a\pm b)(a^2\mp ab+b^2)$  
 $(a\pm b)^2=a^2\pm 2ab+b^2$  
 $(a\pm b)^3=a^3\pm 3a^2b+3ab^2\pm b^3$  
+$n$ 次方展开公式：$(a+b)^n=\displaystyle\sum_{k=0}^nC_n^ka^{n-k}b^k$
+
 # 4. 三角函数
 <div>
 <img src="./res/secondary-review-2.png" width="30%" />

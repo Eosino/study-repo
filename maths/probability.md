@@ -1,7 +1,14 @@
 # 0. 常用高数知识
-## 0.1. 结论
+## 0.1. 常用公式
 1. $\int_{-\infty}^{+\infty}e^{-\frac{x^2}{a}}dx=\sqrt{a\pi}$
-2. $\int_0^{+\infty}x^ke^{-x}dx=k!$
+   1. 除了积分的常规解法，还可以凑成符合 $N(0,\frac{1}{2})$ 的正态分布：
+   2. $=\sqrt{a\pi}\int_{-\infty}^{+\infty}\frac{1}{\sqrt{a\pi}}e^{-\frac{x^2}{a}}dx=\sqrt{a\pi}$
+2. $\int_{-\infty}^{+\infty}xe^{-{x^2}}dx=0$，（奇函数）
+3. $\int_{-\infty}^{+\infty}x^2e^{-{x^2}}dx=\frac{\sqrt{\pi}}{2}$
+   1. 除了积分的常规解法，还可以凑成符合 $N(0,\frac{1}{2})$ 的正态分布：
+   2. $=\sqrt{\pi}\int_{-\infty}^{+\infty}x^2\frac{1}{\pi}e^{-{x^2}}dx=\frac{\sqrt{\pi}}{2}$
+   3. 注：后面积分内为正态分布 $X\sim N(0,\frac{1}{2})$ 的 $E(X^2)=E^2(X)+D(X)=0+\frac{1}{2}=\frac{1}{2}$
+4. $\int_0^{+\infty}x^ke^{-x}dx=k!$
 ## 0.2. 幂级数求和
 |  |  |  |
 |--|--|--|
