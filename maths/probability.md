@@ -370,4 +370,15 @@
          1. 当 $X,Y$ 相互独立时，$D(X\pm Y)=D(X)+D(Y)$
       2. $cov(X,Y)=0\iff \rho_{XY}=0\iff E(XY)=E(X)E(Y)\iff D(X\pm Y)=D(X)+D(Y)$
 
+# 5. 大数定律与中心极限定理
 
+|名称|条件|内容|备注|
+|:-|:-|:-|:-|
+|切比雪夫不等式|期望方差均存在|$P\lbrace \|X-E(X)\|\ge \epsilon\rbrace$|用来估计事件发生的可能性大小|
+|伯努利大数定律|$n$ 重伯努利试验|$\lim\limits_{n\to\infty}P\lbrace \|\frac{n_A}{n}-p\|<\epsilon \rbrace=1$|
+|切比雪夫大数定律|相互独立，期望方差均存在，方差有界|$\lim\limits_{n\to\infty}P(\|\frac{1}{n}\displaystyle\sum_{i=1}^nX_i-\frac{1}{n}\displaystyle\sum_{i=1}^nE(X_i)\|<\epsilon)=1$||
+|辛钦大数定律|独立同分布，期望存在，$E(X_i)=\mu$|$\lim\limits_{n\to\infty}P(\|\frac{1}{n}\displaystyle\sum_{i=1}^nX_i-\mu\|<\epsilon)=1$|辛钦是期望相等时的切比雪夫大数定律|
+|$L-L$ 中心极限定理|独立同分布，期望方差均存在，$E(X_i)=\mu,D(X_i)=\sigma^2$|$\lim\limits_{n\to\infty}P[\frac{\displaystyle\sum_{i=1}^nX_i-n\mu}{\sqrt{n}\sigma}\le x]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-\frac{t^2}{2}}dt$|意思是，当 $n$ 足够大时，独立同分布的 $X_i$ 的和 $\displaystyle\sum_{i=1}^nX_i$ 近似服从正态分布 $N(n\mu,n\sigma^2)$|
+|$D-L$ 中心极限定理|$X_i$ 服从二项分布 $B(n,p)$|$\lim\limits_{n\to\infty}P(\frac{X_n-np}{\sqrt{np(1-p)}}\le x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-\frac{t^2}{2}}dt$|意思是，当 $n$ 足够大时，二项分布会近似服从正态分布 $N(np,np(1-p))$|
+
+# 6. 数理统计
