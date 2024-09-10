@@ -374,7 +374,7 @@
 
 |名称|条件|内容|备注|
 |:-|:-|:-|:-|
-|切比雪夫不等式|期望方差均存在|$P\lbrace \|X-E(X)\|\ge \epsilon\rbrace$|用来估计事件发生的可能性大小|
+|切比雪夫不等式|期望方差均存在|$P\lbrace \|X-E(X)\|\ge \epsilon\rbrace \le \frac{D(X)}{\epsilon^2}$|用来估计事件发生的可能性大小|
 |伯努利大数定律|$n$ 重伯努利试验|$\lim\limits_{n\to\infty}P\lbrace \|\frac{n_A}{n}-p\|<\epsilon \rbrace=1$|
 |切比雪夫大数定律|相互独立，期望方差均存在，方差有界|$\lim\limits_{n\to\infty}P(\|\frac{1}{n}\displaystyle\sum_{i=1}^nX_i-\frac{1}{n}\displaystyle\sum_{i=1}^nE(X_i)\|<\epsilon)=1$||
 |辛钦大数定律|独立同分布，期望存在，$E(X_i)=\mu$|$\lim\limits_{n\to\infty}P(\|\frac{1}{n}\displaystyle\sum_{i=1}^nX_i-\mu\|<\epsilon)=1$|辛钦是期望相等时的切比雪夫大数定律|

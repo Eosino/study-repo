@@ -12,7 +12,7 @@
 3. $0^0、\infty^0$ 形式：指数化，$f(x)^{g(x)}=e^{g(x)\ln{f(x)}}$
 4. 出现 $f(a)-f(b)$ 考虑使用拉格朗日中值定理
 ### 1.1.2. 抓大
-求极限时，可分别取分子分母中趋于$\infty$速度最快的无穷大项（主部，主要部分），舍弃其他，然后再计算。  
+求极限时，可分别取分子分母中趋于 $\infty$ 速度最快的无穷大项（主部，主要部分），舍弃其他，然后再计算。  
 1. 当 $x\to+\infty$，下列函数趋于$+\infty$的速度由慢到快：$\ln x,\enspace x^a,\enspace a^x,\enspace x^x\quad(a>0)$  
 2. 当 $n\to\infty\enspace(n为正整数，n\to\infty就是n\to+\infty)$：$\ln n,\enspace n^a,\enspace a^n,\enspace n^n,\enspace n^n\quad(a>0)$  
 > 注1：当 $x\to-\infty$ 时要具体问题具体分析，或用相反数代换转化为 $x\to+\infty$  
@@ -399,6 +399,15 @@ $\begin{cases}
 | 旋转曲面面积-极坐标 | $S=2\pi\int^\beta_\alpha y\sqrt{r^2(\theta)+r'^2(\theta)}d\theta$ |
 | 区间平均值 | $\bar{y}=\frac{1}{b-a}\int^{b}_{a}f(x)dx$ |
 |  |  |
+
+## 3.4. 反常积分
+
+|||
+|-|-|
+|$\int_a^{+\infty}\frac{1}{x^p}dx,(a>0)$|当 $p>1$ 时收敛|
+|$\int_a^{+\infty}\frac{1}{x\ln^px}dx,(a>1)$|当 $p>1$ 时收敛|
+|$\int_0^{+\infty}x^ke^{-\lambda x}dx,(k\ge 0)$|当 $\lambda>0$ 时收敛|
+|$\int_0^a\frac{1}{x^p}dx,(a>0)$|当 $p<1$ 时收敛|
 
 # 4. 常微分方程
 ## 4.1. 一阶微分方程
