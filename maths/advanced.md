@@ -9,7 +9,7 @@
    * $1^\infty$ 形式: 极限结果 $=e^A$
       * $\lim\limits_{x\to\forall}[1+f(x)]^{g(x)}$, 其中 $f(x)\to0, g(x)\to\infty, A=\lim\limits_{x\to\forall}f(x)g(x)$
       * $\lim\limits_{x\to\forall}f(x)^{g(x)}$, 其中 $f(x)\to1, g(x)\to\infty, A=\lim\limits_{x\to\forall}[f(x)-1]g(x)$
-3. $0^0、\infty^0$ 形式: 指数化，$f(x)^{g(x)}=e^{g(x)\ln{f(x)}}$
+3. $0^0、\infty^0$ 形式: 指数化, $f(x)^{g(x)}=e^{g(x)\ln{f(x)}}$
 4. 出现 $f(a)-f(b)$ 考虑使用拉格朗日中值定理
 ### 1.1.2. 抓大
 求极限时，可分别取分子分母中趋于 $\infty$ 速度最快的无穷大项（主部，主要部分），舍弃其他，然后再计算。  
@@ -48,20 +48,20 @@
 3. $(1+x)^a-1 \sim ax$
    * $[1+f(x)]^a \sim af(x)$
 ## 1.5. 洛必达法则求极限
-1. $\frac{0}{0}$和$\frac{\infty}{\infty}$型极限可直接使用洛必达法则，但并非所有，比如$\lim\limits_{x\to+\infty}{\frac{e^x+e^{-x}}{e^x-e^{-x}}}、\lim\limits_{x\to\infty}{\frac{x+\sin x}{x-\cos x}}$和$x\to 0$时包含$\sin\frac{1}{x},\cos\frac{1}{x}$等情况不能用。
+1. $\frac{0}{0}$ 和 $\frac{\infty}{\infty}$ 型极限可直接使用洛必达法则，但并非所有，比如 $\lim\limits_{x\to+\infty}{\frac{e^x+e^{-x}}{e^x-e^{-x}}}、\lim\limits_{x\to\infty}{\frac{x+\sin x}{x-\cos x}}$ 和 $x\to 0$ 时包含 $\sin\frac{1}{x},\cos\frac{1}{x}$ 等情况不能用。
 2. 法则使用前后要使用“等价无穷小”和“去非零因子“来化简。
-3. $\lim\limits_{x\to\forall}{\frac{f'(x)}{g'(x)}}$不存在，不能判定$\lim\limits_{x\to\forall}{\frac{f(x)}{g(x)}}$不存在，要改用其他方法去计算。
+3. $\lim\limits_{x\to\forall}{\frac{f'(x)}{g'(x)}}$ 不存在，不能判定 $\lim\limits_{x\to\forall}{\frac{f(x)}{g(x)}}$ 不存在，要改用其他方法去计算。
 4. n阶可导，则洛必达法则只能用n-1次，最后一次用导数定义。
 5. 题目只说在某一点可导，则不能用洛必达法则，要用导数定义。
 ## 1.6. 利用导数定义求极限
-1. $f(x)$在$x_0$处的导数定义: 
+1. $f(x)$ 在 $x_0$ 处的导数定义: 
    * $f'(x_0) = \lim\limits_{\Delta x\to0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$  
-   &emsp;&emsp;&emsp;&ensp;$=\lim\limits_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$  
-   &emsp;&emsp;&emsp;&ensp;$=\lim\limits_{x\to x_0}\frac{f[x_0+\varphi(x)]-f(x_0)}{\varphi(x)}$&emsp;[$x\to x_0$使$\varphi(x)\to0$]
-2. 令$h=\frac{1}{\Delta x}$，$f'(x_0) = \lim\limits_{h\to\infty}\frac{f(x_0+\frac{1}{h})-f(x_0)}{\frac{1}{h}} = \lim\limits_{h\to\infty}h[f(x_0+\frac{1}{h})-f(x_0)]$
-   * 若$x_0=0、f(x_0)=a，f'(0)=\lim\limits_{h\to\infty}h[f(\frac{1}{h})-a]$
-   * 若$x_0=0、f(x_0)=0，f'(0)=\lim\limits_{h\to\infty}hf(\frac{1}{h})$
-3. $\frac{0}{0}$型的$\lim\limits_{x\to x_0}\frac{f[u(x)]-f[u(x_0)]}{g[v(x)]-g[v(x_0)]}=\lim\limits_{x\to x_0}\frac{\frac{f[u(x)]-f[u(x_0)]}{u(x)-u(x_0)}}{\frac{g[v(x)]-g[v(x_0)]}{v(x)-v(x_0)}}\frac{u(x)-u(x_0)}{v(x)-v(x_0)}=\frac{f'[u(x_0)]}{f'[v(x_0)]}\lim\limits_{x\to x_0}\frac{u(x)-u(x_0)}{v(x)-v(x_0)}$
+   &emsp;&emsp;&emsp;&ensp; $=\lim\limits_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$  
+   &emsp;&emsp;&emsp;&ensp; $=\lim\limits_{x\to x_0}\frac{f[x_0+\varphi(x)]-f(x_0)}{\varphi(x)}$ &emsp;[ $x\to x_0$ 使 $\varphi(x)\to0$ ]
+2. 令 $h=\frac{1}{\Delta x}$, $f'(x_0) = \lim\limits_{h\to\infty}\frac{f(x_0+\frac{1}{h})-f(x_0)}{\frac{1}{h}} = \lim\limits_{h\to\infty}h[f(x_0+\frac{1}{h})-f(x_0)]$
+   * 若 $x_0=0、f(x_0)=a，f'(0)=\lim\limits_{h\to\infty}h[f(\frac{1}{h})-a]$
+   * 若 $x_0=0、f(x_0)=0，f'(0)=\lim\limits_{h\to\infty}hf(\frac{1}{h})$
+3. $\frac{0}{0}$ 型的 $\lim\limits_{x\to x_0}\frac{f[u(x)]-f[u(x_0)]}{g[v(x)]-g[v(x_0)]}=\lim\limits_{x\to x_0}\frac{\frac{f[u(x)]-f[u(x_0)]}{u(x)-u(x_0)}}{\frac{g[v(x)]-g[v(x_0)]}{v(x)-v(x_0)}}\frac{u(x)-u(x_0)}{v(x)-v(x_0)}=\frac{f'[u(x_0)]}{f'[v(x_0)]}\lim\limits_{x\to x_0}\frac{u(x)-u(x_0)}{v(x)-v(x_0)}$
 ## 1.7. 求幂指函数极限
 1. $1^\infty=e^A$, 若 $\lim{f(x)^{g(x)}}$ 为 $1^\infty$ 型，则 $A=g(x)[f(x)-1]$
 2. 重要结论: $\lim\limits_{x\to\infty}(\frac{ax+b}{ax+c})^{hx+k}=e^{\frac{(b-c)h}{a}}$
@@ -83,46 +83,46 @@
 3. 取整函数 $[x]$ ，意思是取不超过x的最大整数: 
    * $\lim\limits_{x\to n^+}[x]=n$
    * $\lim\limits_{x\to n^-}[x]=n-1$
-4. 偶次方根: 当$x\to\infty$，含偶次方根的函数式提导根号外的因子要加负号。
+4. 偶次方根: 当 $x\to\infty$，含偶次方根的函数式提导根号外的因子要加负号。
 5. 绝对值函数: 即当 $x\to a$ 时的 $|x-a|$ 。
 6. 分段函数分段点的极限。
 ## 1.9. 极限的定义及性质
 ### 1.9.1. 数列的极限
->定义: 设有数列${u_n}$和常数$A$，对任意给定的$\varepsilon>0$，存在整数N，使得当$n>N$时，恒有$|u_n-A|<\varepsilon$成立，则称数列${u_n}$以$A$为极限，记为: $\lim\limits_{n\to\infty}u_n=A$ 或 $u_n\to A\space(n\to\infty)$
+>定义: 设有数列 ${u_n}$ 和常数 $A$，对任意给定的 $\varepsilon>0$，存在整数N，使得当 $n>N$ 时，恒有 $|u_n-A|<\varepsilon$ 成立，则称数列 ${u_n}$ 以 $A$ 为极限，记为: $\lim\limits_{n\to\infty}u_n=A$ 或 $u_n\to A\space(n\to\infty)$
 
 >子列: 从一个数列中抽取无穷多项，在不改变原有次序的情况下构成的新数列称为原数列的子数列，简称子列
-1. $\varepsilon$表示$u_n$与$A$的接近程度，可以任意小，可以有多种形式表达，比如: $2\varepsilon$、$\varepsilon^2$、$\sqrt{\varepsilon}$等
-2. $u_n$收敛于$A\iff u_n$的任意子数列也收敛于$A$
-   * 注意: 这里的任意子列可以理解为全部子列，不能覆盖整个$u_n$的子列收敛不能推导$u_n$收敛
-3. $\lim\limits_{n\to\infty}u_n=A\iff u_n$的偶数子列和奇数子列满足$\lim\limits_{n\to\infty}u_{2n}=\lim\limits_{n\to\infty}u_{2n+1}=A$
-4. $u_n$是单调数列、$\lim\limits_{n\to\infty}u_n=A \iff$存在某个子列收敛于$A$
+1. $\varepsilon$ 表示 $u_n$ 与 $A$ 的接近程度，可以任意小，可以有多种形式表达，比如: $2\varepsilon$、$\varepsilon^2$、$\sqrt{\varepsilon}$ 等
+2. $u_n$ 收敛于 $A\iff u_n$ 的任意子数列也收敛于 $A$
+   * 注意: 这里的任意子列可以理解为全部子列，不能覆盖整个 $u_n$ 的子列收敛不能推导 $u_n$ 收敛
+3. $\lim\limits_{n\to\infty}u_n=A\iff u_n$ 的偶数子列和奇数子列满足 $\lim\limits_{n\to\infty}u_{2n}=\lim\limits_{n\to\infty}u_{2n+1}=A$
+4. $u_n$ 是单调数列、 $\lim\limits_{n\to\infty}u_n=A \iff$ 存在某个子列收敛于 $A$
 ### 1.9.2. 函数的极限
-1. $x\to\infty$时函数$f(x)$的极限: 设有函数$y=f(x)$和常数$A$，对任意给定的$\varepsilon>0$，若存在$M>0$，使得当$|x|>M$时，恒有$|f(x)-A|<\varepsilon$成立，则称当$x\to\infty$时，$y=f(x)$的极限为A，记为: $\lim\limits_{x\to\infty}f(x)=A$ 或 $f(x)\to A\space(x\to\infty)$
-2. $x\to x_0$时函数$f(x)$的极限: 设有函数$y=f(x)$和常数$A$，对任意给定的$\varepsilon>0$，若存在$M>0$，使得当$0<|x-x_0|<M$时，恒有$|f(x)-A|<\varepsilon$成立，则称当$x\to x_0$时，$y=f(x)$的极限为A，记为: $\lim\limits_{x\to x_0}f(x)=A$ 或 $f(x)\to A\space(x\to x_0)$
+1. $x\to\infty$ 时函数 $f(x)$ 的极限: 设有函数 $y=f(x)$ 和常数 $A$，对任意给定的 $\varepsilon>0$，若存在 $M>0$，使得当 $|x|>M$ 时，恒有 $|f(x)-A|<\varepsilon$ 成立，则称当 $x\to\infty$ 时, $y=f(x)$ 的极限为A，记为: $\lim\limits_{x\to\infty}f(x)=A$ 或 $f(x)\to A\space(x\to\infty)$
+2. $x\to x_0$ 时函数 $f(x)$ 的极限: 设有函数 $y=f(x)$ 和常数 $A$，对任意给定的 $\varepsilon>0$，若存在 $M>0$，使得当 $0<|x-x_0|<M$ 时，恒有 $|f(x)-A|<\varepsilon$ 成立，则称当 $x\to x_0$ 时, $y=f(x)$ 的极限为A，记为: $\lim\limits_{x\to x_0}f(x)=A$ 或 $f(x)\to A\space(x\to x_0)$
 3. 函数极限无穷小关系定理（去极限号定理）: $\lim\limits_{x\to x_0}f(x)=A$，则 $f(x)=A+\alpha$，其中 $\alpha$ 为无穷小
 ### 1.9.3. 极限的性质
 1. 唯一性: 若极限存在，则极限值唯一
 2. 有界性: 极限存在，则局部有界；另两个与有界性有关联的结论: 
-   * 连续函数在闭区间$[a,b]$上一定有界
-   * $f'(x)$在有限区间$(a,b)$上有界，则$f(x)$在$(a,b)$上有界（拉格朗日中值定理推出）
-3. 保号性: 设$\lim\limits_{x\to x_0}f(x)=A$，则: 
+   * 连续函数在闭区间 $[a,b]$ 上一定有界
+   * $f'(x)$ 在有限区间 $(a,b)$ 上有界，则 $f(x)$ 在 $(a,b)$ 上有界（拉格朗日中值定理推出）
+3. 保号性: 设 $\lim\limits_{x\to x_0}f(x)=A$，则: 
    * $A>0\implies f(x)>0$
    * $A<0\implies f(x)<0$
    * $f(x)>0\implies A\ge 0$，例: $\lim\limits_{n\to\infty}\frac{1}{n}=0$
    * $f(x)<0\implies A\le 0$
 ## 1.10. 极限的运用
 ### 1.10.1. 连续与间断点
-设$f(x)$在$x=x_0$左右两侧都有定义: 
+设 $f(x)$ 在 $x=x_0$ 左右两侧都有定义: 
 * 左极限: $\lim\limits_{x\to x_0^-}f(x)$
 * 右极限: $\lim\limits_{x\to x_0^+}f(x)$
 * 函数值: $f(x_0)$
 
 则: 
-1. 左右极限至少有一个不存在且等于$\infty$，则$x_0$为无穷间断点（第二类间断点）
-2. 左右极限至少有一个不存在且振荡，则$x_0$为振荡间断点（第二类间断点）
-3. 左右极限都存在，但不相等，则$x_0$为跳跃间断点（第一类间断点）
-4. 左右极限都存在，且相等，但不等于函数值，则$x_0$为可去间断点（第一类间断点）
-5. 左右极限都存在，且相等，且等于函数值，则$f(x)$在$x_0$连续
+1. 左右极限至少有一个不存在且等于 $\infty$，则 $x_0$ 为无穷间断点（第二类间断点）
+2. 左右极限至少有一个不存在且振荡，则 $x_0$ 为振荡间断点（第二类间断点）
+3. 左右极限都存在，但不相等，则 $x_0$ 为跳跃间断点（第一类间断点）
+4. 左右极限都存在，且相等，但不等于函数值，则 $x_0$ 为可去间断点（第一类间断点）
+5. 左右极限都存在，且相等，且等于函数值，则 $f(x)$ 在 $x_0$ 连续
 
 寻找间断点: 
 1. 分母为零的点
@@ -133,19 +133,19 @@
 * 分子为零的点是可去间断点的高度怀疑点
 ### 1.10.2. 渐近线
 垂直渐近线: 
-* 若$\lim\limits_{x\to x_0}f(x)=\infty$，则直线$x=x_0$为曲线$y=f(x)$的垂直渐近线
-* （注: 找使分母为零的$x_0$）
+* 若 $\lim\limits_{x\to x_0}f(x)=\infty$，则直线 $x=x_0$ 为曲线 $y=f(x)$ 的垂直渐近线
+* （注: 找使分母为零的 $x_0$ ）
 
 水平渐近线: 
-* 若$\lim\limits_{x\to\infty}f(x)=A$，则直线$y=A$为曲线$y=f(x)$的水平渐近线
+* 若 $\lim\limits_{x\to\infty}f(x)=A$，则直线 $y=A$ 为曲线 $y=f(x)$ 的水平渐近线
 
 斜渐近线: 
-* 若$k=\lim\limits_{x\to\infty}\frac{f(x)}{x}$、$b=\lim\limits_{x\to\infty}[f(x)-kx]$，则$y=kx+b$为曲线$y=f(x)$的斜渐近线
+* 若 $k=\lim\limits_{x\to\infty}\frac{f(x)}{x}$、 $b=\lim\limits_{x\to\infty}[f(x)-kx]$，则 $y=kx+b$ 为曲线 $y=f(x)$ 的斜渐近线
 * （注: 同一侧水平渐近线与斜渐近线不会共存）
 
 求斜渐近线扩展: 
 1. $k=\lim\limits_{x\to\infty}\frac{f(x)}{x}=^{L'}\lim\limits_{x\to\infty}f'(x)$
-2. 在$x\to\infty$时，把$f(x)$展开为线性组合$kx+b$与无穷小量之和: $kx+b+o(1)$，则$y=kx+b$即为渐近线
+2. 在 $x\to\infty$ 时，把 $f(x)$ 展开为线性组合 $kx+b$ 与无穷小量之和: $kx+b+o(1)$，则 $y=kx+b$ 即为渐近线
 ## 1.11. 计算数列极限
 ### 1.11.1. 使用定积分定义
 >分割、代替、求和、取极限
@@ -153,23 +153,23 @@
 2. 取左端点: $\int^b_af(x)dx=\lim\limits_{n\to\infty}\displaystyle\sum_{i=1}^n\{f[a+\frac{b-a}{n}\cdot(i-1)]\cdot\frac{b-a}{n}\}$
 2. 取中点: $\int^b_af(x)dx=\lim\limits_{n\to\infty}\displaystyle\sum_{i=1}^n\{f[a+\frac{b-a}{n}\cdot\frac{1}{2}\cdot(2i-1)]\cdot\frac{b-a}{n}\}$
 
-特殊地，当$a=0、b=1$时: 
+特殊地，当 $a=0、b=1$ 时: 
 1. 取右端点: $\int^1_0f(x)dx=\lim\limits_{n\to\infty}\displaystyle\sum_{i=1}^nf(\frac{i}{n})\frac{1}{n}$
 2. 取左端点: $\int^1_0f(x)dx=\lim\limits_{n\to\infty}\displaystyle\sum_{i=1}^nf(\frac{i-1}{n})\frac{1}{n}$
 2. 取中点: $\int^1_0f(x)dx=\lim\limits_{n\to\infty}\displaystyle\sum_{i=1}^nf(\frac{2i-1}{2n})\frac{1}{n}$
 >三者的变化其实是: $i\to i-1 \to i-\frac{1}{2}$
 ### 1.11.2. 夹逼准则
 1. 对 $u_1+u_2+...+u_n$ 进行缩放有两个常见的结论: 
-   * 当$n$为无穷大时，则 $n\cdot u_m\le\displaystyle\sum^{n}_{i=1}u_i\le n\cdot u_M$
-   * 当$n$为有限数，且 $u_i\ge0$，则 $u_M\le\displaystyle\sum^{n}_{i=1}u_i\le n\cdot u_M$
+   * 当 $n$ 为无穷大时，则 $n\cdot u_m\le\displaystyle\sum^{n}_{i=1}u_i\le n\cdot u_M$
+   * 当 $n$ 为有限数，且 $u_i\ge0$，则 $u_M\le\displaystyle\sum^{n}_{i=1}u_i\le n\cdot u_M$
 2. $\lim\limits_{n\to\infty}\sqrt[n]{a^n_1+a^n_2+...+a^n_k}=\max\lbrace a_i\rbrace\space(i=1,2,...,k)$
 ### 1.11.3. 其他
 * 先用夹逼准则，再用定积分定义
 * 数列极限改为函数极限
 ## 1.12. 证明数列极限存在
->证明$\lim\limits_{n\to\infty}a_n$存在: 单调有界准则，单调增加（减少）且有上（下）界。
+>证明 $\lim\limits_{n\to\infty}a_n$ 存在: 单调有界准则，单调增加（减少）且有上（下）界。
 
->证明数列极限存在后，求极限: 写出相邻两项（如$a_n$和$a_{n+1}$）之间的关系，并在其两端求$n\to\infty$时的极限，令$\lim\limits_{n\to\infty}a_n=A$，得到关于A的方程（应是因为$\lim\limits_{n\to\infty}a_{n+1}=\lim\limits_{n\to\infty}a_n=A$所以这里是等式方程而非不等式），解出A即得到所求极限。
+>证明数列极限存在后，求极限: 写出相邻两项（如 $a_n$ 和 $a_{n+1}$）之间的关系，并在其两端求 $n\to\infty$ 时的极限，令 $\lim\limits_{n\to\infty}a_n=A$，得到关于A的方程（应是因为 $\lim\limits_{n\to\infty}a_{n+1}=\lim\limits_{n\to\infty}a_n=A$ 所以这里是等式方程而非不等式），解出A即得到所求极限。
 
 证明单调性的方法: 
 * 定义法: 
@@ -180,7 +180,7 @@
    2. $x^2+y^2\ge 2xy,\space x,y\in R$
    3. $\frac{2}{\pi}x\le\sin x\le x \le \tan x,\space x\in [0,\frac{\pi}{2})$
    4. $\frac{x}{1+x}<\ln(1+x)<x,\space x\in R^+$
-      * 变形: 设$n$为正整数，则: $\frac{1}{1+n}<\ln(1+\frac{1}{n})<\frac{1}{n}$
+      * 变形: 设 $n$ 为正整数，则: $\frac{1}{1+n}<\ln(1+\frac{1}{n})<\frac{1}{n}$
 * 数学归纳法
 # 2. 一元函数微分学
 ## 2.1. 导数的定义
@@ -193,15 +193,15 @@
 ### 2.1.3. 可导的条件
 >一元函数在某点可导的充要条件是: **函数在该点的左右导数存在且相等**。但只知道这句话往往是不够的，还需要扩展: 
 
-设$f(x)$在$x=x_0$处可导，定义为: $f'(x_0)=\lim\limits_{x\to x_0}\frac{f[g_1(x)]-f[g_2(x)]}{g_3(x)}$，则:   
+设 $f(x)$ 在 $x=x_0$ 处可导，定义为: $f'(x_0)=\lim\limits_{x\to x_0}\frac{f[g_1(x)]-f[g_2(x)]}{g_3(x)}$，则:   
 **必要条件**  
 * $g_1(x)-g_2(x)=g_3(x)$
-* 题目中若该等式不成立，则通常利用分子分母同乘$g_1(x)-g_2(x)$来求出极限值
+* 题目中若该等式不成立，则通常利用分子分母同乘 $g_1(x)-g_2(x)$ 来求出极限值
 
 **充分条件**  
-1. 一动一静: 分子必为一个动点减一个固定点，固定点就是$f(x_0)$  
-2. 保证$f_+(x_0)=f_-(x_0)$: 假设$f[g_2(x)]=f(x_0)$，当$x$由$x^-_0\to x^+_0$过程中，$g_1(x)$必由$x^-_0\to x^+_0$或$x^+_0\to x^-_0$
-3. $g_1(x)-g_2(x)$为$g_3(x)$的同阶或低阶无穷小
+1. 一动一静: 分子必为一个动点减一个固定点，固定点就是 $f(x_0)$  
+2. 保证 $f_+(x_0)=f_-(x_0)$: 假设 $f[g_2(x)]=f(x_0)$，当 $x$ 由 $x^-_0\to x^+_0$ 过程中, $g_1(x)$ 必由 $x^-_0\to x^+_0$ 或 $x^+_0\to x^-_0$
+3. $g_1(x)-g_2(x)$ 为 $g_3(x)$ 的同阶或低阶无穷小
 
 ## 2.2. 利用导数定义求导
 用导数定义求导较求导法则更方便: 
@@ -210,40 +210,40 @@
 3. 讨论抽象函数在某点的可导性
 
 ## 2.3. 有关可导性的几个常用结论
-1. 设$f(x)$在$x_0$处可导，$g(x)$在$x_0$处连续但不可导，则$F(x)=f(x)g(x)$在$x_0$处可导的充要条件是$f(x_0)=0$
-   * 例: $f(x)=x\max\lbrace\sin x,\cos x\rbrace$，$x\in (0,2\pi)$，有两个不可导点（$x=\frac{\pi}{4}$，$x=\frac{5\pi}{4}$），若改成$(x-\frac{\pi}{4})\max\lbrace\sin x,\cos x\rbrace$，则只剩一个不可导点（$x=\frac{5\pi}{4}$）
-2. 设$f(x)=(x-x_0)^k|x-x_0|$，则: 
-   * 当$k=0$时，$f(x)$在$x_0$处不可导
-   * 当$k=1$时，$f(x)$在$x_0$处一阶可导但二阶不可导
-   * 当$k$为正整数时，$f(x)$在$x_0$处$k$阶可导但$k+1$阶不可导
-   * 补: $f(x)=\varphi(x)|x-x_0|$，$\varphi(x)$在$x_0$处连续，则$f(x)$在$x_0$处: 
-      * 可导$\iff\varphi(x)=0$
-      * 不可导$\iff\varphi(x)\ne 0$
-3. 设$f(x)$在$x_0$处可导，则: 
-   * 当$f(x_0)\ne0$时，$y=|f(x)|$在$x_0$处可导
-   * 当$f(x_0)=0$，且$f'(x_0)=0$时，$y=|f(x)|$在$x_0$处可导，且$y'|_{x=x_0}=0$
-   * 当$f(x_0)=0$，且$f'(x_0)\ne0$时，$y=|f(x)|$在$x_0$处不可导
+1. 设 $f(x)$ 在 $x_0$ 处可导, $g(x)$ 在 $x_0$ 处连续但不可导，则 $F(x)=f(x)g(x)$ 在 $x_0$ 处可导的充要条件是 $f(x_0)=0$
+   * 例: $f(x)=x\max\lbrace\sin x,\cos x\rbrace$, $x\in (0,2\pi)$，有两个不可导点（ $x=\frac{\pi}{4}$, $x=\frac{5\pi}{4}$），若改成 $(x-\frac{\pi}{4})\max\lbrace\sin x,\cos x\rbrace$，则只剩一个不可导点（ $x=\frac{5\pi}{4}$）
+2. 设 $f(x)=(x-x_0)^k|x-x_0|$，则: 
+   * 当 $k=0$ 时， $f(x)$ 在 $x_0$ 处不可导
+   * 当 $k=1$ 时， $f(x)$ 在 $x_0$ 处一阶可导但二阶不可导
+   * 当 $k$ 为正整数时， $f(x)$ 在 $x_0$ 处 $k$ 阶可导但 $k+1$ 阶不可导
+   * 补: $f(x)=\varphi(x)|x-x_0|$， $\varphi(x)$ 在 $x_0$ 处连续，则 $f(x)$ 在 $x_0$ 处: 
+      * 可导 $\iff\varphi(x)=0$
+      * 不可导 $\iff\varphi(x)\ne 0$
+3. 设 $f(x)$ 在 $x_0$ 处可导，则: 
+   * 当 $f(x_0)\ne0$ 时， $y=|f(x)|$ 在 $x_0$ 处可导
+   * 当 $f(x_0)=0$，且 $f'(x_0)=0$ 时， $y=|f(x)|$ 在 $x_0$ 处可导，且 $y'|_{x=x_0}=0$
+   * 当 $f(x_0)=0$，且 $f'(x_0)\ne0$ 时， $y=|f(x)|$ 在 $x_0$ 处不可导
 4. 奇（偶）函数的导函数是偶（奇）函数，周期函数的导函数一定是周期函数
-   * 奇函数的原函数是偶函数，比如: $f(x)=x$，$F(x)=\frac{1}{2}x^2+C$
-   * 偶函数的所有原函数中只有一个奇函数，比如: $f(x)=x^2$，$F(x)=\frac{1}{3}x^3+C$，仅当$C=0$时$F(x)$为奇函数
-   * 周期函数的原函数不一定是周期函数，比如: $f(x)=\cos x+1$，$F(x)=\sin x+x+C$，$F(x)$不是周期函数
-5. 导数极限定理: 若$f(x)$在点$x_0$的左邻域$[x_0-\delta,x_0]$上连续，在$(x_0-\delta,x_0)$内可导，且$\lim\limits_{x\to x_0^-}f'(x)$存在，则$\lim\limits_{x\to x_0^-}f'(x)=f'_-(x_0)$，即: 函数$f(x)$在$x_0$的左导数等于导函数$f'(x)$在$x_0$的左极限
-   * 同理: 若$f(x)$在点$x_0$的右邻域$[x_0,x_0+\delta]$上连续，在$(x_0,x_0+\delta)$内可导，且$\lim\limits_{x\to x_0^+}f'(x)$存在，则$\lim\limits_{x\to x_0^+}f'(x)=f'_+(x_0)$，即: 函数$f(x)$在$x_0$的右导数等于导函数$f'(x)$在$x_0$的右极限
+   * 奇函数的原函数是偶函数，比如: $f(x)=x$， $F(x)=\frac{1}{2}x^2+C$
+   * 偶函数的所有原函数中只有一个奇函数，比如: $f(x)=x^2$，$F(x)=\frac{1}{3}x^3+C$，仅当 $C=0$ 时 $F(x)$ 为奇函数
+   * 周期函数的原函数不一定是周期函数，比如: $f(x)=\cos x+1$， $F(x)=\sin x+x+C$， $F(x)$ 不是周期函数
+5. 导数极限定理: 若 $f(x)$ 在点 $x_0$ 的左邻域 $[x_0-\delta,x_0]$ 上连续，在 $(x_0-\delta,x_0)$ 内可导，且 $\lim\limits_{x\to x_0^-}f'(x)$ 存在，则 $\lim\limits_{x\to x_0^-}f'(x)=f'_-(x_0)$，即: 函数 $f(x)$ 在 $x_0$ 的左导数等于导函数 $f'(x)$ 在 $x_0$ 的左极限
+   * 同理: 若 $f(x)$ 在点 $x_0$ 的右邻域 $[x_0,x_0+\delta]$ 上连续，在 $(x_0,x_0+\delta)$ 内可导，且 $\lim\limits_{x\to x_0^+}f'(x)$ 存在，则 $\lim\limits_{x\to x_0^+}f'(x)=f'_+(x_0)$，即: 函数 $f(x)$ 在 $x_0$ 的右导数等于导函数 $f'(x)$ 在 $x_0$ 的右极限
    * 用导数定义及拉格朗日中值定理即可证明，由此可以证明导函数至多有第二类间断点，即具有第一类间断点的函数一定没有原函数
-6. 导数介值定理（达布定理），若$f(x)$在$[a,b]$上可导: 
-   * $f'$可取到$f'(a)$与$f'(b)$间的一切值，即: 若$f_+'(a)<c<f_-'(b)$，则$\exists\xi\in(a,b)$使$f'(\xi)=c$
-   * 若$f_+'(a)f_-'(b)<0$，则$\exists\xi\in(a,b)$使得$f'(\xi)=0$
+6. 导数介值定理（达布定理），若 $f(x)$ 在 $[a,b]$ 上可导: 
+   * $f'$ 可取到 $f'(a)$ 与 $f'(b)$ 间的一切值，即: 若 $f_+'(a)<c<f_-'(b)$，则 $\exists\xi\in(a,b)$ 使 $f'(\xi)=c$
+   * 若 $f_+'(a)f_-'(b)<0$，则 $\exists\xi\in(a,b)$ 使得 $f'(\xi)=0$
 
 ## 2.4. 一元函数求导
 ### 2.4.1. 复合函数
-设$y=f(u)$，$u=g(x)$均可导，则: $y'=f'[g(x)]g'(x)$
+设 $y=f(u)$， $u=g(x)$ 均可导，则: $y'=f'[g(x)]g'(x)$
 ### 2.4.2. 隐函数
-求方程$F(x,y)=0$确定的隐函数$y$的一阶导数$\frac{dy}{dx}$，一般有下列三种方法: 
-1. 视$y=y(x)$，对方程$F(x,y)=0$两端关于$x$进行复合函数求导，表达式中出现$y'$，然后解除$y'$，此时$y'$仍是$(x,y)$的函数
-2. 利用$F(x,y)$的偏导数计算: $y'=\frac{dy}{dx}=-\frac{F_x'(x,y)}{F_y'(x,y)}$
-3. 对方程两端求微分，然后从求得的等式中解出$\frac{dy}{dx}$
+求方程 $F(x,y)=0$ 确定的隐函数 $y$ 的一阶导数 $\frac{dy}{dx}$，一般有下列三种方法: 
+1. 视 $y=y(x)$，对方程 $F(x,y)=0$ 两端关于 $x$ 进行复合函数求导，表达式中出现 $y'$，然后解除 $y'$，此时 $y'$ 仍是 $(x,y)$ 的函数
+2. 利用 $F(x,y)$ 的偏导数计算: $y'=\frac{dy}{dx}=-\frac{F_x'(x,y)}{F_y'(x,y)}$
+3. 对方程两端求微分，然后从求得的等式中解出 $\frac{dy}{dx}$
 
-**求隐函数的二阶导**: 一般先求出一阶导$\frac{dy}{dx}=\varphi(x,y)$，然后再对$\varphi(x,y)$关于$x$求导，此时表达式中会出现$y'$，将$\varphi(x,y)$代入，即可求得$\frac{d^2y}{dx^2}$
+**求隐函数的二阶导**: 一般先求出一阶导 $\frac{dy}{dx}=\varphi(x,y)$，然后再对 $\varphi(x,y)$ 关于 $x$ 求导，此时表达式中会出现 $y'$，将 $\varphi(x,y)$ 代入，即可求得 $\frac{d^2y}{dx^2}$
 ### 2.4.3. 参数方程
 参数方程
 $\begin{cases}
@@ -254,16 +254,16 @@ $\begin{cases}
 1. $\frac{dy}{dx}=\frac{y'(t)}{x'(t)}$
 2. $\frac{d^2y}{dx^2}=\frac{d\frac{dy}{dx}}{dx}=\frac{d\frac{dy}{dx}}{dt}\cdot\frac{dt}{dx}=\frac{d\frac{dy}{dx}}{dt}\cdot\frac{1}{x'(t)}=\frac{y''(t)x'(t)-x''(t)y'(t)}{x'^3(t)}$
 ### 2.4.4. 反函数
-设$y=f(x)$的反函数$x=\varphi(y)$，则: 
+设 $y=f(x)$ 的反函数 $x=\varphi(y)$，则: 
 * $\frac{dx}{dy}=\frac{1}{f'(x)}$
 * $\frac{d^2x}{dy^2}=\frac{d\frac{dx}{dy}}{dx}\cdot\frac{dx}{dy}=-\frac{f''(x)}{f'^3(x)}$
 ### 2.4.5. 高阶导数
 1. 归纳法: 求出函数的前几阶导数，分析规律
 2. 利用莱布尼茨公式求解
 3. 利用泰勒公式求函数在某点的各阶导数
-   1. 写出$f(x)$在点$x_0$处的泰勒公式:   
+   1. 写出 $f(x)$ 在点 $x_0$ 处的泰勒公式:   
       $f(x)=f(x_0)+f'(x_0)(x-x_0)+...+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+...$
-   2. 通过化简或变量代换或利用已知的泰勒公式把$f(x)$间接展开为:   
+   2. 通过化简或变量代换或利用已知的泰勒公式把 $f(x)$ 间接展开为:   
       $f(x)=a_0+a_1(x-x_0)+a_2(x-x_0)^2+...+a_n(x-x_0)^n+...$
    3. 根据函数的泰勒公式的唯一性，相同的次幂前系数相同，可得:   
       $\frac{f^{(n)}(x_0)}{n!}=a_n\implies f^{(n)}(x_0)=a_n\cdot n!$
@@ -279,7 +279,7 @@ $\begin{cases}
 ## 2.6. 中值定理
 |  |  |  |  |
 |---|---|---|---|
-| 罗尔定理 | $f(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内可导，$f(a)=f(b)$ | $\exists \xi\in (a,b)$ | $f'(\xi)=0$ |
+| 罗尔定理 | $f(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内可导， $f(a)=f(b)$ | $\exists \xi\in (a,b)$ | $f'(\xi)=0$ |
 | 拉格朗日中值定理 | $f(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内可导 | $\exists \xi\in (a,b)$ | $f'(\xi)=\frac{f(b)-f(a)}{b-a}$ |
 | 柯西中值定理 | $f(x),g(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内可导，且 $g'(x)\neq 0$ | $\exists \xi\in (a,b)$ | $\frac{f'(\xi)}{g'(\xi)}=\frac{f(b)-f(a)}{g(b)-g(a)}$ |
 | 积分中值定理<br>（介值定理可证） | $F(x)=\int_a^xf(t)dt$，在 $[a,b]$ 上连续，在 $(a,b)$ 内可导 | $\exists \xi\in[a,b]$ | $\int_a^bf(x)dx=f(\xi)(b-a)$ |
@@ -374,11 +374,7 @@ $\begin{cases}
 3. 非奇非偶时: $\int_{-a}^af(x)dx=\int_0^a[f(x)+f(-x)]dx$
 4. $f(x+T)=f(x)$ 时: $\int_0^Tf(x)dx=\int_a^{a+T}f(x)dx$
 5. $\int_a^bf(x)dx=\int_a^bf(a+b-x)dx$
-6. $\int_0^{\frac{\pi}{2}}\sin^n xdx=\int_0^{\frac{\pi}{2}}\cos^n xdx=$
-$\begin{cases}
-\frac{(n-1)!!}{n!!}\qquad n为奇数  \\
-\frac{(n-1)!!}{n!!}\cdot\frac{\pi}{2}\quad n为偶数  \\
-\end{cases}$
+6. $\int_0^{\frac{\pi}{2}}\sin^n xdx=\int_0^{\frac{\pi}{2}}\cos^n xdx=\begin{cases} \frac{(n-1)!!}{n!!}\qquad n为奇数 \\ \frac{(n-1)!!}{n!!}\cdot\frac{\pi}{2}\quad n为偶数 \\ \end{cases}$
 7. $\int_0^{\frac{\pi}{2}}f(\sin x)dx=\int_0^{\frac{\pi}{2}}f(\cos x)dx$
 8. $\int_0^\pi xf(\sin x)dx=\frac{\pi}{2}\int_0^\pi f(\sin x)dx$，$\frac{\pi}{2}$ 是 $(0,\pi)$ 的中点
 9. $\int_0^a\sqrt{2ax-x^2}dx=\frac{1}{4}\pi a^2$，几何意义是以 $(a,0)$ 为圆心，$a$ 为半径的四分之一圆
@@ -414,9 +410,9 @@ $\begin{cases}
 | 类型 | 方程 | 解法 | 备注 |
 |---|---|---|---|
 | 可分离变量方程 | $\frac{dy}{dx}=f(x)g(y)$ | $\int\frac{1}{g(y)}dy=\int f(x)dx$ |  |
-| 齐次方程 | $\frac{dy}{dx}=f(\frac{y}{x})$ | $\int\frac{1}{f(u)-u}du=\int\frac{1}{x}dx$，$(u=\frac{y}{x})$| 存在 $x^m,y^n,x^sy^t$，当 $m=n=s+t$ 时为齐次方程 |
+| 齐次方程 | $\frac{dy}{dx}=f(\frac{y}{x})$ | $\int\frac{1}{f(u)-u}du=\int\frac{1}{x}dx$, $(u=\frac{y}{x})$| 存在 $x^m,y^n,x^sy^t$，当 $m=n=s+t$ 时为齐次方程 |
 | 一阶线性微分方程 | $y'+p(x)y=q(x)$ | $y=e^{-\int p(x)dx}(\int q(x)e^{\int p(x)dx}dx+C)$ |  |
-| 伯努利方程 | $y'+p(x)y=q(x)y^n$，$(n\ne 0,1)$ | $z'+(n-1)p(x)z=(n-1)q(x)$，$(z=y^{1-n})$ |  |
+| 伯努利方程 | $y'+p(x)y=q(x)y^n$, $(n\ne 0,1)$ | $z'+(n-1)p(x)z=(n-1)q(x)$，$(z=y^{1-n})$ |  |
 | 全微分方程 | $p(x,y)dx+q(x,y)dy=0$ | 待补充 |  |
 |  |  |  |  |
 ## 4.2. 可降阶的高阶微分方程
@@ -458,7 +454,7 @@ $\begin{cases}
 
 $n$ 阶常系数齐次方程: $y^{(n)}+P_1y^{(n-1)}+...+P_{n-1}y'+P_ny=0$，其特征方程是: $r^n+P_1r^{n-1}+...+P_{n-1}r+P_n=0$，通解: 
 1. 当 $r$ 是 $k$ 重根，$y=e^{rx}(C_1+C_2x+...+C_kx^{k-1})$
-2. 当 $r=\lambda\pm i\omega$ 是 $k$ 重共轭复根，$y=e^{\lambda x}[(C_1+C_2x+...+C_kx^{k-1})\cos{\omega x}+(D_1+D_2x+...+D_kx^{k-1})\sin{\omega x}]$  
+2. 当 $r=\lambda\pm i\omega$ 是 $k$ 重共轭复根, $y=e^{\lambda x}[(C_1+C_2x+...+C_kx^{k-1})\cos{\omega x}+(D_1+D_2x+...+D_kx^{k-1})\sin{\omega x}]$  
 
 # 5. 多元函数微分学
 ## 5.1. 概念
