@@ -32,7 +32,7 @@
 |差|$A-B$ 或 $A\bar{B}$|$A$ 发生但 $B$ 不发生|$A-B-C$ 表示 $A$ 发生但 $B,C$ 均不发生<br>$A-B=A-AB$|
 |积|$A\cap B$ 或 $AB$|$A$ 发生且 $B$ 发生（同时都发生）|$ABC$ 表示 $A,B,C$ 均发生|
 |互斥（不相容）|$AB=\phi$|没有交集||
-|对立（互逆）|$\begin{cases} AB=\phi \\ A+B=\Omega \end{cases}$ 记为 $\bar{A}=B$ 或 $A=\bar{B}$|没有交集且相加为全集|对立一定互斥，互斥不一定对立<br>$A\bar{B}=A-B=A-AB$|
+|对立（互逆）|$\begin{cases} AB=\phi\\ A+B=\Omega \end{cases}$ 记为 $\bar{A}=B$ 或 $A=\bar{B}$|没有交集且相加为全集|对立一定互斥，互斥不一定对立<br>$A\bar{B}=A-B=A-AB$|
 
 ## 1.2. 事件运算
 
