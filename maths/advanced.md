@@ -91,7 +91,7 @@
 >定义: 设有数列 ${u_n}$ 和常数 $A$，对任意给定的 $\varepsilon>0$，存在整数N，使得当 $n>N$ 时，恒有 $|u_n-A|<\varepsilon$ 成立，则称数列 ${u_n}$ 以 $A$ 为极限，记为: $\lim\limits_{n\to\infty}u_n=A$ 或 $u_n\to A\space(n\to\infty)$
 
 >子列: 从一个数列中抽取无穷多项，在不改变原有次序的情况下构成的新数列称为原数列的子数列，简称子列
-1. $\varepsilon$ 表示 $u_n$ 与 $A$ 的接近程度，可以任意小，可以有多种形式表达，比如: $2\varepsilon$、$\varepsilon^2$、$\sqrt{\varepsilon}$ 等
+1. $\varepsilon$ 表示 $u_n$ 与 $A$ 的接近程度，可以任意小，可以有多种形式表达，比如: $2\varepsilon$、 $\varepsilon^2$、 $\sqrt{\varepsilon}$ 等
 2. $u_n$ 收敛于 $A\iff u_n$ 的任意子数列也收敛于 $A$
    * 注意: 这里的任意子列可以理解为全部子列，不能覆盖整个 $u_n$ 的子列收敛不能推导 $u_n$ 收敛
 3. $\lim\limits_{n\to\infty}u_n=A\iff u_n$ 的偶数子列和奇数子列满足 $\lim\limits_{n\to\infty}u_{2n}=\lim\limits_{n\to\infty}u_{2n+1}=A$
@@ -374,7 +374,7 @@ $\begin{cases}
 3. 非奇非偶时: $\int_{-a}^af(x)dx=\int_0^a[f(x)+f(-x)]dx$
 4. $f(x+T)=f(x)$ 时: $\int_0^Tf(x)dx=\int_a^{a+T}f(x)dx$
 5. $\int_a^bf(x)dx=\int_a^bf(a+b-x)dx$
-6. $\int_0^{\frac{\pi}{2}}\sin^n xdx=\int_0^{\frac{\pi}{2}}\cos^n xdx=\begin{cases} \frac{(n-1)!!}{n!!}\qquad n为奇数 \\ \frac{(n-1)!!}{n!!}\cdot\frac{\pi}{2}\quad n为偶数 \\ \end{cases}$
+6. $\int_0^{\frac{\pi}{2}}\sin^n xdx=\int_0^{\frac{\pi}{2}}\cos^n xdx= \begin{cases} \frac{(n-1)!!}{n!!}\qquad n为奇数 \\ \frac{(n-1)!!}{n!!}\cdot\frac{\pi}{2}\quad n为偶数 \\ \end{cases}$
 7. $\int_0^{\frac{\pi}{2}}f(\sin x)dx=\int_0^{\frac{\pi}{2}}f(\cos x)dx$
 8. $\int_0^\pi xf(\sin x)dx=\frac{\pi}{2}\int_0^\pi f(\sin x)dx$，$\frac{\pi}{2}$ 是 $(0,\pi)$ 的中点
 9. $\int_0^a\sqrt{2ax-x^2}dx=\frac{1}{4}\pi a^2$，几何意义是以 $(a,0)$ 为圆心，$a$ 为半径的四分之一圆
@@ -464,7 +464,7 @@ $n$ 阶常系数齐次方程: $y^{(n)}+P_1y^{(n-1)}+...+P_{n-1}y'+P_ny=0$，其�
 | 二元函数的几何意义 | 一张曲面 |
 | 二元函数的极限 | 即二重极限: $\lim\limits_{(x,y)\to(x_0,y_0)}f(x,y)$<br>与一元函数只有左右极限不同，二元函数到某点的极限有无数路径，通常由两个不同路径的极限不同来反证其极限不存在<br>与本质为一元函数极限的二次极限 $\lim\limits_{x\to x_0}\lim\limits_{y\to y_0}f(x,y)$ 没有关系 |
 | 二元函数连续 | $\lim\limits_{(x,y)\to(x_0,y_0)}f(x,y)=f(x_0,y_0)$ |
-| 二元函数性质 | 不可用: 洛必达法则、泰勒展开<br>可用: 导数定义、无穷小替换、$1^\infty$<br>若在有界闭区间上连续，则有界、最值、介值 |
+| 二元函数性质 | 不可用: 洛必达法则、泰勒展开<br>可用: 导数定义、无穷小替换、 $1^\infty$<br>若在有界闭区间上连续，则有界、最值、介值 |
 | 二元函数的偏导数 | $f_x'(x_0,y_0)=\lim\limits_{\Delta x\to 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}$ <br> $f_y'(x_0,y_0)=\lim\limits_{\Delta y\to 0}\frac{f(x_0,y_0+\Delta y)-f(x_0,y_0)}{\Delta y}$ |
 | 二元函数的偏导连续 | 对 $z=f(x,y)$ 求偏导得到的 $f'_x(x,y)$ 和 $f'_y(x,y)$ 是偏导函数，也常称为“偏导数”，而“偏导连续”则是指这里的偏导函数连续 |
 | $z=f(x,y)$ 在 $(x_0,y_0)$ 可微 | $\lim\limits_{(\Delta x,\Delta y)\to (0,0)}\frac{f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0)-\frac{\partial f}{\partial x}\Delta x-\frac{\partial f}{\partial y}\Delta y}{\sqrt{(\Delta x)^2+(\Delta y)^2}}$ <br> $\lim\limits_{(x,y)\to (x_0,y_0)}\frac{f(x,y)-f(x_0,y_0)-\frac{\partial f}{\partial x}(x-x_0)-\frac{\partial f}{\partial y}(y-y_0)}{\sqrt{(x-x_0)^2+(y-y_0)^2}}$ <br> 称 $dz=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy$ 为全微分 |
@@ -541,7 +541,7 @@ $\begin{cases}
 ## 7.1. 常数项级数
 1. $\lim\limits_{n\to \infty}a_n$ 存在 $\iff \displaystyle\sum_{n=1}^\infty(a_{n+1}-a_n)$ 收敛
 2. 若 $k\ne 0$，$\displaystyle\sum_{n=1}^\infty a_n$ 与 $\displaystyle\sum_{n=1}^\infty ka_n$ 有相同的敛散性，若 $\displaystyle\sum_{n=1}^\infty a_n=S$ 则 $\displaystyle\sum_{n=1}^\infty ka_n=kS$
-3. 若两个收敛级数 $\displaystyle\sum_{n=1}^\infty a_n=A$、$\displaystyle\sum_{n=1}^\infty b_n=B$，则任给常数 $a,b$ 有 $\displaystyle\sum_{n=1}^\infty (aa_n+bb_n)=aA+bB$，此为收敛级数的线性性质
+3. 若两个收敛级数 $\displaystyle\sum_{n=1}^\infty a_n=A$、 $\displaystyle\sum_{n=1}^\infty b_n=B$，则任给常数 $a,b$ 有 $\displaystyle\sum_{n=1}^\infty (aa_n+bb_n)=aA+bB$，此为收敛级数的线性性质
    * 收敛+收敛=收敛；收敛+发散=发散；发散+发散=不一定发散
 4. 若 $\displaystyle\sum_{n=1}^\infty a_n$ 收敛，则 $\lim\limits_{n\to\infty}a_n=0$，因此若 $\lim\limits_{n\to\infty}a_n\ne 0$ 则 $\displaystyle\sum_{n=1}^\infty a_n$ 一定发散（通项的极限为零是级数收敛的必要非充分条件）
 5. : 
@@ -568,7 +568,7 @@ $\begin{cases}
    * $k=1$ 时，不确定
 4. 积分判别法: 若 $f(x)=a_n$，则广义积分 $\int_1^{+\infty}f(x)dx$ 与 $\displaystyle\sum_{n=1}^\infty{a_n}$ 同敛散
 5. 补充: 
-   * 若正项级数 $\displaystyle\sum_{n=1}^\infty a_n$ 收敛，则 $\displaystyle\sum_{n=1}^\infty a_n^2$、$\displaystyle\sum_{n=1}^\infty\frac{\sqrt{a_n}}{n}$、$\displaystyle\sum_{n=1}^\infty\frac{a_n}{1+a_n}$ 均收敛
+   * 若正项级数 $\displaystyle\sum_{n=1}^\infty a_n$ 收敛，则 $\displaystyle\sum_{n=1}^\infty a_n^2$、 $\displaystyle\sum_{n=1}^\infty\frac{\sqrt{a_n}}{n}$、 $\displaystyle\sum_{n=1}^\infty\frac{a_n}{1+a_n}$ 均收敛
 
 ### 7.1.2. 交错与任意级数
 >若 $a_n>0$，称 $\displaystyle\sum_{n=1}^\infty(-1)^na_n$ 或 $\displaystyle\sum_{n=1}^\infty(-1)^{n-1}a_n$ 为交错级数  
@@ -577,7 +577,7 @@ $\begin{cases}
    * 注: 条件①为充分非必要，当②满足但①不满足时不能保证发散，要改用其他方法（定义、性质等）判断。
 2. 若 $\displaystyle\sum_{n=1}^\infty |a_n|$ 收敛，则称 $\displaystyle\sum_{n=1}^\infty a_n$ 绝对收敛，绝对收敛则原级数收敛。
 3. 若 $\displaystyle\sum_{n=1}^\infty a_n$ 收敛，但 $\displaystyle\sum_{n=1}^\infty |a_n|$ 发散，则称 $\displaystyle\sum_{n=1}^\infty a_n$ 条件收敛。
-4. 熟记 $\displaystyle\sum_{n=1}^\infty(-1)^n\frac{1}{n}$、$\displaystyle\sum_{n=1}^\infty(-1)^n\frac{1}{\sqrt{n}}$ 条件收敛，$\displaystyle\sum_{n=1}^\infty(-1)^n\frac{1}{n^2}$ 绝对收敛（选择题找特例的材料）。
+4. 熟记 $\displaystyle\sum_{n=1}^\infty(-1)^n\frac{1}{n}$、 $\displaystyle\sum_{n=1}^\infty(-1)^n\frac{1}{\sqrt{n}}$ 条件收敛，$\displaystyle\sum_{n=1}^\infty(-1)^n\frac{1}{n^2}$ 绝对收敛（选择题找特例的材料）。
    * $\displaystyle\sum_{n=1}^\infty(-1)^n\frac{1}{n^p}$=$\begin{cases}
       绝对收敛，p>1\\
       条件收敛，0< p \le 1\\
