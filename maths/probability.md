@@ -375,9 +375,9 @@
 |名称|条件|内容|备注|
 |:-|:-|:-|:-|
 |切比雪夫不等式|期望方差均存在|$P\lbrace |X-E(X)|\ge \epsilon\rbrace \le \frac{D(X)}{\epsilon^2}$|用来估计事件发生的可能性大小|
-|伯努利大数定律|$n$ 重伯努利试验|$\lim\limits_{n\to\infty}P\lbrace \|\frac{n_A}{n}-p\|<\epsilon \rbrace=1$|
-|切比雪夫大数定律|相互独立，期望方差均存在，方差有界|$\lim\limits_{n\to\infty}P(\|\frac{1}{n}\displaystyle\sum_{i=1}^nX_i-\frac{1}{n}\displaystyle\sum_{i=1}^nE(X_i)\|<\epsilon)=1$||
-|辛钦大数定律|独立同分布，期望存在，$E(X_i)=\mu$|$\lim\limits_{n\to\infty}P(\|\frac{1}{n}\displaystyle\sum_{i=1}^nX_i-\mu\|<\epsilon)=1$|辛钦是期望相等时的切比雪夫大数定律|
+|伯努利大数定律|$n$ 重伯努利试验|$\lim\limits_{n\to\infty}P\lbrace |\frac{n_A}{n}-p|<\epsilon \rbrace=1$|
+|切比雪夫大数定律|相互独立，期望方差均存在，方差有界|$\lim\limits_{n\to\infty}P(|\frac{1}{n}\displaystyle\sum_{i=1}^nX_i-\frac{1}{n}\displaystyle\sum_{i=1}^nE(X_i)|<\epsilon)=1$||
+|辛钦大数定律|独立同分布，期望存在，$E(X_i)=\mu$|$\lim\limits_{n\to\infty}P(|\frac{1}{n}\displaystyle\sum_{i=1}^nX_i-\mu|<\epsilon)=1$|辛钦是期望相等时的切比雪夫大数定律|
 |$L-L$ 中心极限定理|独立同分布，期望方差均存在，$E(X_i)=\mu,D(X_i)=\sigma^2$|$\lim\limits_{n\to\infty}P[\frac{\displaystyle\sum_{i=1}^nX_i-n\mu}{\sqrt{n}\sigma}\le x]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-\frac{t^2}{2}}dt$|意思是，当 $n$ 足够大时，独立同分布的 $X_i$ 的和 $\displaystyle\sum_{i=1}^nX_i$ 近似服从正态分布 $N(n\mu,n\sigma^2)$|
 |$D-L$ 中心极限定理|$X_i$ 服从二项分布 $B(n,p)$|$\lim\limits_{n\to\infty}P(\frac{X_n-np}{\sqrt{np(1-p)}}\le x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-\frac{t^2}{2}}dt$|意思是，当 $n$ 足够大时，二项分布会近似服从正态分布 $N(np,np(1-p))$|
 
@@ -387,5 +387,19 @@
 2. 统计量是一个随机变量，是样本组成的、不含未知参数的函数
 3. 样本的数字特征
    1. 样本均值：$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$
-
+      1. $E(\bar{X})=E(X)$
+      2. $D(\bar{X})=\frac{D(X)}{n}$
+   2. 样本方差：$S^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X})^2$
+      1. $S^2=\frac{1}{n-1}(\sum_{i=1}^nX_i^2-n\bar{X}^2)$
+      2. $E(S^2)=D(X)$
+   3. 样本 $k$ 阶原点矩：$A_k=\frac{1}{n}\sum_{i=1}^nX_i^k,\quad\quad (k=1,2,...)$
+   4. 样本 $k$ 阶中心矩：$B_k=\frac{1}{n}\sum_{i=1}^n(X_i-\bar{X})^k,\quad (k=1,2,...)$
+## 6.2. 三大抽样分布
+1. $\chi^2$ 分布
+   1. 独立同分布的 $X_i\sim N(0,1)$，则 $\chi^2=\sum_{i=1}^nX_i^2$ 服从自由度为 $n$ 的 $\chi^2$ 分布，记为 $\chi^2\sim\chi^2(n)$
+      1. $E(\chi^2)=n$
+      2. $D(\chi^2)=2n$
+      3. 若 $X\sim N(0,1)$ 则 $X^2\sim \chi^2(1)$
+   2. 可加性：若 $\chi_1^2\sim\chi^2(n_1),\chi_2^2\sim\chi^2(n_2)$ 且 $\chi_1^2,\chi_2^2$ 相互独立，则 $\chi_1^2+\chi_2^2\sim \chi^2(n_1+n_2)$
+   3. 对于给定的 $0<\alpha<1$，称满足 $P\{\chi^2>\chi_\alpha^2(n)\}=\alpha$ 的点 $\chi_\alpha^2(n)$ 是 $\chi^2(n)$ 分布的上 $\alpha$ 分位点
 
