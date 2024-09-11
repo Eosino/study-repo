@@ -402,4 +402,31 @@
       3. 若 $X\sim N(0,1)$ 则 $X^2\sim \chi^2(1)$
    2. 可加性：若 $\chi_1^2\sim\chi^2(n_1),\chi_2^2\sim\chi^2(n_2)$ 且 $\chi_1^2,\chi_2^2$ 相互独立，则 $\chi_1^2+\chi_2^2\sim \chi^2(n_1+n_2)$
    3. 对于给定的 $0<\alpha<1$，称满足 $P\{\chi^2>\chi_\alpha^2(n)\}=\alpha$ 的点 $\chi_\alpha^2(n)$ 是 $\chi^2(n)$ 分布的上 $\alpha$ 分位点
+2. $t$ 分布
+   1. 设 $X\sim N(0,1),Y\sim\chi^2(n)$，$X,Y$ 独立，则 $T=\frac{X}{\sqrt{Y/n}}\sim t(n)$
+   2. $t$ 分布的概率密度函数是形状类似正态分布的偶函数，当 $n$ 充分大时，$t(n)$ 近似 $N(0,1)$
+   3. $E(T)=0$
+   4. 上 $\alpha$ 分位点 $t_\alpha(n),(0<\alpha<1)$，则：
+      1. $P\{T>t_\alpha(n)\}=\alpha$
+      2. $t_{1-\alpha}(n)=-t_\alpha(n)$
+      3. $P\{|T|>t_{\frac{\alpha}{2}}(n)\}=\alpha$
+3. $F$ 分布
+   1. 设 $X_1\sim\chi^2(n_1),X_2\sim\chi^2(n_2)$，$X_1,X_2$ 独立，则 $F=\frac{X_1/n_1}{X_2/n_2}\sim F(n_1,n_2)$
+   2. $\frac{1}{F}=F(n_2,n_1)$
+   3. 上 $\alpha$ 分位点 $F_\alpha(n_1,n_2),(0<\alpha<1)$，则：
+      1. $P\{F>F_\alpha(n_1,n_2)\}=\alpha$
+      2. $F_{1-\alpha}(n_1,n_2)=\frac{1}{F_\alpha(n_2,n_1)}$
+## 6.3. 正态总体的抽样分布
+1. 一个正态总体（重点），设 $X\sim N(\mu,\sigma^2),X_1,X_2,...,X_n$ 是来自总体 $X$ 的样本，样本均值 $\bar{X}$，样本方差 $S^2$
+   1. $\bar{X}\sim N(\mu,\frac{\sigma^2}{n})$
+      1. $U=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$
+   2. $\bar{X},S^2$ 相互独立，且 $\chi^2=\frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)$
+   3. $\chi^2=\frac{1}{\sigma^2}\sum_{i=1}^n(X_i-\mu)^2\sim\chi^2(n)$
+   4. $T=\frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t(n-1)$
+2. 两个正态总体（非重点），设 $X\sim N(\mu_1,\sigma_1^2),Y\sim N(\mu_2,\sigma_2^2),X_i,Y_i$ 分别是来自 $X,Y$ 的样本，相互独立，样本均值 $\bar{X},\bar{Y}$，样本方差 $S_1^2,S_2^2$，则：
+   1. $\bar{X}-\bar{Y}\sim N(\mu_1-\mu_2,\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2})$
+   2. $U=\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}\sim N(0,1)$
+   3. $F=\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma^2}\sim F(n_1-1,n_2-1)$
+
+
 
