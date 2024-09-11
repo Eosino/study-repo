@@ -376,9 +376,9 @@
 |:-|:-|:-|:-|
 |切比雪夫不等式|期望方差均存在|$P\lbrace |X-E(X)|\ge \epsilon\rbrace \le \frac{D(X)}{\epsilon^2}$|用来估计事件发生的可能性大小|
 |伯努利大数定律|$n$ 重伯努利试验|$\lim\limits_{n\to\infty}P\lbrace |\frac{n_A}{n}-p|<\epsilon \rbrace=1$|
-|切比雪夫大数定律|相互独立，期望方差均存在，方差有界|$\lim\limits_{n\to\infty}P(|\frac{1}{n}\displaystyle\sum_{i=1}^nX_i-\frac{1}{n}\displaystyle\sum_{i=1}^nE(X_i)|<\epsilon)=1$||
-|辛钦大数定律|独立同分布，期望存在，$E(X_i)=\mu$|$\lim\limits_{n\to\infty}P(|\frac{1}{n}\displaystyle\sum_{i=1}^nX_i-\mu|<\epsilon)=1$|辛钦是期望相等时的切比雪夫大数定律|
-|$L-L$ 中心极限定理|独立同分布，期望方差均存在，$E(X_i)=\mu,D(X_i)=\sigma^2$|$\lim\limits_{n\to\infty}P[\frac{\displaystyle\sum_{i=1}^nX_i-n\mu}{\sqrt{n}\sigma}\le x]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-\frac{t^2}{2}}dt$|意思是，当 $n$ 足够大时，独立同分布的 $X_i$ 的和 $\displaystyle\sum_{i=1}^nX_i$ 近似服从正态分布 $N(n\mu,n\sigma^2)$|
+|切比雪夫大数定律|相互独立，期望方差均存在，方差有界|$\lim\limits_{n\to\infty}P(|\frac{1}{n}\sum_{i=1}^nX_i-\frac{1}{n}\sum_{i=1}^nE(X_i)|<\epsilon)=1$||
+|辛钦大数定律|独立同分布，期望存在，$E(X_i)=\mu$|$\lim\limits_{n\to\infty}P(|\frac{1}{n}\sum_{i=1}^nX_i-\mu|<\epsilon)=1$|辛钦是期望相等时的切比雪夫大数定律|
+|$L-L$ 中心极限定理|独立同分布，期望方差均存在，$E(X_i)=\mu,D(X_i)=\sigma^2$|$\lim\limits_{n\to\infty}P[\frac{\sum_{i=1}^nX_i-n\mu}{\sqrt{n}\sigma}\le x]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-\frac{t^2}{2}}dt$|意思是，当 $n$ 足够大时，独立同分布的 $X_i$ 的和 $\sum_{i=1}^nX_i$ 近似服从正态分布 $N(n\mu,n\sigma^2)$|
 |$D-L$ 中心极限定理|$X_i$ 服从二项分布 $B(n,p)$|$\lim\limits_{n\to\infty}P(\frac{X_n-np}{\sqrt{np(1-p)}}\le x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-\frac{t^2}{2}}dt$|意思是，当 $n$ 足够大时，二项分布会近似服从正态分布 $N(np,np(1-p))$|
 
 # 6. 数理统计
@@ -401,32 +401,32 @@
       2. $D(\chi^2)=2n$
       3. 若 $X\sim N(0,1)$ 则 $X^2\sim \chi^2(1)$
    2. 可加性：若 $\chi_1^2\sim\chi^2(n_1),\chi_2^2\sim\chi^2(n_2)$ 且 $\chi_1^2,\chi_2^2$ 相互独立，则 $\chi_1^2+\chi_2^2\sim \chi^2(n_1+n_2)$
-   3. 对于给定的 $0<\alpha<1$，称满足 $P\{\chi^2>\chi_\alpha^2(n)\}=\alpha$ 的点 $\chi_\alpha^2(n)$ 是 $\chi^2(n)$ 分布的上 $\alpha$ 分位点
 2. $t$ 分布
    1. 设 $X\sim N(0,1),Y\sim\chi^2(n)$，$X,Y$ 独立，则 $T=\frac{X}{\sqrt{Y/n}}\sim t(n)$
    2. $t$ 分布的概率密度函数是形状类似正态分布的偶函数，当 $n$ 充分大时，$t(n)$ 近似 $N(0,1)$
    3. $E(T)=0$
-   4. 上 $\alpha$ 分位点 $t_\alpha(n),(0<\alpha<1)$，则：
-      1. $P\{T>t_\alpha(n)\}=\alpha$
-      2. $t_{1-\alpha}(n)=-t_\alpha(n)$
-      3. $P\{|T|>t_{\frac{\alpha}{2}}(n)\}=\alpha$
 3. $F$ 分布
    1. 设 $X_1\sim\chi^2(n_1),X_2\sim\chi^2(n_2)$，$X_1,X_2$ 独立，则 $F=\frac{X_1/n_1}{X_2/n_2}\sim F(n_1,n_2)$
    2. $\frac{1}{F}=F(n_2,n_1)$
-   3. 上 $\alpha$ 分位点 $F_\alpha(n_1,n_2),(0<\alpha<1)$，则：
-      1. $P\{F>F_\alpha(n_1,n_2)\}=\alpha$
-      2. $F_{1-\alpha}(n_1,n_2)=\frac{1}{F_\alpha(n_2,n_1)}$
 ## 6.3. 正态总体的抽样分布
 1. 一个正态总体（重点），设 $X\sim N(\mu,\sigma^2),X_1,X_2,...,X_n$ 是来自总体 $X$ 的样本，样本均值 $\bar{X}$，样本方差 $S^2$
    1. $\bar{X}\sim N(\mu,\frac{\sigma^2}{n})$
-      1. $U=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$
-   2. $\bar{X},S^2$ 相互独立，且 $\chi^2=\frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)$
-   3. $\chi^2=\frac{1}{\sigma^2}\sum_{i=1}^n(X_i-\mu)^2\sim\chi^2(n)$
-   4. $T=\frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t(n-1)$
+      1. $\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$
+   2. $\bar{X},S^2$ 相互独立，且：
+      1. $\frac{1}{\sigma^2}\sum_{i=1}^n(X_i-\bar{X})^2=\frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)$
+      2. $\frac{1}{\sigma^2}\sum_{i=1}^n(X_i-\mu)^2\sim\chi^2(n)$
+   3. $\frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t(n-1)$
 2. 两个正态总体（非重点），设 $X\sim N(\mu_1,\sigma_1^2),Y\sim N(\mu_2,\sigma_2^2),X_i,Y_i$ 分别是来自 $X,Y$ 的样本，相互独立，样本均值 $\bar{X},\bar{Y}$，样本方差 $S_1^2,S_2^2$，则：
    1. $\bar{X}-\bar{Y}\sim N(\mu_1-\mu_2,\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2})$
    2. $U=\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}\sim N(0,1)$
    3. $F=\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma^2}\sim F(n_1-1,n_2-1)$
-
-
+## 6.4. 上 $\alpha$ 分位点
+设 $X$ 是一个连续型随机变量，对于给定的 $0<\alpha<1$，称满足 $P\{X>x_\alpha\}=\alpha$ 的点 $x_\alpha$ 为 $X$ 所对应分布的上 $\alpha$ 分位点。
+ 
+|分布|记为|公式|
+|-|-|-|
+|标准正态 $N(0,1)$|$u_\alpha$ 或 $z_\alpha$|$u_{1-\alpha}=-u_\alpha$|
+|$t(n)$|$t_\alpha(n)$|$t_{1-\alpha}(n)=-u_\alpha(n)$|
+|$\chi^2(n)$|$\chi_\alpha^2(n)$||
+|$F(n_1,n_2)$|$F_\alpha(n_1,n_2)$|$F_{1-\alpha}(n_1,n_2)=\frac{1}{F_\alpha(n_2,n_1)}$|
 
