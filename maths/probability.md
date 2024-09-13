@@ -174,6 +174,7 @@
          5. $\varPhi(-x)=1-\varPhi(x)$
          6. $P\lbrace |X|\le a\rbrace=2\varPhi(a)-1$
       3. 设 $\mu_\alpha$ 为标准正态分布的上 $\alpha$ 分位点，则：$P\lbrace X>\mu_\alpha\rbrace=\alpha$，即 $\varphi(x)$ 图形中 $x=\mu_\alpha$ 右边的面积为 $\alpha$
+         1. 设 $Z\sim N(0,1)$，那么 $\Phi(1.96)=0.975 \implies P\{z\le 1.96\}=0.975 \implies P\{z>1.96\}=0.025 \implies Z_{0.025}=1.96,(\alpha=0.025,Z_\alpha=1.96)$
       4. 一般正态分布 $X\sim N(\mu,\sigma^2)$ 可通过线性变换转化为标准正态分布 $Z=\frac{X-\mu}{\sigma}\sim N(0,1)$
 ## 2.4. 函数的分布
 1. 离散型随机变量的函数 $Y=g(X)$ 的分布，需要通过函数得出 $Y$ 的取值，然取值相同则概率相加
@@ -376,8 +377,8 @@
 |:-|:-|:-|:-|
 |切比雪夫不等式|期望方差均存在|$P\lbrace |X-E(X)|\ge \epsilon\rbrace \le \frac{D(X)}{\epsilon^2}$|用来估计事件发生的可能性大小|
 |伯努利大数定律|$n$ 重伯努利试验|$\lim\limits_{n\to\infty}P\lbrace |\frac{n_A}{n}-p|<\epsilon \rbrace=1$|
-|切比雪夫大数定律|相互独立，期望方差均存在，方差有界|$\lim\limits_{n\to\infty}P(|\frac{1}{n}\sum_{i=1}^nX_i-\frac{1}{n}\sum_{i=1}^nE(X_i)|<\epsilon)=1$||
-|辛钦大数定律|独立同分布，期望存在，$E(X_i)=\mu$|$\lim\limits_{n\to\infty}P(|\frac{1}{n}\sum_{i=1}^nX_i-\mu|<\epsilon)=1$|辛钦是期望相等时的切比雪夫大数定律|
+|切比雪夫大数定律|相互独立，期望方差均存在，方差有界|$\lim\limits_{n\to\infty}P(|\frac{1}{n}\sum_{i=1}^nX_i-\frac{1}{n}\sum_{i=1}^nE(X_i)|<\epsilon)=1$|平均值依概率收敛于期望的平均值|
+|辛钦大数定律|独立同分布，期望存在，$E(X_i)=\mu$|$\lim\limits_{n\to\infty}P(|\frac{1}{n}\sum_{i=1}^nX_i-\mu|<\epsilon)=1$|辛钦是期望相等时的切比雪夫大数定律，平均值依概率收敛于期望|
 |$L-L$ 中心极限定理|独立同分布，期望方差均存在，$E(X_i)=\mu,D(X_i)=\sigma^2$|$\lim\limits_{n\to\infty}P[\frac{\sum_{i=1}^nX_i-n\mu}{\sqrt{n}\sigma}\le x]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-\frac{t^2}{2}}dt$|意思是，当 $n$ 足够大时，独立同分布的 $X_i$ 的和 $\sum_{i=1}^nX_i$ 近似服从正态分布 $N(n\mu,n\sigma^2)$|
 |$D-L$ 中心极限定理|$X_i$ 服从二项分布 $B(n,p)$|$\lim\limits_{n\to\infty}P(\frac{X_n-np}{\sqrt{np(1-p)}}\le x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-\frac{t^2}{2}}dt$|意思是，当 $n$ 足够大时，二项分布会近似服从正态分布 $N(np,np(1-p))$|
 
@@ -430,4 +431,70 @@
 |$t(n)$|$t_\alpha(n)$|$t_{1-\alpha}(n)=-t_\alpha(n)$|
 |$\chi^2(n)$|$\chi_\alpha^2(n)$||
 |$F(n_1,n_2)$|$F_\alpha(n_1,n_2)$|$F_{1-\alpha}(n_1,n_2)=\frac{1}{F_\alpha(n_2,n_1)}$|
+
+# 7. 参数估计
+## 7.1. 点估计
+1. 概念：用样本 $X_i)$ 构造的统计量 $\hat{\theta}$ 来估计未知参数 $\theta$
+2. 矩估计（$k$ 个参数需要列出 $1\to k$ 阶矩方程，大纲要求 $1,2$ 阶，但考试一般只考 $1$ 阶）
+   1. 写出 $E(X)=\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$
+   2. 从中解出参数
+3. 最大似然估计
+   1. 似然函数
+      1. 离散型总体的似然函数：$L(\theta)=\prod_{i=1}^np(x_i;\theta)$
+      2. 连续型总体的似然函数：$L(\theta)=\prod_{i=1}^nf(x_i;\theta)$
+   2. 最大似然估计就是计算使似然函数 $L(\theta)$ 达到最大值的参数值 $\hat{\theta}$，步骤：
+      1. 写出似然函数 $L(\theta)$
+      2. 取对数 $\ln L(\theta)$（可选，通常需要取对数简化求导）
+      3. 求导，然后求出唯一驻点，即解方程 $\frac{d[\ln L(\theta)]}{d\theta}=0$
+         1. 若 $\frac{d[\ln L(\theta)]}{d\theta}\ne 0$，则：
+            1. 若大于零，则 $L(\theta)$ 递增，根据题目所给条件 $x_i\ge 0$，取 $\hat{\theta}=\min\{X_1,X_2,...,X_n\}$
+            2. 若小于零，则 $L(\theta)$ 递减，根据题目所给条件 $x_i\le 0$，取 $\hat{\theta}=\max\{X_1,X_2,...,X_n\}$
+## 7.2. 估计量的评选标准
+1. 无偏估计：设 $\hat{\theta}$ 是 $\theta$ 的估计量，若 $E(\hat{\theta})=\theta$ 则 $\hat{\theta}$ 是未知参数 $\theta$ 的无偏估计量。
+2. 更有效估计：设 $\hat{\theta_1},\hat{\theta_2}$ 都是 $\theta$ 的无偏估计量，若 $D(\hat{\theta_1})<D(\hat{\theta_2})$，则 $\hat{\theta_1}$ 是比 $\hat{\theta_2}$ 更有效的估计量。
+3. 一致估计：设 $\hat{\theta}$ 是 $\theta$ 的估计量，若 $\hat{\theta}$ 依概率收敛于 $\theta$，则 $\hat{\theta}$ 是 $\theta$ 的一致估计量。
+
+## 7.3. 区间估计
+1. 置信区间：总体 $X$ 有未知参数 $\theta$，存在两个统计量 $\hat{\theta_1},\hat{\theta_2}$ 和事先给定的正数 $0<\alpha<1$，若 $P\{\hat{\theta_1}<\theta<\hat{\theta_2}\}=1-\alpha$，则称随机区间 $(\hat{\theta_1},\hat{\theta_2})$ 为 $\theta$ 的置信度为 $1-\alpha$ 的置信区间。
+   1. 称 $\hat{\theta_1},\hat{\theta_2}$ 为置信下限和置信上线
+   2. 称 $\alpha$ 为显著性水平
+2. 一个正态总体参数的区间估计
+   1. 未知参数为 $\mu$
+      1. 若 $\sigma^2$ 已知，$1-\alpha$ 置信区间为 $(\bar{X}-U_{\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}},\bar{X}+U_{\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}})$，区间关于 $\bar{X}$ 对称，其中 $U\sim N(0,1)$
+      2. 若 $\sigma^2$ 未知，$1-\alpha$ 置信区间为 $(\bar{X}-t_{\frac{\alpha}{2}}(n-1)\frac{S}{\sqrt{n}},\bar{X}+t_{\frac{\alpha}{2}}(n-1)\frac{S}{\sqrt{n}})$，区间关于 $\bar{X}$ 对称
+   2. 未知参数为 $\sigma^2$，$1-\alpha$ 置信区间为 $(\frac{(n-1)S^2}{\chi_{\frac{\alpha}{2}}^2(n-1)},\frac{(n-1)S^2}{\chi_{1-\frac{\alpha}{2}}^2(n-1)})$
+
+# 8. 假设检验
+## 8.1. 基本概念
+1. 假设
+   1. 关于总体分布的未知参数的假设称为基本假设（又称原假设、零假设），记为 $H_0$
+   2. 对立于基本假设的假设称为备选假设（又称备择假设、对立假设），记为 $H_1$
+2. 假设检验：根据样本，按照一定规则判断 $H_0$ 的真伪，并作出接受还是拒绝的决定。
+3. 两类错误
+   1. 第一类错误（弃真）：拒绝实际真的假设
+   2. 第二类错误（纳伪）：接受实际假的假设
+4. 显著性检验
+   1. 显著性水平：在假设检验中允许犯第一类错误的概率，记为 $\alpha \in (0,1)$；它表现了对 $H_0$ 弃真的控制程度，一般取 $0.1,0.05,0.01,0.001$ 等。
+   2. 显著性检验：只控制第一类错位概率 $\alpha$ 的统计检验。
+   3. 显著性检验的一般步骤：
+      1. 根据问题要求提出 $H_0,H_1$（等于一定要位于 $H_0$）
+      2. 给出显著性水平 $\alpha$
+      3. 确定统计量及拒绝域 $W$
+      4. 按犯第一类错误的概率等于 $\alpha$ 求出拒绝域 $W$
+      5. 根据样本值计算检验统计量 $T$ 的观测值 $t$，当 $t\in W$ 时，拒绝原假设 $H_0$，否则接受 $H_0$
+5. 备注
+   1. 实际推断原理：小概率事件在一次试验中实际上是不会发生的，实际推断原理又称小概率原理。
+   2. 显著性水平 $\alpha=0.05$ 表示小概率事件发生的概率是 $5%$
+      1. 在一次试验中没发生小概率事件，则接受 $H_0$（或者说，接受 $H_0$ 表示没发生小概率事件）
+         1. 当 $\alpha$ 较大时接受，则 $\alpha$ 较小时肯定也接受（$5%$ 的小概率都没发生，$1%$ 的小概率就更不会发生）
+      2. 在一次试验中发生了小概率事件，则拒绝 $H_0$（或者说，拒绝 $H_0$ 表示发生了小概率事件）
+         1. 当 $\alpha$ 较小时拒绝，则 $\alpha$ 较大时肯定也拒绝（$1%$ 的小概率都发生了，$5%$ 的小概率就更会发生）
+## 8.2. 正态总体的假设检验
+
+|检验参数|原假设 $H_0$|对立假设 $H_1$|拒绝域 $W$|情形|统计量|统计量的分布|
+|-|-|-|-|-|-|-|
+|期望 $\mu$|$\mu=\mu_0$ </br> $\mu\le\mu_0$ </br> $\mu\ge\mu_0$|$\mu\ne\mu_0$ </br> $\mu>\mu_0$ </br> $\mu<\mu_0$|$|Z|\ge Z_{\frac{\alpha}{2}}$ </br> $Z\ge Z_\alpha$ </br> $Z\le -Z_\alpha$|$\sigma^2$ 已知|$Z=\frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}$|$N(0,1)$|
+|期望 $\mu$|$\mu=\mu_0$ </br> $\mu\le\mu_0$ </br> $\mu\ge\mu_0$|$\mu\ne\mu_0$ </br> $\mu>\mu_0$ </br> $\mu<\mu_0$|$|T|\ge t_{\frac{\alpha}{2}}(n-1)$ </br> $T\ge t_\alpha(n-1)$ </br> $T\le -t_\alpha(n-1)$|$\sigma^2$ 未知|$T=\frac{\bar{X}-\mu_0}{S/\sqrt{n}}$|$t(n-1)$|
+|方差 $\sigma^2$|$\sigma_2=\sigma_0^2$ </br> $\sigma\le\sigma_0^2$ </br> $\sigma\ge\sigma_0^2$|$\sigma^2\ne\sigma_0^2$ </br> $\sigma^2>\sigma_0^2$ </br> $\sigma^2<\sigma_0^2$|$\chi^2\le \chi^2_{1-\frac{\alpha}{2}}(n)\cup\chi^2\ge \chi^2_{\frac{\alpha}{2}}(n)$ </br> $\chi^2\ge \chi^2_\alpha(n)$ </br> $\chi^2\le \chi^2_{1-\alpha}(n)$|$\mu$ 已知|$\chi^2=\frac{1}{\sigma_0^2}\sum_{i=1}^n(X_i-\mu)^2$|$\chi^2(n)$|
+|方差 $\sigma^2$|$\sigma_2=\sigma_0^2$ </br> $\sigma\le\sigma_0^2$ </br> $\sigma\ge\sigma_0^2$|$\sigma^2\ne\sigma_0^2$ </br> $\sigma^2>\sigma_0^2$ </br> $\sigma^2<\sigma_0^2$|$\chi^2\le \chi^2_{1-\frac{\alpha}{2}}(n-1)\cup\chi^2\ge \chi^2_{\frac{\alpha}{2}}(n-1)$ </br> $\chi^2\ge \chi^2_\alpha(n-1)$ </br> $\chi^2\le \chi^2_{1-\alpha}(n-1)$|$\mu$ 未知|$\chi^2=\frac{(n-1)S^2}{\sigma_0^2}$|$\chi^2(n-1)$|
 
